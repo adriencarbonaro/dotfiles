@@ -1,0 +1,3 @@
+rofi.show: run
+rofi.modi: window,ssh,run,keys
+rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
