@@ -26,11 +26,13 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+random = ${env:POLYBAR_ACCENT_COLOR}
+;random=#99FF99
 
-[bar/example]
+[bar/carbo]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 25
+height = 40
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -54,10 +56,67 @@ module-margin-right = 3
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
-font-3 = Inconsolata:pixelsize=11;1
-font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=11;1"
-font-5 = "Font Awesome 5 Free:style=Solid:pixelsize=11;1"
-font-6 = "Font Awesome 5 Brands:pixelsize=11;1"
+font-3 = Inconsolata:pixelsize=14;1
+font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=14;1"
+font-5 = "Font Awesome 5 Free:style=Solid:pixelsize=14;1"
+font-6 = "Font Awesome 5 Brands:pixelsize=14;1"
+
+modules-left = i3 
+modules-center = xwindow 
+modules-right = alsa xbacklight memory cpu temperature wlan eth battery date clock 
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+
+[bar/example]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 45
+;offset-x = 1%
+;offset-y = 1%
+;radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+;border-size = 4
+;border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 3
+module-margin-right = 3
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Inconsolata:pixelsize=18;1
+font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=15;1"
+font-5 = "Font Awesome 5 Free:style=Solid:pixelsize=15;1"
+font-6 = "Font Awesome 5 Brands:pixelsize=15;1"
 
 modules-left = i3 
 modules-center = xwindow 
@@ -109,7 +168,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F${colors.random}}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 label-mounted-font = 4
@@ -120,18 +179,18 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 3
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 3
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 3
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 3
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -153,18 +212,22 @@ label-mode-background = ${colors.primary}
 ;label-focused = %index%
 label-focused = %name%
 label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-foreground = ${colors.random}
+label-focused-underline = ${colors.random}
 label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-font = 4
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-font = 4
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+label-visible-underline = ${colors.random}
 label-visible-padding = ${self.label-focused-padding}
+label-visible-font = 4
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
@@ -192,17 +255,19 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = " "
+label-foreground = ${colors.random}
+label-font = 4
 
-bar-width = 10
+bar-width = 15
 bar-indicator = |
 bar-indicator-foreground = #fff
-bar-indicator-font = 2
+bar-indicator-font = 4
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #fff
 bar-empty = ─
-bar-empty-font = 2
+bar-empty-font = 4
 bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
@@ -214,7 +279,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = #f98020
+format-prefix-foreground = ${colors.random}
 ;format-underline = #f95050
 format-prefix-font = 4
 
@@ -222,12 +287,13 @@ format = <label>
 label = %percentage:3%%
 label-font = 4
 
+
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-font = 4
-format-prefix-foreground = #4bffdc
+format-prefix-foreground = ${colors.random}
 ;format-underline = #4bffdc
 label = %percentage_used:3%%
 label-font = 4
@@ -239,12 +305,14 @@ interval = 3.0
 
 format-connected-prefix = " "
 format-connected-prefix-font = 4
-format-connected-prefix-foreground = #9f78e1
+format-connected-prefix-foreground = ${colors.random}
+
 
 format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
 
-label-connected = %{F#9f78e1}%essid%%{F-} %local_ip%
+label-connected = ${env:BAR_MODULE_LABEL}
+;label-connected = %{F#99FF99}%essid%%{F-} %local_ip%
 label-connected-font = 4
 
 format-disconnected = <label-disconnected>
@@ -254,11 +322,11 @@ label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 label-disconnected-font = 4
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -277,18 +345,30 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+[module/clock]
+type = internal/date
+interval = 1
+
+time = %H:%M:%S
+
+format-prefix = "  "
+format-prefix-foreground = ${colors.random}
+;format-underline = #0a6cf5
+
+label = %time%
+label-font = 4
+
 [module/date]
 type = internal/date
 interval = 5
 
 date = " %a, %e %b"
-time = %H:%M:%S
 
 format-prefix = " "
-format-prefix-foreground = #0a6cf5
+format-prefix-foreground = ${colors.random}
 ;format-underline = #0a6cf5
 
-label = %date% %time%
+label = %date%
 label-font = 4
 
 [module/pulseaudio]
@@ -327,8 +407,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 type = internal/alsa
-color-volume = #55aa55
-color-muted = #aa5555
+color-volume = ${colors.random}
+color-muted = #FF5555
 
 format-volume-prefix = " "
 format-volume-prefix-foreground = ${self.color-volume}
@@ -367,6 +447,37 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format-prefix      = " "
+format-prefix-font = 4
+format-prefix-foreground = ${colors.random}
+
+format-warn-prefix = "T° "
+format-warn-prefix-font = 4
+format-warn-prefix-foreground = #f50a4d 
+
+format = <label>
+;format-underline = #f50a4d
+format-warn = <label-warn>
+;format-warn-underline = #f50a4d
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+label-font = 4
+label-warn-font = 4
+
+;ramp-0 = 
+;ramp-1 = 
+;ramp-2 = 
+;ramp-foreground = ${colors.foreground-alt}
+
+
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -375,10 +486,10 @@ full-at = 98
 
 ; COLORS
 color-alert       = #ff5555
-color-warning     = #ffff55
+color-warning     = ${colors.random}
 color-charging    = #f28b37
-color-discharging = #fff520
-color-full        = #00FF00
+color-discharging = ${colors.random}
+color-full        = ${colors.random}
 
 ; PREFIX
 ;format-charging-prefix = " "
@@ -437,35 +548,6 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format-prefix      = " "
-format-prefix-font = 4
-format-prefix-foreground = #f50a9d
-
-format-warn-prefix = "T° "
-format-warn-prefix-font = 4
-format-warn-prefix-foreground = #f50a4d 
-
-format = <label>
-;format-underline = #f50a4d
-format-warn = <label-warn>
-;format-warn-underline = #f50a4d
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-label-font = 4
-label-warn-font = 4
-
-;ramp-0 = 
-;ramp-1 = 
-;ramp-2 = 
-;ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
