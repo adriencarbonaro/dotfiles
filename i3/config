@@ -34,10 +34,11 @@ floating_modifier $mod
 bindsym $mod+Return exec terminator
 
 # kill focused window
-bindsym $mod+Shift+A kill
+bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+space exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -85,7 +86,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # focus the parent container
 bindsym $mod+q focus parent
@@ -96,33 +97,35 @@ bindsym $mod+q focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 ""
-set $ws2 ""
+#set $ws2 ""
+#set $ws2 ""
+set $ws2 ""
 set $ws3 ""
 set $ws4 ""
-set $ws5 "5"
-set $ws6 "6"
+set $ws5 ""
+set $ws6 ""
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+ampersand workspace $ws1
-bindsym $mod+eacute workspace $ws2
-bindsym $mod+quotedbl workspace $ws3
-bindsym $mod+apostrophe workspace $ws4
-bindsym $mod+parenleft workspace $ws5
-bindsym $mod+minus workspace $ws6
-bindsym $mod+egrave workspace $ws7
-bindsym $mod+underscore workspace $ws8
-bindsym $mod+ccedilla workspace $ws9
-bindsym $mod+agrave workspace $ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # Switch to next workspace.
 # Mod1 = Alt
 # Type in xmodmap to know differents Mod#
-bindsym Mod1+Ctrl+Right workspace next
-bindsym Mod1+Ctrl+Left workspace prev
+bindsym $mod+Mod1+Right workspace next
+bindsym $mod+Mod1+Left workspace prev
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -171,14 +174,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Create borders
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 4
 
-new_window pixel 2
-new_float pixel 2
+new_window	pixel 5
+new_float	pixel 5
 
 # Gaps
-gaps inner 15
-gaps outer 5
+gaps inner 25
+gaps outer 10
 
 # Hide gaps when only one window on screen
 smart_gaps on
@@ -187,32 +190,50 @@ smart_gaps on
 bindsym $mod+k exec sl
 
 # Volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute             exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume 	exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 2 +5%
+bindsym XF86AudioLowerVolume 	exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 2 -5%
+bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 2 toggle
 
 # Brightness control
-#bindsym XF86MonBrightnessUp exec x
+bindsym XF86MonBrightnessUp     exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown   exec xbacklight -dec 10
+
+# Keyboard backlight control
+bindsym XF86KbdBrightnessUp     exec $HOME/bin/backlight.sh inc
+bindsym XF86KbdBrightnessDown   exec $HOME/bin/backlight.sh dec
+
+# Play control
+bindsym XF86AudioPlay 	exec --no-startup-id sp play
+bindsym XF86AudioNext	exec --no-startup-id sp next
+bindsym XF86AudioPrev 	exec --no-startup-id sp prev
 
 
-set $color	   #FFF000
-set $rcolo         #FF0000
-set $bg            #262626
-set $bg_in         #404040
+# Hide borders when only one window on screen
+hide_edge_borders smart
+
+# Change resolution (Get things bigger with Mac Book Pro Retina)
+exec_always --no-startup-id xrandr -s 1920x1200
+
+# Set autorepeat threshold to 250ms and speed to 50 repeats per seconds
+exec_always --no-startup-id xset r rate 250 50
+
+# Set wallpaper
+exec_always --no-startup-id feh --bg-fill $HOME/Images/wall.png
+
+# Display top bar
+exec_always --no-startup-id killall polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id xrdb $HOME/.Xresources
+
+set $color  #AAAAFF
+set $rcolo  #FF0000
+set $bg     #262626
+set $bg_in  #404040
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $bg     $bg     $bg     $bg       $color
+client.focused          $bg     $bg     $bg     $color    $color
 client.focused_inactive $bg     $bg     $bg     $bg       $bg
 client.unfocused        $bg     $bg     $bg     $bg       $bg_in
 client.urgent           $bg     $bg     $bg     $bg       $bg
 client.placeholder      $bg     $bg     $bg     $bg       $bg
 client.background       #ffffff
-
-# Hide borders when only one window on screen
-hide_edge_borders smart
-
-# Set wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Images/city.png
-
-# Display top bar
-exec_always --no-startup-id polybar example
