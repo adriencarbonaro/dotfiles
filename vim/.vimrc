@@ -2,6 +2,7 @@
 
 syntax enable
 set number
+set cursorline
 set ruler
 set encoding=utf-8
 set backspace=indent,eol,start
@@ -10,10 +11,10 @@ set showcmd
 set t_Co=256
 set mouse=a
 set noshowmode
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
+"set tabstop=4
+"set shiftwidth=4
+"set expandtab
+set hlsearch 
 
 " Color Scheme
 colorscheme carbo
@@ -21,14 +22,19 @@ colorscheme carbo
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'mileszs/ack.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'scrooloose/nerdtree'
+Plugin 'VundleVim/Vundle.vim'      "  Vim Package manager
+Plugin 'airblade/vim-gitgutter'    "  Git plugin - display + - ~ in vim gutter
+Plugin 'scrooloose/nerdcommenter'  "  Comment plugin - Toggle comments
+Plugin 'mileszs/ack.vim'           "  Ack plugin - ack search program
+Plugin 'Yggdroot/indentLine'       "  Indent plugin - display indent lines in code
+Plugin 'scrooloose/nerdtree'       "  Tree plugin - display file tree
+Plugin 'godlygeek/tabular'         "  Align plugin - align code according to symbol
 call vundle#end()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" create location to store swap (.swp) files
+set directory^=$HOME/.vim/tmp//
+
 filetype indent plugin on
 
 " PLUGIN OPTION ----------------------------------
@@ -48,16 +54,16 @@ set statusline +=%7*%{(mode()=='n')?'\ \ NORMAL\ ':''}
 set statusline +=%8*%{(mode()=='i')?'\ \ INSERT\ ':''}
 set statusline +=%8*%{(mode()=='R')?'\ \ REPLAC\ ':''}
 set statusline +=%6*%{(mode()=='v')?'\ \ VISUAL\ ':''}
-set statusline +=%1*\ %n\ %*         "buffer number
-set statusline +=%3*%{&ff}%*         "file format
-set statusline +=%5*\ %y%*     	     "file type
-set statusline +=%4*\ %<%F%*   	     "full path
-set statusline +=%2*%m%*             "modified flag
-set statusline +=%1*%=%5l%*            "current line
-set statusline +=%2*/%L%*            "total lines
-set statusline +=%1*%4v\ %*          "virtual column number
-set statusline +=%2*0x%04B\ %*       "character under cursor
-set statusline +=%3*%{winwidth(0)} "window width
+set statusline +=%1*\ %n\ %*        "  buffer number
+set statusline +=%3*%{&ff}%*        "  file format
+set statusline +=%5*\ %y%*          "  file type
+set statusline +=%4*\ %<%F%*        "  full path
+set statusline +=%2*%m%*            "  modified flag
+set statusline +=%1*%=%5l%*         "  current line
+set statusline +=%2*/%L%*           "  total lines
+set statusline +=%1*%4v\ %*         "  virtual column number
+set statusline +=%2*0x%04B\ %*      "  character under cursor
+set statusline +=%3*%{winwidth(0)}  "  window width
 
 " Colors for status bar
 hi User1 ctermfg=166 ctermbg=236
@@ -71,6 +77,12 @@ hi User7 ctermfg=255 ctermbg=28
 hi User8 ctermfg=255 ctermbg=94
 
 " BINDINGS ---------------------------------------
+
+" Automaticaly close brackets
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
 
 " Switch windows with Alt + Arrows
 nmap <silent> <C-Left> <C-W>h
@@ -97,6 +109,13 @@ nmap :gd <Plug>GitGutterPreviewHunk
 " CtrlP Plugin invoking to add path
 nmap :cp<CR> :CtrlP
 
+" Paste multiple in visual mode
+xnoremap p pgvy
+
+" Tabularize Plugin to align according to a symbol
+nmap :t= :Tabularize /=/l2
+vmap :t= :Tabularize /=/l2
+
 " Abbreviations ----------------------------------
 
 " Abbreviation for ack tool
@@ -104,3 +123,4 @@ ca ack Ack!
 
 " Vertical resize abbreviation
 ca vr vertical resize
+
