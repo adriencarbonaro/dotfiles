@@ -11,9 +11,9 @@ set showcmd
 set t_Co=256
 set mouse=a
 set noshowmode
-"set tabstop=4
-"set shiftwidth=4
-"set expandtab
+set tabstop=4
+set shiftwidth=4
+set expandtab
 set hlsearch 
 
 " Color Scheme
@@ -29,6 +29,7 @@ Plugin 'mileszs/ack.vim'           "  Ack plugin - ack search program
 Plugin 'Yggdroot/indentLine'       "  Indent plugin - display indent lines in code
 Plugin 'scrooloose/nerdtree'       "  Tree plugin - display file tree
 Plugin 'godlygeek/tabular'         "  Align plugin - align code according to symbol
+Plugin 'sheerun/vim-polyglot'
 call vundle#end()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -107,19 +108,28 @@ map <C-@> <Plug>NERDCommenterToggle
 nmap :gd <Plug>GitGutterPreviewHunk
 
 " CtrlP Plugin invoking to add path
-nmap :cp<CR> :CtrlP
+nmap :cp :CtrlP<Space>
+nmap <C-p> :CtrlP .<CR>
 
 " Paste multiple in visual mode
 xnoremap p pgvy
 
 " Tabularize Plugin to align according to a symbol
-nmap :t= :Tabularize /=/l2
-vmap :t= :Tabularize /=/l2
+ca Tab Tabularize
+nmap :t= :Tab /^[^=]*\zs=/l1c1<CR>
+vmap :t= :Tab /^[^=]*\zs=/l1c1<CR>
+" Tab only the first space
+nmap :t<Space> :Tab /^[ ]*\zs[^ ]*\zs /l0c0<CR>
+vmap :t<Space> :Tab /^[ ]*\zs[^ ]*\zs /l0c0<CR>
+
+" Correct indentation JSON files
+nmap :json<CR> :%!python -m json.tool<CR>
 
 " Abbreviations ----------------------------------
 
 " Abbreviation for ack tool
-ca ack Ack!
+ca Ack Ack!
+nnoremap <C-a> :Ack!<Space>
 
 " Vertical resize abbreviation
 ca vr vertical resize

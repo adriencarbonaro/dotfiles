@@ -21,14 +21,14 @@ endif
 let colors_name = "carbo"
 
 " General colors
-hi Normal ctermfg=254 ctermbg=236
+hi Normal ctermfg=254
 hi Cursor ctermfg=234 ctermbg=13 
 hi Visual ctermfg=251 ctermbg=239
 hi VisualNOS ctermfg=251 ctermbg=236
 hi Search ctermfg=177 ctermbg=241
 hi Folded ctermfg=103 ctermbg=237
 hi Title ctermfg=230 cterm=bold
-hi VertSplit ctermfg=235 ctermbg=66
+hi VertSplit ctermfg=236 ctermbg=66
 hi LineNr ctermfg=241
 hi SpecialKey ctermfg=241 ctermbg=235 cterm=none
 hi WarningMsg ctermfg=203
@@ -42,7 +42,7 @@ if version >= 700
 " Highlight current line
 hi CursorLine ctermbg=237 cterm=none
 " Highlight current line number
-hi CursorLineNr ctermfg=38
+hi CursorLineNr ctermfg=221
 hi MatchParen ctermfg=228 ctermbg=101 cterm=bold
 hi Pmenu ctermfg=230 ctermbg=238
 hi PmenuSel ctermfg=232 ctermbg=192
@@ -59,9 +59,9 @@ hi Keyword ctermfg=75
 hi Statement ctermfg=75
 hi Constant ctermfg=173
 hi Number ctermfg=167
-hi PreProc ctermfg=172
-hi Function ctermfg=209
-hi Identifier ctermfg=192
+hi PreProc ctermfg=147
+hi Function ctermfg=183
+hi Identifier ctermfg=81
 hi Type ctermfg=85
 hi Special ctermfg=229
 hi String ctermfg=113
