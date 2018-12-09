@@ -1,5 +1,8 @@
 # dotfiles
 
+![.dot](dot.png)
+
+
 ## Description
 
 My dotfiles for a linux distribution configuration.
