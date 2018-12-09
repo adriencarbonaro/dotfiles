@@ -24,8 +24,8 @@ URxvt.geometry:             90x30
 ! URxvt.urgentOnBell:         true
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
-URxvt.saveLines:            50
-URxvt.internalBorder:       25
+!URxvt.saveLines:            50
+URxvt.internalBorder:       10
 URxvt.lineSpace:            0
 
 ! Fonts
@@ -44,19 +44,25 @@ URxvt.scrollBar:            false
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          firefox
+URxvt.urlLauncher:          chromium-browser
 
 ! Cursor
 URxvt.cursorBlink:          true
-URxvt.cursorColor:          #ededed
+!URxvt.cursorColor:          #ededed
 URxvt.cursorUnderline:      false
 
+! Reproduce Ctrl + Arrows like other terminals
+URxvt.keysym.Control-Down:        \033[1;3B
+URxvt.keysym.Control-Up:          \033[1;3A
+URxvt.keysym.Control-Left:        \033[1;3D
+URxvt.keysym.Control-Right:       \033[1;3C
+
 ! Pointer
-URxvt.pointerBlank:         true
+!URxvt.pointerBlank:         true
 
 !!Source http://github.com/altercation/solarized
 
-URxvt*background: #303030
+URxvt*background: #353535
 
 *foreground: #ededed
 !*fading: 40
