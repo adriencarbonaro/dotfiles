@@ -30,8 +30,9 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec terminator
+#bindsym $mod+Return exec terminator
+#exec_always --no-startup-id xrdb -merge $HOME/.Xdefaults
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -180,8 +181,8 @@ new_window	pixel 5
 new_float	pixel 5
 
 # Gaps
-gaps inner 25
-gaps outer 10
+gaps inner 40
+gaps outer 15
 
 # Hide gaps when only one window on screen
 smart_gaps on
@@ -218,14 +219,13 @@ exec_always --no-startup-id xrandr -s 1920x1200
 exec_always --no-startup-id xset r rate 250 50
 
 # Set wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Images/wall.png
+#exec_always --no-startup-id feh --bg-fill $HOME/Images/wall_red.png
+exec_always feh --randomize --bg-fill $HOME/Images/wallpapers/*
 
 # Display top bar
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id xrdb $HOME/.Xresources
 
-set $color  #AAAAFF
 set $rcolo  #FF0000
 set $bg     #262626
 set $bg_in  #404040
@@ -237,3 +237,6 @@ client.unfocused        $bg     $bg     $bg     $bg       $bg_in
 client.urgent           $bg     $bg     $bg     $bg       $bg
 client.placeholder      $bg     $bg     $bg     $bg       $bg
 client.background       #ffffff
+
+# Window border color
+set $color #88FF88
