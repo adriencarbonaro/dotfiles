@@ -2,8 +2,10 @@
 
 ## Description
 
-My config for a Ubuntu 18.04 linux distribution.
+My dotfiles for a linux distribution configuration.
 
 **WM:** i3
-
+**shell**: zsh with ohmyzsh
+**terminal**: urxvt
+**editor**: vim
 **bar:** polybar
