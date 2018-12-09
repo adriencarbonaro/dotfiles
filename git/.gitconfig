@@ -20,7 +20,7 @@
     changed   = red bold
 [color "diff"]
     meta       = black bold
-    frag       = black bold
+    frag       = cyan bold
     func       = cyan
     old        = red
     new        = green
@@ -28,10 +28,10 @@
     whitespace = red
     context    = normal
 [color "branch"]
-    current  = cyan bold
-    local    = cyan
-    remote   = magenta
-    upstream = magenta
+    current  = magenta bold
+    local    = magenta
+    remote   = cyan
+    upstream = cyan
     plain    = normal
 [color "decorate"]
     branch = green bold
@@ -40,7 +40,7 @@
     stash = cyan
     HEAD = cyan bold
 [color "interactive"]
-    prompt = red
+    prompt = blue bold
     header = red bold
     error = red
     help = black bold
