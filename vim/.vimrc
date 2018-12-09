@@ -125,6 +125,8 @@ vmap :t<Space> :Tab /^[ ]*\zs[^ ]*\zs /l0c0<CR>
 " Correct indentation JSON files
 nmap :json<CR> :%!python -m json.tool<CR>
 
+nmap <C-_> :set hlsearch!<CR>
+
 " Abbreviations ----------------------------------
 
 " Abbreviation for ack tool
