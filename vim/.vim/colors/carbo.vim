@@ -28,7 +28,7 @@ hi VisualNOS ctermfg=251 ctermbg=236
 hi Search ctermfg=177 ctermbg=241
 hi Folded ctermfg=103 ctermbg=237
 hi Title ctermfg=230 cterm=bold
-hi VertSplit ctermfg=236 ctermbg=66
+hi VertSplit ctermfg=236 ctermbg=66 
 hi LineNr ctermfg=241
 hi SpecialKey ctermfg=241 ctermbg=235 cterm=none
 hi WarningMsg ctermfg=203
@@ -40,9 +40,9 @@ hi Directory ctermfg=75 cterm=bold
 " Vim >= 7.0 specific colors
 if version >= 700
 " Highlight current line
-hi CursorLine ctermbg=237 cterm=none
+hi CursorLine ctermbg=236 cterm=none
 " Highlight current line number
-hi CursorLineNr ctermfg=221
+hi CursorLineNr ctermfg=183
 hi MatchParen ctermfg=228 ctermbg=101 cterm=bold
 hi Pmenu ctermfg=230 ctermbg=238
 hi PmenuSel ctermfg=232 ctermbg=192
