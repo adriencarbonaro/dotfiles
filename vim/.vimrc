@@ -29,7 +29,7 @@ Plugin 'mileszs/ack.vim'           "  Ack plugin - ack search program
 Plugin 'Yggdroot/indentLine'       "  Indent plugin - display indent lines in code
 Plugin 'scrooloose/nerdtree'       "  Tree plugin - display file tree
 Plugin 'godlygeek/tabular'         "  Align plugin - align code according to symbol
-Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot'      "  Syntax plugin - syntax highlighting according to language
 call vundle#end()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/plugin
