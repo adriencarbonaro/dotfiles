@@ -47,6 +47,9 @@ let g:indentLine_char = '|'
 let g:ctrlp_regexp = 1
 let g:ctrlp_show_hidden = 1
 
+" Enable doxygen for C, C++
+let g:load_doxygen_syntax=1
+
 " STATUS BAR -------------------------------------
 
 " Status bar style
