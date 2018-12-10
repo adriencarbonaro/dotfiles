@@ -45,7 +45,7 @@ filetype indent plugin on
 let g:indentLine_char = '|'
 
 " CtrlP Plugin variables
-let g:ctrlp_regexp = 1
+"let g:ctrlp_regexp = 1
 let g:ctrlp_show_hidden = 1
 
 " Enable doxygen for C, C++
