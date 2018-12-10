@@ -32,6 +32,7 @@ Plugin 'godlygeek/tabular'         "  Align plugin - align code according to sym
 Plugin 'sheerun/vim-polyglot'
 call vundle#end()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/plugin
 
 " create location to store swap (.swp) files
 set directory^=$HOME/.vim/tmp//
