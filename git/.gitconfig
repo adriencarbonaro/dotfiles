@@ -24,7 +24,7 @@
     func       = cyan
     old        = red
     new        = green
-    commit     = yellow
+    commit     = cyan
     whitespace = red
     context    = normal
 [color "branch"]
@@ -36,7 +36,7 @@
 [color "decorate"]
     branch = green bold
     remoteBranch = magenta bold
-    tag = magenta
+    tag = yellow bold
     stash = cyan
     HEAD = cyan bold
 [color "interactive"]
