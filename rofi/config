@@ -1,3 +1,5 @@
 rofi.show: run
-rofi.theme: /usr/local/share/rofi/themes/Arc-Dark.rasi
 rofi.modi: window,ssh,run,keys
+rofi.theme: /usr/share/rofi/themes/carbo.rasi
+rofi.blur-background = true
+rofi.fullscreen:true
