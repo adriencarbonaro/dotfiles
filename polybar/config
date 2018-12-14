@@ -222,7 +222,7 @@ label-focused-font = 4
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 label-unfocused-font = 4
-label-unfocused-foreground = #888888
+label-unfocused-foreground = ${colors.foreground}
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
@@ -314,12 +314,15 @@ format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
 
 label-connected = %essid%
+label-connected-foreground = ${colors.random}
 label-connected-font = 3
 
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.random}
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = #9f78e1
 
-label-disconnected = %ifname% disconnected
+label-disconnected = ... 
 label-disconnected-foreground = ${colors.foreground}
 label-disconnected-font = 4
 
@@ -520,9 +523,9 @@ color-full        = ${colors.random}
 ;format-full-prefix-foreground = ${self.color-full}
 
 ; FORMAT 
-format-charging    = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full        = <ramp-capacity> <label-full>
+format-charging    = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full        = <ramp-capacity><label-full>
 
 ; UNDERLINE
 ;format-charging-underline = ${self.color-charging}
