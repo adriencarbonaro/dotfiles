@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #00000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -26,8 +26,9 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
-random = ${env:POLYBAR_ACCENT_COLOR}
-;random=#99FF99
+;random  = #ffffff
+;random = ${env:POLYBAR_ACCENT_COLOR}
+random=#99FF99
 
 [bar/carbo]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -36,7 +37,7 @@ height = 40
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -47,23 +48,23 @@ line-color = #f00
 ;border-size = 4
 ;border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 5
+padding-right = 7
 
 module-margin-left = 3
 module-margin-right = 3
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = Inconsolata:style=Bold:pixelsize=14;1
 font-3 = Inconsolata:pixelsize=14;1
 font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=14;1"
 font-5 = "Font Awesome 5 Free:style=Solid:pixelsize=14;1"
 font-6 = "Font Awesome 5 Brands:pixelsize=14;1"
 
 modules-left = i3 
-modules-center = xwindow 
-modules-right = alsa xbacklight memory cpu temperature wlan eth battery date clock 
+modules-center = date clock 
+modules-right = alsa xbacklight wlan ip eth battery 
 
 tray-position = right
 tray-padding = 2
@@ -211,9 +212,9 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 ;label-focused = %index%
 label-focused = %name%
-label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-background =  
 label-focused-foreground = ${colors.random}
-label-focused-underline = ${colors.random}
+;label-focused-underline = ${colors.random}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 label-focused-font = 4
 
@@ -221,7 +222,7 @@ label-focused-font = 4
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 label-unfocused-font = 4
-
+label-unfocused-foreground = #888888
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
@@ -254,9 +255,10 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = " "
-label-foreground = ${colors.random}
+format = <label>
+format-prefix = "  "
+label = "%percentage%%"
+format-prefix-foreground = ${colors.random}
 label-font = 4
 
 bar-width = 15
@@ -311,15 +313,14 @@ format-connected-prefix-foreground = ${colors.random}
 format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
 
-label-connected = ${env:BAR_MODULE_LABEL}
-;label-connected = %{F#99FF99}%essid%%{F-} %local_ip%
-label-connected-font = 4
+label-connected = %essid%
+label-connected-font = 3
 
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = #9f78e1
 
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.foreground}
 label-disconnected-font = 4
 
 ramp-signal-0 = 
@@ -328,6 +329,20 @@ ramp-signal-2 =
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/ip]
+type = internal/network
+interface = "wlp3s0"
+interval = 3.0
+
+;format-connected-prefix = ""
+;format-connected-prefix-font = 4
+;format-connected-prefix-foreground = ${colors.random}
+
+format-connected = <label-connected>
+
+label-connected = %local_ip%
+label-connected-font = 4
 
 [module/eth]
 type = internal/network
@@ -369,7 +384,7 @@ format-prefix-foreground = ${colors.random}
 ;format-underline = #0a6cf5
 
 label = %date%
-label-font = 4
+label-font = 3
 
 [module/pulseaudio]
 ;type = internal/pulseaudio
@@ -408,21 +423,21 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/alsa]
 type = internal/alsa
 color-volume = ${colors.random}
-color-muted = #FF5555
+color-muted = #FF6666
 
-format-volume-prefix = " "
+format-volume-prefix = "  "
 format-volume-prefix-foreground = ${self.color-volume}
 
-format-volume = <label-volume> <bar-volume>
-label-volume = " " 
+format-volume = <label-volume>
+label-volume = %percentage:3%%
 label-volume-font = 4
 
 format-muted-prefix = " "
 format-muted-prefix-foreground = ${self.color-muted}
 format-muted-prefix-font = 4
 
-format-muted = <label-muted> <bar-volume>
-label-muted = " "
+format-muted = <label-muted>
+label-muted = %percentage:3%%
 label-muted-font = 4
 
 bar-volume-width = 15
@@ -487,12 +502,12 @@ full-at = 98
 ; COLORS
 color-alert       = #ff5555
 color-warning     = ${colors.random}
-color-charging    = #f28b37
+color-charging    = #FACC40
 color-discharging = ${colors.random}
 color-full        = ${colors.random}
 
 ; PREFIX
-;format-charging-prefix = " "
+;format-charging-prefix = ""
 ;format-charging-prefix-font = 4
 ;format-charging-prefix-foreground = ${self.color-charging}
 
@@ -505,9 +520,9 @@ color-full        = ${colors.random}
 ;format-full-prefix-foreground = ${self.color-full}
 
 ; FORMAT 
-format-charging    = <animation-charging>  <label-charging>
-format-discharging = <ramp-capacity>  <label-discharging>
-format-full        = <ramp-capacity>  <label-full>
+format-charging    = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full        = <ramp-capacity> <label-full>
 
 ; UNDERLINE
 ;format-charging-underline = ${self.color-charging}
