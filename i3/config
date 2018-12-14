@@ -226,7 +226,6 @@ exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/*gradient.jpg
 exec_always --no-startup-id compton &
 
 # Display top bar
-exec_always --no-startup-id killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 set $color  #FF9988
@@ -242,4 +241,3 @@ client.urgent           $bg     $bg     $bg     $bg       $bg_in
 client.placeholder      $bg     $bg     $bg     $bg       $bg_in
 client.background       #ffffff
 
-set $color #88FF88
