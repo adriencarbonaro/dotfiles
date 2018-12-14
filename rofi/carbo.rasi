@@ -1,5 +1,5 @@
 /**
- * Put this file in /usr/share/rofi/themes/carbo.rasi 
+ * Put this file in ~/.config/rofi/carbo.rasi
  */
 
 * {
