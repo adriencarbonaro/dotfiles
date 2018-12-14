@@ -8,7 +8,6 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -223,10 +222,14 @@ exec_always --no-startup-id xset r rate 250 50
 # Gradient wallpapers from uigradient.com
 exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/*gradient.jpg
 
+# Start compton compositor (for transparent)
+exec_always --no-startup-id compton &
+
 # Display top bar
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+set $color  #FF9988
 set $rcolo  #FF0000
 set $bg     #262626
 set $bg_in  #404040
@@ -239,5 +242,4 @@ client.urgent           $bg     $bg     $bg     $bg       $bg_in
 client.placeholder      $bg     $bg     $bg     $bg       $bg_in
 client.background       #ffffff
 
-# Window border color
 set $color #88FF88
