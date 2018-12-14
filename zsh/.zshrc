@@ -102,14 +102,19 @@ source $TOP_DIR/.bash_aliases
 export SHELL=/bin/zsh
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+# dotfiles paths
 export ZSHRC="$HOME/.zshrc"
 export VIMRC="$HOME/.vimrc"
 export VIM_COLOR="$HOME/.vim/colors/carbo.vim"
-export ZSH_THEME="$HOME/.oh_my_zsh/theme/carbo2.zsh-theme"
+export ZSH_COLOR="$HOME/.oh_my_zsh/theme/carbo2.zsh-theme"
 export I3_CONFIG="$HOME/.config/i3/config"
 export POLYBAR_CONFIG="$HOME/.config/polybar/config"
+export ROFI_CONFIG="$HOME/.config/rofi/config"
+export ROFI_COLOR="$HOME/.config/rofi/carbo.rasi"
+export COMPTON_CONFIG="$HOME/.config/compton.conf"
+
 export PATH="$PATH:$HOME/bin"
-export POLYBAR_ACCENT_COLOR=#FF8888
 export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
 export LESS="-RX"
 
