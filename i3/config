@@ -185,7 +185,7 @@ gaps inner 40
 gaps outer 15
 
 # Hide gaps when only one window on screen
-smart_gaps on
+#smart_gaps on
 
 # ScreenLock keybinding
 bindsym $mod+k exec sl
@@ -220,7 +220,8 @@ exec_always --no-startup-id xset r rate 250 50
 
 # Set wallpaper
 #exec_always --no-startup-id feh --bg-fill $HOME/Images/wall_red.png
-exec_always feh --randomize --bg-fill $HOME/Images/wallpapers/*
+# Gradient wallpapers from uigradient.com
+exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/*gradient.jpg
 
 # Display top bar
 exec_always --no-startup-id killall polybar
@@ -232,10 +233,10 @@ set $bg_in  #404040
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $bg     $bg     $bg     $color    $color
-client.focused_inactive $bg     $bg     $bg     $bg       $bg
+client.focused_inactive $bg     $bg     $bg     $bg       $bg_in
 client.unfocused        $bg     $bg     $bg     $bg       $bg_in
-client.urgent           $bg     $bg     $bg     $bg       $bg
-client.placeholder      $bg     $bg     $bg     $bg       $bg
+client.urgent           $bg     $bg     $bg     $bg       $bg_in
+client.placeholder      $bg     $bg     $bg     $bg       $bg_in
 client.background       #ffffff
 
 # Window border color
