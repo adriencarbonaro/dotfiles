@@ -1,0 +1,26 @@
+#!/bin/bash
+
+a=$(($RANDOM % 255))
+b=$(($RANDOM % 255))
+c=$(($RANDOM % 255))
+
+while [ $a -lt 80 ] || [ $b -lt 80 ] || [ $c -lt 80 ]
+do
+    a=$(($RANDOM % 255))
+    b=$(($RANDOM % 255))
+    c=$(($RANDOM % 255))
+done
+
+a=$(echo "obase=16; $a" | bc)
+b=$(echo "obase=16; $b" | bc)
+c=$(echo "obase=16; $c" | bc)
+
+accent_color="#$a$b$c"
+
+export ACCENT_COLOR=$accent_color
+echo $accent_color > $HOME/.accent_color.txt
+
+# Change accent color in i3, polybar and rofi config files
+sed -i -e "s/^set \$color.*/set \$color $accent_color/g" $HOME/.config/i3/config
+sed -i -e "s/^random.*/random = $accent_color/g" $HOME/.config/polybar/config
+sed -i -e "s/accent:.*/accent: $accent_color;/g" $HOME/.config/rofi/carbo.rasi
