@@ -25,7 +25,7 @@ URxvt.geometry:             90x30
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
 !URxvt.saveLines:            50
-URxvt.internalBorder:       10
+URxvt.internalBorder:       50
 URxvt.lineSpace:            0
 
 ! Fonts
@@ -62,7 +62,7 @@ URxvt.keysym.Control-Right:       \033[1;3C
 
 !!Source http://github.com/altercation/solarized
 
-URxvt*background: #353535
+URxvt*background: #303539
 
 *foreground: #ededed
 !*fading: 40
