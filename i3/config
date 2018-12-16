@@ -174,7 +174,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Create borders
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 5
 
 new_window	pixel 5
 new_float	pixel 5
@@ -224,6 +224,9 @@ exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/*gradient.jpg
 
 # Start compton compositor (for transparent)
 exec_always --no-startup-id compton &
+
+exec_always --no-startup-id killall dunst
+exec_always --no-startup-id dunst -conf $HOME/dotfiles/dunst/dunst.conf &
 
 # Display top bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
