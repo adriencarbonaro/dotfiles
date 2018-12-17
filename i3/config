@@ -220,7 +220,7 @@ exec_always --no-startup-id xset r rate 250 50
 # Set wallpaper
 #exec_always --no-startup-id feh --bg-fill $HOME/Images/wall_red.png
 # Gradient wallpapers from uigradient.com
-exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/*gradient.jpg
+exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/gradient/*
 
 # Start compton compositor (for transparent)
 exec_always --no-startup-id compton &
