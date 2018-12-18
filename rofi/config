@@ -1,5 +1,5 @@
 rofi.show: run
-rofi.modi: window,ssh,run,keys
+rofi.modi: window,ssh,run
 rofi.theme: .config/rofi/carbo.rasi
 rofi.blur-background = true
 rofi.fullscreen:true

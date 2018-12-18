@@ -1,9 +1,15 @@
-/**
- * Put this file in ~/.config/rofi/carbo.rasi
- */
+configuration {
+
+    display-ssh:    "→ ";
+    display-run:    "→ ";
+    display-drun:   "→ ";
+    display-window: "→ ";
+    display-combi:  "→ ";
+    show-icons:     true;
+}
 
 * {
-	accent: #88DDFF;
+	accent: #A2F57D;
     foreground:         		@accent;
     background:         		rgba(0, 0, 0, 0.99);
     transparent:				rgba(0, 0, 0, 0);
