@@ -28,3 +28,4 @@ echo $accent_color > $HOME/.accent_color.txt
 sed -i -e "s/^set \$color.*/set \$color $accent_color/g" $HOME/.config/i3/config
 sed -i -e "s/^random.*/random = $accent_color/g" $HOME/.config/polybar/config
 sed -i -e "s/accent:.*/accent: $accent_color;/g" $HOME/.config/rofi/carbo.rasi
+sed -i -e "s/^D='#.*/D='${accent_color}cc'/g" $HOME/bin/sl
