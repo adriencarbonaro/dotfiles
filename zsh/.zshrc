@@ -113,6 +113,7 @@ export POLYBAR_CONFIG="$HOME/.config/polybar/config"
 export ROFI_CONFIG="$HOME/.config/rofi/config"
 export ROFI_COLOR="$HOME/.config/rofi/carbo.rasi"
 export COMPTON_CONFIG="$HOME/.config/compton.conf"
+export DOTFILES="$HOME/dotfiles/"
 
 export PATH="$PATH:$HOME/bin"
 export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
