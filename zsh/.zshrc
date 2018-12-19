@@ -71,6 +71,19 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+## zsh-syntax-highlighting style 
+# Change syntax highlighting colors
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta
+ZSH_HIGHLIGHT_STYLES[path]=fg=blue
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=green
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=green
+ZSH_HIGHLIGHT_STYLES[triple-quoted-argument]=fg=green
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=cyan
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=yellow
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=yellow
+ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=magenta
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
