@@ -113,6 +113,11 @@ ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=magenta
 
 source $TOP_DIR/.bash_aliases
 
+if [ -x "$(command -v exa)" ]
+then
+    source $TOP_DIR/.aliases_exa
+fi
+
 export SHELL=/bin/zsh
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -128,6 +133,7 @@ export ROFI_CONFIG="$HOME/.config/rofi/config"
 export ROFI_COLOR="$HOME/.config/rofi/carbo.rasi"
 export COMPTON_CONFIG="$HOME/.config/compton.conf"
 export DOTFILES="$HOME/dotfiles"
+export EXA_COLORS="*.md=1;33:ga=33:gm=33:gd=33:gv=33:gt=33:uu=33:sb=35:sn=35:uw=36:gw=36:tw:36:ue=32:ux=32:gx=32:tx=32:ur=34:gr=34:tr=34"
 
 export PATH="$PATH:$HOME/bin"
 export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
