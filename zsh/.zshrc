@@ -141,5 +141,6 @@ export LESS="-RX"
 
 if [ -x "$(command -v neofetch)" ]
 then
-	neofetch
+    neofetch --color_blocks off
+    colorpanes
 fi
