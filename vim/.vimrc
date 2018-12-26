@@ -40,6 +40,8 @@ set directory^=$HOME/.vim/tmp//
 filetype indent plugin on
 
 " PLUGIN OPTION ----------------------------------
+" Disable specific syntax highlighting (Plugin 'sheerun/vim-polyglot')
+let g:polyglot_disabled = ['markdown']
 
 " Marker style (Plugin 'Yggdroot/indentLine')
 let g:indentLine_char = '|'
