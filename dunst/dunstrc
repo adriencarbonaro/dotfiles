@@ -1,5 +1,14 @@
+#------------------------------------------------------------
+# DUNST - Notifications manager
+#
+# Move this file to $HOME/.config/dunst/
+#------------------------------------------------------------
+# Author:       Adrien CARBONARO
+# Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
+#------------------------------------------------------------
+
 [global]
-font = Inconsolata 14
+font = Montserrat 13
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -72,6 +81,13 @@ hide_duplicates_count = yes
 #geometry = "250x50-40+40"
 geometry = "300x50-15+49"
 
+# Define the corner radius of the notification window
+# in pixel size. If the radius is 0, you have no rounded
+# corners.
+# The radius will be automatically lowered if it exceeds half of the
+# notification height to avoid clipping text and/or icons.
+corner_radius=10
+
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
 shrink = no
@@ -79,7 +95,7 @@ shrink = no
 # The transparency of the window.  Range: [0; 100].
 # This option will only work if a compositing windowmanager is
 # present (e.g. xcompmgr, compiz, etc.).
-transparency = 5
+transparency = 20
 
 # Don't remove messages, if the user is idle (no mouse or keyboard input)
 # for longer than idle_threshold seconds.
@@ -152,7 +168,7 @@ icon_position = off
 max_icon_size = 80
 
 # Paths to default icons.
-icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/
+icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/:/usr/share/icons/Oranchelo/apps/scalable
 
 frame_width = 3
 frame_color = "#8EC07C"
@@ -183,21 +199,21 @@ context = ctrl+shift+period
 # Otherwise the "#" and following would be interpreted as a comment.
 frame_color = "#3B7C87"
 foreground = "#3B7C87"
-background = "#191311"
+background = "#FFFFFF"
 #background = "#2B313C"
 timeout = 4
 
 [urgency_normal]
 frame_color = "#5B8234"
 foreground = "#5B8234"
-background = "#191311"
+background = "#FFFFFF"
 #background = "#2B313C"
 timeout = 6
 
 [urgency_critical]
 frame_color = "#B7472A"
 foreground = "#B7472A"
-background = "#191311"
+background = "#FFFFFF"
 #background = "#2B313C"
 timeout = 8
 
