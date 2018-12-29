@@ -1,3 +1,13 @@
+#------------------------------------------------------------
+# GIT - Version manager
+#
+# This file sets the configuration for git command display
+# Move this file to $HOME/.gitconfig
+#------------------------------------------------------------
+# Author:       Adrien CARBONARO
+# Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
+#------------------------------------------------------------
+
 [user]
 	email = carbonaro.adrien@gmail.com
 	name  = Adrien CARBONARO

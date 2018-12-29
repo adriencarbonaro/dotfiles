@@ -1,3 +1,12 @@
+#------------------------------------------------------------
+# GTK - Theme manager
+#
+# Move this file to $HOME/.gtkrc-2.0
+#------------------------------------------------------------
+# Author:       Adrien CARBONARO
+# Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
+#------------------------------------------------------------
+
 gtk-theme-name="X-Arc-Shadow"
 gtk-icon-theme-name="Oranchelo"
 gtk-font-name="DejaVu Sans 12"

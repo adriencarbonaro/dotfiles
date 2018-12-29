@@ -1,3 +1,12 @@
+#------------------------------------------------------------
+# ZSH - terminal shell
+#
+# Move this file to $HOME/.zshrc
+#------------------------------------------------------------
+# Author:       Adrien CARBONARO
+# Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
+#------------------------------------------------------------
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
