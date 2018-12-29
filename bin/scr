@@ -1,0 +1,4 @@
+#!/bin/sh
+
+scrot '%Y-%m-%d_%H%M_$wx$h.png' -e 'mv $f ~/shots/'
+notify-send "Screenshot" "$(date)" -t 5000
