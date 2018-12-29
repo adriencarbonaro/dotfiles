@@ -1,0 +1,3 @@
+# some more ls aliases
+alias ll='exa -l -a --git'
+alias l='exa -l'
