@@ -195,6 +195,10 @@ gaps outer 15
 # Hide gaps when only one window on screen
 #smart_gaps on
 
+# Snapshots bindings
+bindsym $mod+p exec scrot '%Y-%m-%d_%H%M_$wx$h.png' -e 'mv $f ~/shots/'
+#bindsym $mod+Shift+P exec scrot '%Y-%m-%d_%H%M_$wx$h.png' -e 'mv $f ~/shots/' 
+
 # ScreenLock keybinding
 bindsym $mod+k exec sl
 
