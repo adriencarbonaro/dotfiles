@@ -1,0 +1,20 @@
+#!/bin/bash
+
+COLOR=$1
+# ABCDEF
+
+p1=${COLOR:0:2}
+p2=${COLOR:2:2}
+p3=${COLOR:4:2}
+
+i1=$(echo $p1 | tr '[:lower:]' '[:upper:]')
+i2=$(echo $p2 | tr '[:lower:]' '[:upper:]')
+i3=$(echo $p3 | tr '[:lower:]' '[:upper:]')
+
+printf "HEX: %3s %3s %3s\n" $i1 $i2 $i3
+
+o1=$(echo "obase=10; ibase=16; $i1" | bc)
+o2=$(echo "obase=10; ibase=16; $i2" | bc)
+o3=$(echo "obase=10; ibase=16; $i3" | bc)
+
+printf "RGB: %3d %3d %3d\n" $o1 $o2 $o3
