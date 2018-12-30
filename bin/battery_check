@@ -1,0 +1,16 @@
+#!/bin/sh
+export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pidof i3)/environ | cut -d= -f2-)
+battery_level=`acpi -b | grep -P -o "[0-9]+(?=%)"`
+
+if [ $battery_level -le 10 ]
+then
+    notify-send "Battery critical" "Battery level is ${battery_level}% !" -u critical
+elif [ $battery_level -le 20 ]
+then
+    notify-send "Battery low" "Battery level: ${battery_level}% !"
+elif [ $battery_level -le 50 ]
+then
+    notify-send "Battery medium" "Battery level: ${battery_level}% !" -u low
+fi
+
+
