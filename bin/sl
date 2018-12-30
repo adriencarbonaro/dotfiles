@@ -1,0 +1,47 @@
+#!/bin/bash
+
+B='#00000000'  # blank
+C='#606060FF'
+D='#96B7CEcc'
+T='#FF00FFcc'  # text
+W='#FF5555FF'  # wrong
+V='#FF00FFcc'  # verifying
+
+# Take a screenshot of the screen
+scrot /tmp/screen.png
+
+# Create the pixel effect on the screenshot
+convert -scale 10% -scale 1000% /tmp/screen.png /tmp/screen.png
+
+# Pause Spotify
+sp pause
+
+# Turn on i3lock program with the screenshot as background
+$HOME/i3lock-color/x86_64-pc-linux-gnu/i3lock \
+-i /tmp/screen.png    \
+--insidevercolor=$C   \
+--ringvercolor=$D     \
+\
+--insidewrongcolor=$C \
+--ringwrongcolor=$W   \
+\
+--insidecolor=$C      \
+--ringcolor=$D        \
+--linecolor=$B        \
+--separatorcolor=$D   \
+\
+--verifcolor=$D        \
+--wrongcolor=$D        \
+--timecolor=$D        \
+--datecolor=$D        \
+--layoutcolor=$D      \
+--keyhlcolor=$W       \
+--bshlcolor=$W        \
+\
+--clock               \
+--indicator           \
+--timestr="%H:%M:%S"  \
+--datestr="%A, %m %Y" 
+
+# Remove the screeshot when login
+rm /tmp/screen.png
