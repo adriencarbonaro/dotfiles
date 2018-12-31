@@ -95,7 +95,7 @@ shrink = no
 # The transparency of the window.  Range: [0; 100].
 # This option will only work if a compositing windowmanager is
 # present (e.g. xcompmgr, compiz, etc.).
-transparency = 10
+transparency = 5
 
 # Don't remove messages, if the user is idle (no mouse or keyboard input)
 # for longer than idle_threshold seconds.
@@ -131,7 +131,7 @@ show_indicators = no
 # The height of a single line.  If the height is smaller than the
 # font height, it will get raised to the font height.
 # This adds empty space above and under the text.
-line_height = 3
+line_height = 6
 
 # Draw a line of "separatpr_height" pixel height between two
 # notifications.
@@ -139,10 +139,10 @@ line_height = 3
 separator_height = 2
 
 # Padding between text and separator.
-padding = 14
+padding = 20
 
 # Horizontal padding.
-horizontal_padding = 6
+horizontal_padding = 20
 
 # Define a color for the separator.
 # possible values are:
@@ -165,14 +165,13 @@ browser = /usr/bin/firefox -new-tab
 
 # Align icons left/right/off
 icon_position = left
-max_icon_size = 80
+max_icon_size = 70
 
 # Paths to default icons.
 icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/:/usr/share/icons/Oranchelo/apps/scalable
 
 frame_width = 3
-#frame_color = "#8EC07C"
-frame_color = "#FF0000"
+#frame_color = "#FF0000"
 
 [shortcuts]
 
@@ -198,25 +197,22 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#3B7C87"
-foreground = "#3B7C87"
-background = "#FFFFFF"
-#background = "#2B313C"
-timeout = 4
+frame_color = "#3BACC7"
+foreground  = "#3BACC7"
+background  = "#FFFFFF"
+timeout     = 4
 
 [urgency_normal]
-frame_color = "#5B8234"
-foreground = "#5B8234"
-background = "#FFFFFF"
-#background = "#2B313C"
-timeout = 6
+frame_color = "#20B766"
+foreground  = "#20B766"
+background  = "#FFFFFF"
+timeout     = 6
 
 [urgency_critical]
 frame_color = "#FF6234"
-foreground = "#FF6234"
-background = "#FFFFFF"
-#background = "#2B313C"
-timeout = 8
+foreground  = "#FF6234"
+background  = "#FFFFFF"
+timeout     = 8
 
 
 # Every section that isn't one of the above is interpreted as a rules to
