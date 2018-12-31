@@ -39,7 +39,6 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec terminator
-#exec_always --no-startup-id xrdb -merge $HOME/.Xdefaults
 bindsym $mod+Return exec urxvt
 
 # kill focused window
@@ -196,12 +195,12 @@ gaps outer 15
 #smart_gaps on
 
 # Snapshots bindings
-bindsym $mod+p exec scr
-bindsym $mod+Shift+p exec scrs
+bindsym $mod+p          exec scr
+bindsym $mod+Shift+p    exec scrs
 
-bindsym $mod+n exec notify-send "Notification" "This is a test notification" --icon=bleachbit
-bindsym $mod+Shift+n exec notify-send "Notification" "This is a test notification" -u low --icon=bleachbit
-bindsym $mod+Mod1+n exec notify-send "Notification" "This is a test notification" -u critical --icon=bleachbit
+bindsym $mod+n          exec notify-send "Notification" "This is a test notification" --icon=bleachbit
+bindsym $mod+Shift+n    exec notify-send "Notification" "This is a test notification" -u low --icon=bleachbit
+bindsym $mod+Mod1+n     exec notify-send "Notification" "This is a test notification" -u critical --icon=bleachbit
 
 # ScreenLock keybinding
 bindsym $mod+k exec sl
@@ -209,7 +208,7 @@ bindsym $mod+k exec sl
 # Volume control
 bindsym XF86AudioRaiseVolume 	exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 2 +5%
 bindsym XF86AudioLowerVolume 	exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 2 -5%
-bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 2 toggle
+bindsym XF86AudioMute          exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 2 toggle
 
 # Brightness control
 bindsym XF86MonBrightnessUp     exec xbacklight -inc 10
