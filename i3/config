@@ -104,18 +104,16 @@ bindsym $mod+q focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 ""
-#set $ws2 ""
-#set $ws2 ""
-set $ws2 ""
-set $ws3 ""
-set $ws4 ""
-set $ws5 ""
-set $ws6 ""
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 ""
+set $ws2 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
+set $ws6 ""
+set $ws7 ""
+set $ws8 ""
+set $ws9 ""
+set $ws10 ""
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -195,8 +193,8 @@ gaps outer 15
 #smart_gaps on
 
 # Snapshots bindings
-bindsym $mod+p          exec scr
-bindsym $mod+Shift+p    exec scrs
+bindsym $mod+p          exec screen
+bindsym $mod+Shift+p    exec screens
 
 bindsym $mod+n          exec notify-send "Notification" "This is a test notification" --icon=bleachbit
 bindsym $mod+Shift+n    exec notify-send "Notification" "This is a test notification" -u low --icon=bleachbit

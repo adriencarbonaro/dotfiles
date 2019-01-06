@@ -7,7 +7,7 @@
 # Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
 #------------------------------------------------------------
 
-;==========================================================
+;===============================================================================
 ;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
@@ -21,11 +21,14 @@
 ;   To learn more about how to configure Polybar
 ;   go to https://github.com/jaagr/polybar
 ;
+;   Examples : https://github.com/adi1090x/polybar-themes
+;
 ;   The README contains alot of information
 ;
-;==========================================================
+;===============================================================================
 
 [colors]
+
 ;background = ${xrdb:color0:#222}
 background = #0F000000
 background-alt = #444
@@ -35,11 +38,12 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
-;random  = #ffffff
-;random = ${env:POLYBAR_ACCENT_COLOR}
-random=#99FF99
+random = #D6EDB9
+
+;===============================================================================
 
 [bar/carbo]
+
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 40
@@ -63,6 +67,8 @@ padding-right = 7
 module-margin-left = 3
 module-margin-right = 3
 
+;== Fonts ======================================================================
+
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Inconsolata:style=Bold:pixelsize=14;1
@@ -70,10 +76,15 @@ font-3 = Inconsolata:pixelsize=14;1
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=14;1"
 font-5 = "Font Awesome 5 Free:style=Regular:pixelsize=14;1"
 font-6 = "Font Awesome 5 Brands:pixelsize=14;1"
+font-7 = "Material Icons:size=13;4"
 
-modules-left = i3 
+;== Module Location ============================================================
+
+modules-left = i3 sep google github
 modules-center = date clock 
 modules-right = alsa xbacklight wlan ip eth battery 
+
+;===============================================================================
 
 tray-position = right
 tray-padding = 2
@@ -94,7 +105,10 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+;===============================================================================
+
 [bar/carbo_alt]
+
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 40
@@ -117,6 +131,8 @@ padding-right = 7
 
 module-margin-left = 3
 module-margin-right = 3
+
+;== Fonts ======================================================================
 
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -134,9 +150,13 @@ font-4 = "Inconsolata Nerd Font:pixelsize=14;1"
 font-5 = "Inconsolata Nerd Font:pixelsize=14;1"
 font-6 = "Inconsolata Nerd Font:pixelsize=14;1"
 
+;== Module Location ============================================================
+
 modules-left = alsa xbacklight battery 
 modules-center = i3
 modules-right = wlan ip eth date clock
+
+;===============================================================================
 
 tray-position = right
 tray-padding = 2
@@ -157,8 +177,10 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+;===============================================================================
 
 [bar/example]
+
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 45
@@ -182,6 +204,8 @@ padding-right = 2
 module-margin-left = 3
 module-margin-right = 3
 
+;== Fonts ======================================================================
+
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
@@ -190,9 +214,13 @@ font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=15;1"
 font-5 = "Font Awesome 5 Free:style=Solid:pixelsize=15;1"
 font-6 = "Font Awesome 5 Brands:pixelsize=15;1"
 
-modules-left = i3 
+;== Module Location ============================================================
+
+modules-left = i3 mpd
 modules-center = xwindow 
 modules-right = alsa memory cpu temperature wlan eth battery date 
+
+;===============================================================================
 
 tray-position = right
 tray-padding = 2
@@ -212,6 +240,8 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+;== Modules ====================================================================
 
 [module/xwindow]
 type = internal/xwindow
@@ -234,16 +264,7 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F${colors.random}}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-label-mounted-font = 4
+;===============================================================================
 
 [module/bspwm]
 type = internal/bspwm
@@ -266,6 +287,8 @@ label-empty-padding = 3
 
 ; Separator in between workspaces
 ; label-separator = |
+
+;===============================================================================
 
 [module/i3]
 type = internal/i3
@@ -309,6 +332,65 @@ label-urgent-padding = ${self.label-mode-padding}
 ; Separator in between workspaces
 ;label-separator = |
 
+;===============================================================================
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+format-padding = 0
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+;icon-4 = 5;
+icon-default = 
+
+format = <label-state>
+label-active = %icon%
+label-occupied = %icon%
+label-urgent = %icon%
+label-empty = %icon%
+
+label-occupied-padding = 2
+label-empty-padding = 2
+label-urgent-padding = 2
+label-active-padding = 2
+
+label-active-foreground = ${color.acolor}
+label-urgent-foreground = ${color.curgent}
+label-empty-foreground = ${color.fg}
+label-occupied-foreground = ${color.coccupied}
+
+label-active-underline = ${color.acolor}
+label-urgent-underline = ${color.curgent}
+label-occupied-underline = ${color.coccupied}
+
+;===============================================================================
+
+[module/google]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = #FFFFFF
+click-left = xdg-open https://www.qwant.com/ 
+
+[module/github]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = #FFFFFF
+click-left = xdg-open https://www.github.com/ 
+
+[module/sep]
+type = custom/text
+content = |
+content-padding = 1
+content-foreground = #FFFFFF
+
+;===============================================================================
 
 [module/mpd]
 type = internal/mpd
@@ -322,6 +404,8 @@ icon-next = 
 
 label-song-maxlen = 25
 label-song-ellipsis = true
+
+;===============================================================================
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -348,6 +432,19 @@ inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
+;===============================================================================
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F${colors.random}}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+label-mounted-font = 4
+
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -360,7 +457,6 @@ format = <label>
 label = %percentage:3%%
 label-font = 4
 
-
 [module/memory]
 type = internal/memory
 interval = 2
@@ -370,6 +466,38 @@ format-prefix-foreground = ${colors.random}
 ;format-underline = #4bffdc
 label = %percentage_used:3%%
 label-font = 4
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format-prefix      = " "
+format-prefix-font = 4
+format-prefix-foreground = ${colors.random}
+
+format-warn-prefix = "T° "
+format-warn-prefix-font = 4
+format-warn-prefix-foreground = #f50a4d 
+
+format = <label>
+;format-underline = #f50a4d
+format-warn = <label-warn>
+;format-warn-underline = #f50a4d
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+label-font = 4
+label-warn-font = 4
+
+;ramp-0 = 
+;ramp-1 = 
+;ramp-2 = 
+;ramp-foreground = ${colors.foreground-alt}
+
+;===============================================================================
 
 [module/wlan]
 type = internal/network
@@ -434,11 +562,14 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+;===============================================================================
+
 [module/clock]
 type = internal/date
 interval = 1
 
-time = %H:%M:%S
+;time = %H:%M:%S
+time = %I:%M %p
 
 format-prefix = "  "
 format-prefix-foreground = ${colors.random}
@@ -451,14 +582,16 @@ label-font = 3
 type = internal/date
 interval = 5
 
-date = " %a, %d %b"
+date = %a, %d %b
 
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${colors.random}
 ;format-underline = #0a6cf5
 
 label = %date%
 label-font = 3
+
+;===============================================================================
 
 [module/pulseaudio]
 ;type = internal/pulseaudio
@@ -536,36 +669,7 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format-prefix      = " "
-format-prefix-font = 4
-format-prefix-foreground = ${colors.random}
-
-format-warn-prefix = "T° "
-format-warn-prefix-font = 4
-format-warn-prefix-foreground = #f50a4d 
-
-format = <label>
-;format-underline = #f50a4d
-format-warn = <label-warn>
-;format-warn-underline = #f50a4d
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-label-font = 4
-label-warn-font = 4
-
-;ramp-0 = 
-;ramp-1 = 
-;ramp-2 = 
-;ramp-foreground = ${colors.foreground-alt}
-
+;===============================================================================
 
 [module/battery]
 type = internal/battery
@@ -637,6 +741,7 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
+;===============================================================================
 
 [module/powermenu]
 type = custom/menu
@@ -666,6 +771,8 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+;===============================================================================
 
 [settings]
 screenchange-reload = true
