@@ -27,7 +27,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #00000000
+background = #0F000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -67,8 +67,8 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Inconsolata:style=Bold:pixelsize=14;1
 font-3 = Inconsolata:pixelsize=14;1
-font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=14;1"
-font-5 = "Font Awesome 5 Free:style=Solid:pixelsize=14;1"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=14;1"
+font-5 = "Font Awesome 5 Free:style=Regular:pixelsize=14;1"
 font-6 = "Font Awesome 5 Brands:pixelsize=14;1"
 
 modules-left = i3 
@@ -94,6 +94,68 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[bar/carbo_alt]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 40
+;offset-x = 1%
+;offset-y = 1%
+;radius = 6.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+;border-size = 4
+;border-color = #00000000
+
+padding-left = 5
+padding-right = 7
+
+module-margin-left = 3
+module-margin-right = 3
+
+;font-0 = fixed:pixelsize=10;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = Inconsolata:style=Bold:pixelsize=14;1
+;font-3 = Inconsolata:pixelsize=14;1
+;font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=14;1"
+;font-5 = "Font Awesome 5 Free:style=Regular:pixelsize=14;1"
+;font-6 = "Font Awesome 5 Brands:pixelsize=14;1"
+
+font-0 = "Inconsolata Nerd Font:pixelsize=14;1"
+font-1 = "Inconsolata Nerd Font:pixelsize=14;1"
+font-2 = "Inconsolata Nerd Font:pixelsize=14;1"
+font-3 = "Inconsolata Nerd Font:pixelsize=14;1"
+font-4 = "Inconsolata Nerd Font:pixelsize=14;1"
+font-5 = "Inconsolata Nerd Font:pixelsize=14;1"
+font-6 = "Inconsolata Nerd Font:pixelsize=14;1"
+
+modules-left = alsa xbacklight battery 
+modules-center = i3
+modules-right = wlan ip eth date clock
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
 
 
 [bar/example]
@@ -212,26 +274,26 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-padding = 3
+label-mode-foreground = ${colors.random}
+label-mode-background =  
 
 ; focused = Active workspace on focused monitor
 ;label-focused = %index%
 label-focused = %name%
-label-focused-background =  
-label-focused-foreground = ${colors.random}
+label-focused-foreground = ${self.label-mode-foreground}
+label-focused-background = ${self.label-mode-background}
 ;label-focused-underline = ${colors.random}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-padding = ${self.label-mode-padding}
 label-focused-font = 4
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-padding = ${self.label-mode-padding}
 label-unfocused-font = 4
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-foreground = #FFFFFF
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
@@ -242,10 +304,10 @@ label-visible-font = 4
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-padding = ${self.label-mode-padding}
 
 ; Separator in between workspaces
-; label-separator = |
+;label-separator = |
 
 
 [module/mpd]
@@ -266,7 +328,7 @@ type = internal/xbacklight
 
 format = <label>
 format-prefix = "  "
-label = "%percentage%%"
+label = "%percentage:3%%"
 format-prefix-foreground = ${colors.random}
 label-font = 4
 
@@ -347,9 +409,9 @@ type = internal/network
 interface = "wlp3s0"
 interval = 3.0
 
-;format-connected-prefix = ""
-;format-connected-prefix-font = 4
-;format-connected-prefix-foreground = ${colors.random}
+format-connected-prefix = " "
+format-connected-prefix-font = 4
+format-connected-prefix-foreground = ${colors.random}
 
 format-connected = <label-connected>
 
@@ -383,13 +445,13 @@ format-prefix-foreground = ${colors.random}
 ;format-underline = #0a6cf5
 
 label = %time%
-label-font = 4
+label-font = 3
 
 [module/date]
 type = internal/date
 interval = 5
 
-date = " %a, %e %b"
+date = " %a, %d %b"
 
 format-prefix = " "
 format-prefix-foreground = ${colors.random}
@@ -401,7 +463,7 @@ label-font = 3
 [module/pulseaudio]
 ;type = internal/pulseaudio
 
-;format-volume-prefix = " "
+;format-volume-prefix = ""
 ;format-volume-prefix-foreground = ${self.format-underline}
 
 ;format-volume = <label-volume> <bar-volume>
@@ -532,9 +594,9 @@ color-full        = ${colors.random}
 ;format-full-prefix-foreground = ${self.color-full}
 
 ; FORMAT 
-format-charging    = <animation-charging><label-charging>
-format-discharging = <ramp-capacity><label-discharging>
-format-full        = <ramp-capacity><label-full>
+format-charging    = <animation-charging>  <label-charging>
+format-discharging = <ramp-capacity>  <label-discharging>
+format-full        = <ramp-capacity>  <label-full>
 
 ; UNDERLINE
 ;format-charging-underline = ${self.color-charging}
