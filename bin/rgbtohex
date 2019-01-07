@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#-----------------------------------------------------------
+# NAME         :  rgbtohex
+# AUTHOR       :  Adrien CARBONARO
+# UPDATE       :  07/01/2019
+# DESCRIPTION  :  Convert RGB color into HEX color
+# PARAMETERS   :  $1 - RRR the red component
+#                 $2 - GGG the green component
+#                 $3 - BBB the blue component
+#-----------------------------------------------------------
+
+if [ -z $1 ] 
+then
+    echo -e "\033[31mUSAGE: $0 RRR GGG BBB (RRR red color, GGG green color, BBB blue color)\033[0m"
+    exit
+elif [ -z $2 ]
+then
+    echo -e "\033[31mUSAGE: $0 RRR GGG BBB (RRR red color, GGG green color, BBB blue color)\033[0m"
+    exit
+elif [ -z $3 ]
+then
+    echo -e "\033[31mUSAGE: $0 RRR GGG BBB (RRR red color, GGG green color, BBB blue color)\033[0m"
+    exit
+fi
+
+CR=$1
+CG=$2
+CB=$3
+# 255 255 255
+
+printf "RGB: \033[31m%3s\033[0m \033[32m%3s\033[0m \033[34m%3s\033[0m\n" $CR $CG $CB
+
+o1=$(echo "obase=16; ibase=10; $CR" | bc)
+o2=$(echo "obase=16; ibase=10; $CG" | bc)
+o3=$(echo "obase=16; ibase=10; $CB" | bc)
+
+printf "HEX: \033[31m%3s\033[0m \033[32m%3s\033[0m \033[34m%3s\033[0m\n" $o1 $o2 $o3

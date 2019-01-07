@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#-----------------------------------------------------------
+# NAME         :  screenlock
+# AUTHOR       :  Adrien CARBONARO
+# UPDATE       :  07/01/2019
+# DESCRIPTION  :  Screenlock script using i3lock
+# PARAMETERS   :  none
+#-----------------------------------------------------------
+
 # Take a screenshot of the screen
 scrot /tmp/screen.png
 

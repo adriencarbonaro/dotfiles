@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#-----------------------------------------------------------
+# NAME         :  colorpanes
+# AUTHOR       :  Adrien CARBONARO
+# UPDATE       :  07/01/2019
+# DESCRIPTION  :  Display terminal ANSI colors with panes
+# PARAMETERS   :  none
+#-----------------------------------------------------------
+
 # Author: GekkoP
 # Source: http://linuxbbq.org/bbs/viewtopic.php?f=4&t=1656#p33189
  

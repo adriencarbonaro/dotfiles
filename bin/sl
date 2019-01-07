@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#-----------------------------------------------------------
+# NAME         :  sl
+# AUTHOR       :  Adrien CARBONARO
+# UPDATE       :  07/01/2019
+# DESCRIPTION  :  Screenlock script using i3lock
+# PARAMETERS   :  none
+#-----------------------------------------------------------
+
 B='#00000000'  # blank
 C='#606060FF'
 D='#96B7CEcc'

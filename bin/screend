@@ -4,9 +4,9 @@
 # NAME         :  screen
 # AUTHOR       :  Adrien CARBONARO
 # UPDATE       :  07/01/2019
-# DESCRIPTION  :  Screenshot script
+# DESCRIPTION  :  Screenshot script with delay
 # PARAMETERS   :  none
 #-----------------------------------------------------------
 
-scrot '%d-%m-%Y_%H%M_$wx$h.png' -e 'mv $f ~/shots/'
+scrot -d 5 '%d-%m-%Y_%H%M_$wx$h.png' -e 'mv $f ~/shots/'
 notify-send "Screenshot" "$(date "+%a %d %b %H:%M")" --icon=accessories-camera

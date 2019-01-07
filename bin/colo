@@ -1,5 +1,13 @@
 #!/bin/sh
 
+#-----------------------------------------------------------
+# NAME         :  colo
+# AUTHOR       :  Adrien CARBONARO
+# UPDATE       :  07/01/2019
+# DESCRIPTION  :  Display terminal ANSI colors
+# PARAMETERS   :  none
+#-----------------------------------------------------------
+
 echo "\033[31mColors\033[0m"
 echo "\033[32mColors\033[0m"
 echo "\033[33mColors\033[0m"

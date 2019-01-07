@@ -1,32 +1,65 @@
 #!/bin/bash
 
-#---------------------------------------------------------------
+#-----------------------------------------------------------
+# NAME         :  accent
+# AUTHOR       :  Adrien CARBONARO
+# UPDATE       :  07/01/2019
+# DESCRIPTION  :  Generate a color for apps in i3 setup
+# PARAMETERS   :  $1 - RRGGBB a forced color
+#-----------------------------------------------------------
 # Copy this file to /etc/init.d/
 #---------------------------------------------------------------
 
-a=$(($RANDOM % 255))
-b=$(($RANDOM % 255))
-c=$(($RANDOM % 255))
-
-while [ $a -lt 80 ] || [ $b -lt 80 ] || [ $c -lt 80 ]
-do
+if [ -z $1 ]
+then
+# -- Set accent color randomly --------------------------------------------------
     a=$(($RANDOM % 255))
     b=$(($RANDOM % 255))
     c=$(($RANDOM % 255))
-done
 
-a=$(echo "obase=16; $a" | bc)
-b=$(echo "obase=16; $b" | bc)
-c=$(echo "obase=16; $c" | bc)
+    while [ $a -lt 80 ] || [ $b -lt 80 ] || [ $c -lt 80 ]
+    do
+        a=$(($RANDOM % 255))
+        b=$(($RANDOM % 255))
+        c=$(($RANDOM % 255))
+    done
 
-accent_color="#$a$b$c"
+    a=$(echo "obase=16; $a" | bc)
+    b=$(echo "obase=16; $b" | bc)
+    c=$(echo "obase=16; $c" | bc)
 
+    accent_color="#$a$b$c"
+else
+# -- Set accent color with parameter --------------------------------------------
+    COLOR=$1
+    # ABCDEF
+
+    p1=${COLOR:0:2}
+    p2=${COLOR:2:2}
+    p3=${COLOR:4:2}
+
+    a=$(echo $p1 | tr '[:lower:]' '[:upper:]')
+    b=$(echo $p2 | tr '[:lower:]' '[:upper:]')
+    c=$(echo $p3 | tr '[:lower:]' '[:upper:]')
+
+    accent_color="#$a$b$c"
+fi
+
+# -- export accent color to all apps --------------------------------------------
+echo $accent_color
 export ACCENT_COLOR=$accent_color
 echo $accent_color > $HOME/.accent_color.txt
 
-# Change accent color in i3, polybar and rofi config files
+# -- Change accent color in config files ----------------------------------------
+# -- Apps :
+# -- * i3
+# -- * polybar
+# -- * rofi
+# -- * sl (i3lock)
+# -- * GTK theme
 sed -i -e "s/^set \$color.*/set \$color $accent_color/g" $HOME/.config/i3/config
 sed -i -e "s/^random.*/random = $accent_color/g" $HOME/.config/polybar/config
 sed -i -e "s/accent:.*/accent: $accent_color;/g" $HOME/.config/rofi/carbo.rasi
 sed -i -e "s/^D='#.*/D='${accent_color}cc'/g" $HOME/bin/sl
 sed -i -e "s/selected_bg_color:#[A-Z, a-z, 0-9]*/selected_bg_color:${accent_color}/g" $HOME/.themes/X-Arc-Shadow/gtk-2.0/gtkrc
+

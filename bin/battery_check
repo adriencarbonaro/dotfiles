@@ -1,4 +1,13 @@
 #!/bin/sh
+
+#-----------------------------------------------------------
+# NAME         :  battery_check
+# AUTHOR       :  Adrien CARBONARO
+# UPDATE       :  07/01/2019
+# DESCRIPTION  :  Check and display the battery percentage
+# PARAMETERS   :  none
+#-----------------------------------------------------------
+
 export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pidof i3)/environ | cut -d= -f2-)
 battery_level=`acpi -b | grep -P -o "[0-9]+(?=%)"`
 
