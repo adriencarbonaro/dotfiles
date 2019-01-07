@@ -300,14 +300,16 @@ wrapping-scroll = false
 pin-workspaces = true
 
 label-mode-padding = 3
+
+; Set the "resize mode" display
 label-mode-foreground = ${colors.random}
-label-mode-background =  
+label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 ;label-focused = %index%
 label-focused = %name%
 label-focused-foreground = ${self.label-mode-foreground}
-label-focused-background = ${self.label-mode-background}
+label-focused-background = 
 ;label-focused-underline = ${colors.random}
 label-focused-padding = ${self.label-mode-padding}
 label-focused-font = 4
@@ -319,7 +321,7 @@ label-unfocused-font = 4
 label-unfocused-foreground = #FFFFFF
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
-label-visible-background = ${self.label-focused-background}
+label-visible-background = 
 label-visible-underline = ${colors.random}
 label-visible-padding = ${self.label-focused-padding}
 label-visible-font = 4
