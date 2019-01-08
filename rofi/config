@@ -4,4 +4,4 @@ rofi.theme: .config/rofi/carbo.rasi
 rofi.blur-background : true
 rofi.fullscreen:true
 rofi.terminal:urxvt
-rofi.font: Inconsolata 15
+rofi.font: Iosevka Term 15
