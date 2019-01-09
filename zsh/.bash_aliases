@@ -23,6 +23,7 @@ alias FLA="cd ~/embedded-tools/Linux/flasher"
 alias openn="mimeopen"
 alias trash="gvfs-trash"
 alias weather="curl wttr.in/Boulogne"
+alias wificonnect="nmcli con up id"
 
 alias cp="cp -v"
 alias mv="mv -v"
