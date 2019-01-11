@@ -4,13 +4,15 @@
 # This file sets the configuration for git command display
 # Move this file to $HOME/.gitconfig
 #------------------------------------------------------------
+# WARNING: replace email and name by your credentials.
+#------------------------------------------------------------
 # Author:       Adrien CARBONARO
 # Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
 #------------------------------------------------------------
 
 [user]
-	email = carbonaro.adrien@gmail.com
-	name  = Adrien CARBONARO
+    email = [your_email]
+    name  = [your_name]
 [color]
     pager       = true
     ui          = auto
