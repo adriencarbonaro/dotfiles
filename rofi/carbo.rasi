@@ -9,10 +9,10 @@ configuration {
 }
 
 * {
-	accent: #A2F57D;
+	accent: #E5AE96;
     foreground:         		@accent;
-    background:         		rgba(0, 0, 0, 0.99);
-    transparent:				rgba(0, 0, 0, 0);
+    background:         		rgba(0, 0, 0, 1);
+    transparent:				rgba(48, 53, 58);
 
     normal-background: 			@transparent;
     normal-foreground: 			@foreground;
