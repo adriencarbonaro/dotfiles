@@ -13,13 +13,13 @@ battery_level=`acpi -b | grep -P -o "[0-9]+(?=%)"`
 
 if [ $battery_level -le 10 ]
 then
-    notify-send "Battery critical" "Battery level is ${battery_level}% !" -u critical --icon=preferences-system-power
+    notify-send "Battery critical" "${battery_level}%" -u critical -i /home/adrien/dotfiles/icons/battery_low.png
 elif [ $battery_level -le 20 ]
 then
-    notify-send "Battery low" "Battery level: ${battery_level}% !" --icon=preferences-system-power
+    notify-send "Battery low" "${battery_level}%" -i /home/adrien/dotfiles/icons/battery_low.png
 elif [ $battery_level -le 50 ]
 then
-    notify-send "Battery medium" "Battery level: ${battery_level}% !" -u low --icon=preferences-system-power
+    notify-send "Battery medium" "${battery_level}%" -i /home/adrien/dotfiles/icons/battery_low.png
 fi
 
 
