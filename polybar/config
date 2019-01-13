@@ -80,9 +80,9 @@ font-7 = "Material Icons:size=13;4"
 
 ;== Module Location ============================================================
 
-modules-left = i3 sep google github
+modules-left = i3 sep term thunar google mail github gitlab
 modules-center = date clock 
-modules-right = alsa xbacklight wlan ip eth battery 
+modules-right = alsa xbacklight wlan ip battery 
 
 ;===============================================================================
 
@@ -384,7 +384,35 @@ type = custom/text
 content = 
 content-padding = 1
 content-foreground = #FFFFFF
-click-left = xdg-open https://www.github.com/ 
+click-left = xdg-open https://www.github.com/
+
+[module/gitlab]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = #FFFFFF
+click-left = xdg-open https://www.gitlab.com/
+
+[module/term]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = #FFFFFF
+click-left = urxvt 
+
+[module/mail]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = #FFFFFF
+click-left = xdg-open https://www.gmail.com/ 
+
+[module/thunar]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = #FFFFFF
+click-left = thunar
 
 [module/sep]
 type = custom/text

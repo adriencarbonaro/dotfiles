@@ -237,7 +237,7 @@ exec_always --no-startup-id xset r rate 250 50
 exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/gradient/*
 
 # Start compton compositor (for transparent)
-exec_always --no-startup-id compton &
+exec_always --no-startup-id compton -f -D 2 &
 
 exec_always --no-startup-id killall dunst
 exec_always --no-startup-id dunst &
