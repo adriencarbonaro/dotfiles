@@ -34,15 +34,15 @@ URxvt.geometry:             90x30
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
 !URxvt.saveLines:            50
-URxvt.internalBorder:       50
+URxvt.internalBorder:       40
 URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font: xft:Inconsolata:pixelsize=21
+URxvt*font: xft:Iosevka Term:pixelsize=21
 !URxvt*font2: xft:FontAwesome:pixelsize=11
-URxvt*boldFont: xft:Inconsolata:Bold:pixelsize=21
-
+URxvt*boldFont: xft:Iosevka Term:style=Bold:pixelsize=21
+!URxvt*boldFont: xft:Ubuntu Nerd Font:style=Bold:pixelsize=21
 ! Fix font space
 URxvt*letterSpace: -1
 
@@ -57,8 +57,8 @@ URxvt.urlLauncher:          chromium-browser
 
 ! Cursor
 URxvt.cursorBlink:          true
-!URxvt.cursorColor:          #ededed
-URxvt.cursorUnderline:      false
+URxvt.cursorColor:          #335555
+URxv.cursorUnderline:      false
 
 ! Reproduce Ctrl + Arrows like other terminals
 URxvt.keysym.Control-Down:        \033[1;3B
@@ -84,29 +84,32 @@ URxvt*background: #303539
 *color8: #555753
 
 !! red dark/light
-*color1: #CC0000
-*color9: #EF2929
+*color1: #ff6666
+*color9: #ff6666
 
 !! green dark/light
-*color2 : #4E9A06
-*color10: #34E246
+*color2 : #4ee77f
+*color10: #4ee77f
 
 !! yellow dark/light
-*color3 : #c4a000
+*color3 : #fce94f
 *color11: #FCE94F
 
 !! blue dark/light
-*color4 : #3465A4
-*color12: #729FCF
+*color4 : #448cb8
+*color12: #448cb8
 
 !! magenta dark/light
-*color5 : #75507B
-*color13: #AD7FA8
+*color5 : #b387bf
+*color13: #b387bf
 
 !! cyan dark/light
-*color6 : #06989A
-*color14: #34E2E2
+*color6 : #35adb0
+*color14: #25dadf
 
 !! white dark/light
 *color7 : #D3D7CF
 *color15: #eeeeec
+
+
+i3wm.color0: #FF0000
