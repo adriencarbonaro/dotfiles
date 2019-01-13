@@ -9,4 +9,4 @@
 #-----------------------------------------------------------
 
 scrot -d 5 '%d-%m-%Y_%H%M_$wx$h.png' -e 'mv $f ~/shots/'
-notify-send "Screenshot" "$(date "+%a %d %b %H:%M")" --icon=accessories-camera
+notify-send "Screenshot" "$(date "+%d-%m-%y %I:%M")" -i /home/adrien/dotfiles/icons/camera.png
