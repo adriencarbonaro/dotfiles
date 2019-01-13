@@ -8,7 +8,7 @@
 #------------------------------------------------------------
 
 [global]
-font = Montserrat 13
+font = Anka/Coder 13
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -168,7 +168,7 @@ icon_position = left
 max_icon_size = 70
 
 # Paths to default icons.
-icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/:/usr/share/icons/Oranchelo/apps/scalable
+icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/:/usr/share/icons/Oranchelo/apps/scalable:/home/adrien/dotfiles/icons/
 
 frame_width = 3
 #frame_color = "#FF0000"
@@ -197,21 +197,21 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#3BACC7"
+frame_color = "#1D1F28"
 foreground  = "#3BACC7"
-background  = "#FFFFFF"
+background  = "#1D1F28"
 timeout     = 4
 
 [urgency_normal]
-frame_color = "#20B766"
-foreground  = "#20B766"
-background  = "#FFFFFF"
+frame_color = "#1D1F28"
+foreground  = "#FFFFFF"
+background  = "#1D1F28"
 timeout     = 6
 
 [urgency_critical]
-frame_color = "#FF6234"
-foreground  = "#FF6234"
-background  = "#FFFFFF"
+frame_color = "#1D1F28"
+foreground  = "#FF6254"
+background  = "#1D1F28"
 timeout     = 8
 
 
