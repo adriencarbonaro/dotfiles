@@ -9,30 +9,31 @@ configuration {
 }
 
 * {
-	accent: #E5AE96;
-    foreground:         		@accent;
-    background:         		rgba(0, 0, 0, 1);
-    transparent:				rgba(48, 53, 58);
+    accent: #00FFAA;
+    textforeground: #303539;
+    foreground:                 @accent;
+    background:                 rgba(48, 53, 58, 50%);
+    transparent:                rgba(0, 0, 0, 0%);
 
-    normal-background: 			@transparent;
+    normal-background: 			@background;
     normal-foreground: 			@foreground;
-    urgent-background: 			@transparent;
+    urgent-background: 			@background;
     urgent-foreground:			@foreground;
-    active-background: 			@transparent;
+    active-background: 			@background;
     active-foreground:			@foreground;
 
     selected-normal-background:  @foreground;
-    selected-normal-foreground:  @background;
+    selected-normal-foreground:  @textforeground;
     selected-urgent-background:  @foreground;
     selected-urgent-foreground:  @background;
     selected-active-background:  @foreground;
     selected-active-foreground:  @background;
 
-    alternate-normal-background: @transparent;
+    alternate-normal-background: @background;
     alternate-normal-foreground: @foreground;
-    alternate-active-background: @transparent;
+    alternate-active-background: @background;
     alternate-active-foreground: @active-foreground;
-    alternate-urgent-background: @transparent;
+    alternate-urgent-background: @background;
     alternate-urgent-foreground: @urgent-foreground;
 
     border-color:                @background;
@@ -72,15 +73,12 @@ configuration {
     padding: 				12 25 12;
 }
 #element.normal.normal {
-    background-color: 		@normal-background;
     text-color:       		@normal-foreground;
 }
 #element.normal.urgent {
-    background-color: 		@urgent-background;
     text-color:       		@urgent-foreground;
 }
 #element.normal.active {
-    background-color: 		@active-background;
     text-color:       		@active-foreground;
 }
 #element.selected.normal {
@@ -88,7 +86,6 @@ configuration {
     text-color:       		@selected-normal-foreground;
 }
 #element.selected.urgent {
-    background-color: 		@selected-urgent-background;
     text-color:       		@selected-urgent-foreground;
 }
 #element.selected.active {
@@ -96,15 +93,12 @@ configuration {
     text-color:       		@selected-active-foreground;
 }
 #element.alternate.normal {
-    background-color: 		@alternate-normal-background;
     text-color:       		@alternate-normal-foreground;
 }
 #element.alternate.urgent {
-    background-color: 		@alternate-urgent-background;
     text-color:       		@alternate-urgent-foreground;
 }
 #element.alternate.active {
-    background-color: 		@alternate-active-background;
     text-color:       		@alternate-active-foreground;
 }
 
