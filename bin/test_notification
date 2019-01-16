@@ -1,0 +1,4 @@
+#!/bin/sh
+
+notify-send "Notification" -i $HOME/dotfiles/icons/test.png -t 2000
+canberra-gtk-play -f $HOME/dotfiles/dunst/sounds/message.oga
