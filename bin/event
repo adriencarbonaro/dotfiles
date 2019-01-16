@@ -1,0 +1,32 @@
+#!/bin/sh
+
+#-----------------------------------------------------------
+# AUTHOR        : Adrien CARBONARO
+# DATE          : 16/01/2019
+# DESCRIPTION   : Set a notification reminder
+# PARAMETERS    : $1 : Notification title
+#                 $2 : Notification time
+#                 $3 : -n (optional)
+#                 $4 : Notification body
+# RETURN        : 0
+#-----------------------------------------------------------
+
+# Usage: event "Title" "Body" "Time"
+
+if [ $# -lt 2 ] ; then
+    echo "\033[31m    USAGE: event <title> <time> [-n note]\033[0m"
+    exit 0
+elif [ $# -eq 3 ] ; then
+    echo "\033[31m    USAGE: event <title> <time> [-n note]\033[0m"
+    exit 0
+elif [ $# -gt 4 ] ; then
+    echo "\033[31m    USAGE: event <title> <time> [-n note]\033[0m"
+    exit 0
+fi
+
+title=$1
+time=$2
+option=$3
+note=$4
+
+echo "notify-send $title $note -i default -t 5000" | at $time
