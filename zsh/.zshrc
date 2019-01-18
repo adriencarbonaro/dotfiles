@@ -154,6 +154,7 @@ export EXA_COLORS="*.md=1;33:ga=37:gm=33:gd=33:gv=33:gt=33:uu=36:sb=33:sn=33:uw=
 export TODO="$HOME/TODO"
 
 export PATH="$PATH:$HOME/bin"
+export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"
 export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
 export LESS="-RX"
 
