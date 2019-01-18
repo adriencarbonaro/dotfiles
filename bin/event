@@ -30,3 +30,4 @@ option=$3
 note=$4
 
 echo "notify-send $title $note -i default -t 5000" | at $time
+canberra-gtk-play -f $HOME/dotfiles/dunst/sounds/message.oga
