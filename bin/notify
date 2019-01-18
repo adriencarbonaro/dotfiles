@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# There must be at least 1 argument (summary)
+if [ $# -lt 1 ] ; then
+    echo "Number of args : $#"
+    echo "\033[31m    USAGE: notify [-b body] [-u urgency] <summary> \033[0m"
+    echo "\033[31m           notify -h for help \033[0m"
+    exit 0
+fi 
+
+while getopts "b:u:h" option
+do
+    case $option in
+        b)
+            body=$OPTARG
+            ;;
+        u)
+            urgency=$OPTARG
+            ;;
+        h)
+            echo "\033[31m    USAGE: notify [-b body] [-u urgency] <summary> \033[0m"
+            exit 0
+            ;;
+    esac
+done
+
+shift $(($OPTIND - 1))
+
+summary=$1
+
+if [ -z $urgency ] ; then
+    if [ -z $body ] ; then
+        notify-send $summary -i $HOME/dotfiles/icons/default.png -t 4000
+        canberra-gtk-play -f $HOME/dotfiles/dunst/sounds/message.oga
+    else
+        notify-send $summary $body -i $HOME/dotfiles/icons/default.png -t 4000
+        canberra-gtk-play -f $HOME/dotfiles/dunst/sounds/message.oga
+    fi
+else
+    notify-send $summary $body -u $urgency -i $HOME/dotfiles/icons/default.png -t 4000
+    canberra-gtk-play -f $HOME/dotfiles/dunst/sounds/message.oga
+fi
