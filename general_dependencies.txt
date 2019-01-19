@@ -1,0 +1,14 @@
+git
+scrot
+feh
+curl
+zsh
+vim
+ack-grep
+mutt
+i3
+i3-wm
+rxvt-unicode
+htop
+cmatrix
+imagemagick
