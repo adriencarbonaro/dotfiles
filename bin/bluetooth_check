@@ -1,12 +1,15 @@
 #!/bin/sh
 
 #-----------------------------------------------------------
-# NAME         :  test_notification
+# NAME         :  bluetooth_check
 # AUTHOR       :  Adrien CARBONARO
 # UPDATE       :  20/01/2019
-# DESCRIPTION  :  Generate a custom test notification
+# DESCRIPTION  :  Check if bluetooth is connected to device
 # PARAMETERS   :  none
 #-----------------------------------------------------------
 
-notify-send "Notification" -i $HOME/dotfiles/icons/test.png -t 2000
-canberra-gtk-play -f $HOME/dotfiles/dunst/sounds/message.oga
+if [ "$(pgrep redshift)" ]; then
+    echo "JBL FLip 3"
+else
+    echo "..."
+fi
