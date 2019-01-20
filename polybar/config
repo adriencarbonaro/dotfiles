@@ -77,7 +77,7 @@ font-7 = "Material Icons:size=13;4"
 
 modules-left = i3 sep term thunar google mail github gitlab
 modules-center = date clock 
-modules-right = alsa xbacklight wlan ip battery 
+modules-right = alsa xbacklight bluetooth redshift wlan ip battery powermenu
 
 ;===============================================================================
 
@@ -230,6 +230,25 @@ label-urgent-underline = ${color.curgent}
 label-occupied-underline = ${color.coccupied}
 
 ;===============================================================================
+
+[module/redshift]
+type = custom/script
+format = <label>
+format-foreground = #FFFFFF
+label = %output%
+exec = check_redshift
+interval = 1
+
+[module/bluetooth]
+type = custom/script
+format-foreground = #FFFFFF
+format-prefix = "  " 
+format-prefix-foreground = ${colors.random}
+label-font = 4
+label = %output%
+exec = bluetooth_check
+exec-if = systemctl is-active bluetooth.service = "active"
+interval = 5
 
 [module/google]
 type = custom/text
@@ -643,29 +662,29 @@ type = custom/menu
 
 expand-right = true
 
-format-spacing = 1
+format-spacing = 2
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-open = 
+label-open-foreground = ${colors.random}
+label-close = 
+label-close-foreground = ${colors.random}
+label-separator = -
+label-separator-foreground = #ffffff 
 
-menu-0-0 = reboot
+menu-0-0 =  
 menu-0-0-exec = menu-open-1
-menu-0-1 = power off
+menu-0-1 = 
 menu-0-1-exec = menu-open-2
 
-menu-1-0 = cancel
+menu-1-0 = 
 menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1 = 
+menu-1-1-exec = reboot
 
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+menu-2-0 = 
+menu-2-0-exec = menu-open-0
+menu-2-1 = 
+menu-2-1-exec = sudo poweroff
 
 ;===============================================================================
 
