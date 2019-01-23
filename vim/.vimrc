@@ -30,6 +30,9 @@ Plugin 'Yggdroot/indentLine'       "  Indent plugin - display indent lines in co
 Plugin 'scrooloose/nerdtree'       "  Tree plugin - display file tree
 Plugin 'godlygeek/tabular'         "  Align plugin - align code according to symbol
 Plugin 'sheerun/vim-polyglot'      "  Syntax plugin - syntax highlighting according to language
+Plugin 'Valloric/YouCompleteMe'    "  Complete plugin - auto complete
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/plugin
@@ -52,6 +55,9 @@ let g:ctrlp_show_hidden = 1
 
 " Enable doxygen for C, C++
 let g:load_doxygen_syntax=1
+
+" YouCompleteMe Plugin
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
 
 " STATUS BAR -------------------------------------
 
