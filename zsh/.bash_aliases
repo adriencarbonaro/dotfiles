@@ -14,6 +14,7 @@ alias chrome='chromium-browser'
 alias gits='git status'
 alias gg='git status'
 alias gl='git log --graph --oneline --decorate'
+alias gll='git log --graph --decorate'
 alias gb='git branch'
 alias nbrc='nano ~/.bashrc'
 alias fsize="du * -hs | sort -h"
