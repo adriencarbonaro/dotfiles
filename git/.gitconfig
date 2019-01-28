@@ -4,15 +4,13 @@
 # This file sets the configuration for git command display
 # Move this file to $HOME/.gitconfig
 #------------------------------------------------------------
-# WARNING: replace email and name by your credentials.
-#------------------------------------------------------------
 # Author:       Adrien CARBONARO
 # Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
 #------------------------------------------------------------
 
 [user]
-    email = [your_email]
-    name  = [your_name]
+	email = carbonaro.adrien@gmail.com
+	name  = Adrien CARBONARO
 [color]
     pager       = true
     ui          = auto
@@ -64,3 +62,6 @@
     selected = normal
     separator = red bold
     linenumber = normal
+[alias]
+    l1 = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s - %C(bold black)%an (%ar)' --all
+    l2 = log --graph --decorate --format=format:'%C(auto)%h%d %n %C(bold black)Author: %an <%ae> %n %C(bold black)Date:   %ad %n%n %s %n'  --all
