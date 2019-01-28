@@ -63,5 +63,5 @@
     separator = red bold
     linenumber = normal
 [alias]
-    compactLog = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s - %C(bold black)%an (%ar)' --all
+    compactLog = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ar)' --all
     fullLog = log --graph --decorate --format=format:'%C(auto)%h%d %n %C(bold black)Author: %an <%ae> %n %C(bold black)Date:   %ad %n%n %s %n'  --all
