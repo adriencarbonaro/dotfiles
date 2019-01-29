@@ -63,3 +63,10 @@ https://typora.io/
 
 https://asciinema.org/
 
+## Exa : `ls` improved
+
+https://the.exa.website/
+
+## zsh-syntax-highlighting : CLI syntax highlighting
+
+https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
