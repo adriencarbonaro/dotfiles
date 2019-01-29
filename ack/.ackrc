@@ -1,6 +1,13 @@
 #------------------------------------------------------------
 # ACK - Grep enhanced
 #
+#  █████╗  ██████╗██╗  ██╗██████╗  ██████╗
+# ██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔════╝
+# ███████║██║     █████╔╝ ██████╔╝██║
+# ██╔══██║██║     ██╔═██╗ ██╔══██╗██║
+# ██║  ██║╚██████╗██║  ██╗██║  ██║╚██████╗
+# ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+#
 # Move this file to $HOME/.ackrc
 #------------------------------------------------------------
 # Author:       Adrien CARBONARO
@@ -16,8 +23,8 @@
 # Color Matching element
 --color-match=bold red
 # file name color
---color-filename=bold cyan
+--color-filename=green bold
 # line color
---color-lineno=bold blue
+--color-lineno=blue
 # Always display line number
 -H
