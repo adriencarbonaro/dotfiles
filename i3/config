@@ -1,4 +1,12 @@
 #------------------------------------------------------------
+#
+# ██╗██████╗        ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+# ██║╚════██╗      ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
+# ██║ █████╔╝█████╗██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+# ██║ ╚═══██╗╚════╝██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+# ██║██████╔╝      ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+# ╚═╝╚═════╝        ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+#
 # I3 - Window Manager
 #
 # Move this file to $HOME/.config/i3/config
@@ -53,10 +61,10 @@ bindsym $mod+space exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-#bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+m focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -77,7 +85,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+o split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -190,18 +198,18 @@ gaps inner 40
 gaps outer 15
 
 # Hide gaps when only one window on screen
-#smart_gaps on
+smart_gaps on
 
 # Snapshots bindings
 bindsym $mod+p          exec screen
 bindsym $mod+Shift+p    exec screens
 
-bindsym $mod+n          exec notify-send "Notification" "This is a test notification" --icon=bleachbit
-bindsym $mod+Shift+n    exec notify-send "Notification" "This is a test notification" -u low --icon=bleachbit
-bindsym $mod+Mod1+n     exec notify-send "Notification" "This is a test notification" -u critical --icon=bleachbit
+bindsym $mod+n          exec notify Notification
+bindsym $mod+Shift+n    exec notify -u low Notification
+bindsym $mod+Mod1+n     exec notify -u critical Notification
 
 # ScreenLock keybinding
-bindsym $mod+k exec sl
+bindsym $mod+x exec sl
 
 # Volume control
 bindsym XF86AudioRaiseVolume 	exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 2 +5%
@@ -248,7 +256,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 set $color  #FF9988
 set $rcolo  #FF0000
 set $bg     #262626
-set $bg_in  #404040
+set $bg_in  #303539
 
 # class                 border    backgr.   text      indicator   child_border
 client.focused          $bg_in    $bg_in    $bg_in    $color      $color
