@@ -33,6 +33,7 @@ Plugin 'sheerun/vim-polyglot'      "  Syntax plugin - syntax highlighting accord
 Plugin 'Valloric/YouCompleteMe'    "  Complete plugin - auto complete
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'mboughaba/i3config.vim'
 call vundle#end()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/plugin
