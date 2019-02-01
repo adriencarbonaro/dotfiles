@@ -98,10 +98,10 @@ inoremap {{     {
 inoremap {}     {}
 
 " Switch windows with Alt + Arrows
-nmap <silent> <C-Left> <C-W>h
-nmap <silent> <C-Right> <C-W>l
-nmap <silent> <C-Up> <C-W>k
-nmap <silent> <C-Down> <C-W>j
+nmap <silent> <A-Left> <C-W>h
+nmap <silent> <A-Right> <C-W>l
+nmap <silent> <A-Up> <C-W>k
+nmap <silent> <A-Down> <C-W>j
 
 " Vertical/Horizontal split window
 nmap <C-S-h> :sp<CR>
