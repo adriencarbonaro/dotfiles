@@ -91,6 +91,9 @@ hi User8 ctermfg=255 ctermbg=94
 
 " BINDINGS ---------------------------------------
 
+" No highlight search
+nnoremap :/<CR> :nohlsearch<CR>
+
 " Automaticaly close brackets
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
