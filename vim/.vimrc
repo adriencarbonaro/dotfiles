@@ -91,6 +91,11 @@ hi User8 ctermfg=255 ctermbg=94
 
 " BINDINGS ---------------------------------------
 
+" ESC key to jk or kj or jj
+inoremap kj <Esc>
+inoremap jk <Esc>
+inoremap jj <Esc>
+
 " No highlight search
 nnoremap :/<CR> :nohlsearch<CR>
 
