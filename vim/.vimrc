@@ -127,6 +127,8 @@ map <C-@> <Plug>NERDCommenterToggle
 
 " GitGutter Plugin
 nmap :gd <Plug>GitGutterPreviewHunk
+nmap :ga <Plug>GitGutterStageHunk
+nmap :gn <Plug>GitGutterNextHunk
 
 " CtrlP Plugin invoking to add path
 nmap :cp :CtrlP<Space>
