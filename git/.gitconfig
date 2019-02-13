@@ -8,9 +8,6 @@
 # Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
 #------------------------------------------------------------
 
-[user]
-	email = carbonaro.adrien@gmail.com
-	name  = Adrien CARBONARO
 [color]
     pager       = true
     ui          = auto
