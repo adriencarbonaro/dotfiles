@@ -41,3 +41,11 @@ If the script is an infinite loop (allowing the RPi to be autonomous), add the s
  
 exit 0
 ```
+
+## `/etc/init.d/rc.local` disappeared
+
+If `/etc/init.d/rc.local` isn't present on the system, re install it by typing :
+
+```
+sudo apt-get install --reinstall initscripts
+```
