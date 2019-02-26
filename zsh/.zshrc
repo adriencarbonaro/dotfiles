@@ -141,6 +141,7 @@ export EDITOR="$VISUAL"
 # dotfiles paths
 export ZSHRC="$HOME/.zshrc"
 export VIMRC="$HOME/.vimrc"
+export TIGRC="$HOME/.tigrc"
 export VIM_COLOR="$HOME/.vim/colors/carbo.vim"
 export ZSH_COLOR="$HOME/.oh_my_zsh/theme/carbo2.zsh-theme"
 export I3_CONFIG="$HOME/.config/i3/config"
