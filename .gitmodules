@@ -28,6 +28,9 @@
 [submodule "Vundle.vim"]
 	path = vim/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim
-[submodule "ohmyzsh/custom/plugin/zsh-syntax-highlighting"]
-	path = ohmyzsh/custom/plugin/zsh-syntax-highlighting
+[submodule "zsh-syntax-highlighting"]
+	path = ohmyzsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "oranchelo-icon-theme"]
+	path = gtk/icons/oranchelo-icon-theme
+	url = https://github.com/OrancheloTeam/oranchelo-icon-theme
