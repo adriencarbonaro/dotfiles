@@ -25,17 +25,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'      "  Vim Package manager
 Plugin 'airblade/vim-gitgutter'    "  Git plugin - display + - ~ in vim gutter
 Plugin 'scrooloose/nerdcommenter'  "  Comment plugin - Toggle comments
-Plugin 'mileszs/ack.vim'           "  Ack plugin - ack search program
 Plugin 'Yggdroot/indentLine'       "  Indent plugin - display indent lines in code
 Plugin 'scrooloose/nerdtree'       "  Tree plugin - display file tree
 Plugin 'godlygeek/tabular'         "  Align plugin - align code according to symbol
 Plugin 'sheerun/vim-polyglot'      "  Syntax plugin - syntax highlighting according to language
-Plugin 'Valloric/YouCompleteMe'    "  Complete plugin - auto complete
-Plugin 'rdnetto/YCM-Generator'
+"Plugin 'Valloric/YouCompleteMe'    "  Complete plugin - auto complete
+"Plugin 'rdnetto/YCM-Generator'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'mboughaba/i3config.vim'
 call vundle#end()
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/plugin
 
 " create location to store swap (.swp) files
@@ -50,15 +48,9 @@ let g:polyglot_disabled = ['markdown']
 " Marker style (Plugin 'Yggdroot/indentLine')
 let g:indentLine_char = '|'
 
-" CtrlP Plugin variables
-"let g:ctrlp_regexp = 1
-let g:ctrlp_show_hidden = 1
-
 " Enable doxygen for C, C++
 let g:load_doxygen_syntax=1
 
-" YouCompleteMe Plugin
-let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
 
 " STATUS BAR -------------------------------------
 
@@ -130,9 +122,6 @@ nmap :gd <Plug>GitGutterPreviewHunk
 nmap :ga <Plug>GitGutterStageHunk
 nmap :gn <Plug>GitGutterNextHunk
 
-" CtrlP Plugin invoking to add path
-nmap :cp :CtrlP<Space>
-nmap <C-p> :CtrlP .<CR>
 
 " Paste multiple in visual mode
 xnoremap p pgvy
