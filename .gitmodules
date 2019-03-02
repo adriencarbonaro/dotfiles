@@ -31,3 +31,6 @@
 [submodule "vim/.vim/bundle/fzf.vim"]
 	path = vim/.vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "gtk/icons/oranchelo-icon-theme"]
+	path = gtk/icons/oranchelo-icon-theme
+	url = https://github.com/OrancheloTeam/oranchelo-icon-theme
