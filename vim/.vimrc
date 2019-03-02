@@ -33,8 +33,13 @@ Plugin 'sheerun/vim-polyglot'      "  Syntax plugin - syntax highlighting accord
 "Plugin 'rdnetto/YCM-Generator'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'mboughaba/i3config.vim'
+Plugin 'junegunn/fzf.vim'
+
 call vundle#end()
 set runtimepath^=~/.vim/plugin
+
+" add fzf program for fzf.vim
+set rtp+=~/dotfiles/fzf/fzf
 
 " create location to store swap (.swp) files
 set directory^=$HOME/.vim/tmp//
@@ -51,6 +56,8 @@ let g:indentLine_char = '|'
 " Enable doxygen for C, C++
 let g:load_doxygen_syntax=1
 
+" Get functions for fzf.vim plugin + devicons
+so $HOME/.vim/plugin/fzf_devicon.vim
 
 " STATUS BAR -------------------------------------
 
@@ -122,6 +129,15 @@ nmap :gd <Plug>GitGutterPreviewHunk
 nmap :ga <Plug>GitGutterStageHunk
 nmap :gn <Plug>GitGutterNextHunk
 
+" FZF Plugin
+" Files
+nmap <C-p> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
+" Lines
+nmap <C-f> :Lines<CR>
+" Tags
+nmap <C-t> :Tags<CR>
+nmap <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR> " :GFiles?
+nmap <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
 
 " Paste multiple in visual mode
 xnoremap p pgvy

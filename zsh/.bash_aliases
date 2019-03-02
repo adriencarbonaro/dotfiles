@@ -23,6 +23,7 @@ alias openn="mimeopen"
 alias trash="gvfs-trash"
 alias weather="curl wttr.in/Boulogne"
 alias wificonnect="nmcli con up id"
+alias ff="fzf"
 
 alias cp="cp -v"
 alias mv="mv -v"
