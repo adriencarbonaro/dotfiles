@@ -1,9 +1,3 @@
-[submodule "ack.vim"]
-	path = vim/.vim/bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim
-[submodule "ctrlp.vim"]
-	path = vim/.vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "indentLine"]
 	path = vim/.vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine
