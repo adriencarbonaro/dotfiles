@@ -31,6 +31,9 @@
 [submodule "zsh-syntax-highlighting"]
 	path = ohmyzsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "oranchelo-icon-theme"]
-	path = gtk/icons/oranchelo-icon-theme
-	url = https://github.com/OrancheloTeam/oranchelo-icon-theme
+[submodule "fzf/fzf"]
+	path = fzf/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "vim/.vim/bundle/fzf.vim"]
+	path = vim/.vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
