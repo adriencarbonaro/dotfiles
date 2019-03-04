@@ -37,3 +37,6 @@
 [submodule "gtk/themes/X-Arc-Shadow"]
 	path = gtk/themes/X-Arc-Shadow
 	url = https://gitlab.com/LinxGem33/X-Arc-Shadow
+[submodule "the_silver_searcher"]
+	path = the_silver_searcher
+	url = https://github.com/ggreer/the_silver_searcher
