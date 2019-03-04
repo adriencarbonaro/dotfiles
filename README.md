@@ -6,15 +6,33 @@
 
 My dotfiles for a linux distribution configuration.
 
-**WM:** i3
+**WM**: i3
 
-**shell**: zsh with ohmyzsh
+**Shell**: zsh with ohmyzsh
 
-**terminal**: urxvt
+**Terminal**: urxvt
 
-**editor**: vim
+**Editor**: vim
 
-**bar:** polybar
+**File manager**: thunar
+
+**Bar**: polybar
+
+**Compositor**: compton
+
+**Notifications**: dunst
+
+**App launcher**: rofi
+
+**Searcher**: ag - The Silver Searcher
+
+**File finder**: fzf
+
+**File listing**: exa
+
+**Git CLI**: tig
+
+**Font**: Iosevka
 
 ## Screenshots
 
