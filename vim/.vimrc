@@ -129,15 +129,17 @@ nmap :gd <Plug>GitGutterPreviewHunk
 nmap :ga <Plug>GitGutterStageHunk
 nmap :gn <Plug>GitGutterNextHunk
 
-" FZF Plugin
-" Files
+" FZF Plugin -------------------------------------------------------------------
+" Files (':Files' with devicons)
 nmap <C-p> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
+" Git tracked files (ignore submodules + .gitignore files)
+nmap <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
 " Lines
 nmap <C-f> :Lines<CR>
 " Tags
 nmap <C-t> :Tags<CR>
-nmap <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR> " :GFiles?
-nmap <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
+" Git diff
+nmap <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR> 
 
 " Paste multiple in visual mode
 xnoremap p pgvy
