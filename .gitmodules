@@ -40,3 +40,6 @@
 [submodule "the_silver_searcher"]
 	path = the_silver_searcher
 	url = https://github.com/ggreer/the_silver_searcher
+[submodule "ripgrep"]
+	path = ripgrep
+	url = https://github.com/BurntSushi/ripgrep/
