@@ -24,7 +24,7 @@ My dotfiles for a linux distribution configuration.
 
 **App launcher**: rofi
 
-**Searcher**: ag - The Silver Searcher
+**Searcher**: ripgrep (rg)
 
 **File finder**: fzf
 
