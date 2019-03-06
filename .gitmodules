@@ -37,3 +37,6 @@
 [submodule "gtk/themes/X-Arc-Shadow"]
 	path = gtk/themes/X-Arc-Shadow
 	url = https://gitlab.com/LinxGem33/X-Arc-Shadow
+[submodule "ripgrep/ripgrep"]
+	path = ripgrep/ripgrep
+	url = https://github.com/BurntSushi/ripgrep
