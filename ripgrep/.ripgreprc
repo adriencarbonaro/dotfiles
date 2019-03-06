@@ -1,0 +1,31 @@
+#------------------------------------------------------------
+# RIPGREP - faster searcher than ack and ag
+#
+# ██████╗ ██╗██████╗  ██████╗ ██████╗ ███████╗██████╗ ██████╗  ██████╗
+# ██╔══██╗██║██╔══██╗██╔════╝ ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝
+# ██████╔╝██║██████╔╝██║  ███╗██████╔╝█████╗  ██████╔╝██████╔╝██║
+# ██╔══██╗██║██╔═══╝ ██║   ██║██╔══██╗██╔══╝  ██╔═══╝ ██╔══██╗██║
+# ██║  ██║██║██║     ╚██████╔╝██║  ██║███████╗██║     ██║  ██║╚██████╗
+# ╚═╝  ╚═╝╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝
+#
+# Move this file to $HOME/.ripgreprc
+#------------------------------------------------------------
+# Author:       Adrien CARBONARO
+# Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
+#------------------------------------------------------------
+
+# ripgrep (rg) configuration file
+
+# Set the colors.
+--colors=line:fg:blue
+--colors=line:style:bold
+--colors=match:fg:yellow
+--colors=match:style:bold
+--colors=path:fg:green
+--colors=path:style:bold
+
+# Because who cares about case!?
+--smart-case
+
+# hidden
+--hidden
