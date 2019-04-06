@@ -135,7 +135,9 @@ nmap <C-p> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
 " Git tracked files (ignore submodules + .gitignore files)
 nmap <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
 " Lines
-nmap <C-f> :Lines<CR>
+nmap <C-l> :Lines<CR>
+" Rg
+nmap <C-f> :Rg<CR>
 " Tags
 nmap <C-t> :Tags<CR>
 " Git diff
