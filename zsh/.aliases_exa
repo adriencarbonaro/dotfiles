@@ -1,5 +1,5 @@
 # some more ls aliases
-alias ll='exa -l -a --git'
+alias ll='exa -l -a -g --git'
 alias l='exa -l'
-alias lls="exa -l -a --git --sort=size"
-alias llt="exa -l -a --git --sort=time"
+alias lls="exa -l -a -g --git --sort=size"
+alias llt="exa -l -a -g --git --sort=time"

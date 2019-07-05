@@ -154,7 +154,7 @@ export ROFI_COLOR="$HOME/.config/rofi/carbo.rasi"
 export COMPTON_CONFIG="$HOME/.config/compton.conf"
 export DUNST_CONFIG="$HOME/.config/dunst/dunstrc"
 export DOTFILES="$HOME/dotfiles"
-export EXA_COLORS="*.md=1;33:ga=37:gm=33:gd=33:gv=33:gt=33:uu=36:sb=33:sn=33:uw=36:gw=36:tw:36:ue=32:ux=32:gx=32:tx=32:ur=34:gr=34:tr=34:da=35"
+export EXA_COLORS="*.png=35:*.jpg=35:*.md=1;33:ga=37:gm=33:gd=33:gv=33:gt=33:uu=36:sb=33:sn=33:uw=36:gw=36:tw:36:ue=32:ux=32:gx=32:tx=32:ur=34:gr=34:tr=34:da=35"
 export TODO="$HOME/TODO"
 export FZF_DEFAULT_COMMAND='find .'
 
