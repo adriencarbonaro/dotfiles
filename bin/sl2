@@ -1,0 +1,97 @@
+#!/usr/bin/zsh
+
+wallpaper=$2
+cachepath=$HOME/.cache/sl
+
+B='#00000000'  # blank
+C='#404549FF'
+D='#8897F4cc'
+T='#FEFEFEFF'  # text
+W='#FF5555FF'  # wrong
+V='#EEEEEEFF'  # verifying
+
+width=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*' | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/' |cut -d "x" -f 1 |head -n1)
+height=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*' | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/' |cut -d "x" -f 2 |head -n1)
+
+cropbg() {
+	convert "$wallpaper" -resize ${width}x -gravity center -crop ${width}x${height}+0+0 +repage \( \
+        -size 120x140 xc:none \
+        \) -gravity south -compose over -composite $cachepath/resize.png
+}
+
+blurbg() {
+    convert "$cachepath/resize.png" \
+		-filter Gaussian \
+		-blur 0x8 \
+		"$cachepath/wallpaper_blur.png"
+}
+
+genbg() {
+    echo "Caching image ..."
+	if [[ ! -d $HOME/.cache/sl ]]; then
+		mkdir $HOME/.cache/sl
+	fi
+	cropbg
+	blurbg
+	echo "Finished caching image"
+}
+
+mylock() {
+    # Pause Spotify
+    sp pause
+
+    date_now=$(date +'%d %b')
+
+    i3lock -n --force-clock -i $cachepath/wallpaper_blur.png \
+    --indpos="w/2:h/2+70" --timepos="w/2:h/2-100" --datepos="w/2:h/2-30" --greeterpos="w/2:h/2" \
+    --insidevercolor=$V \
+    --insidewrongcolor=$W \
+    --insidecolor=$B \
+    --ringvercolor=$V \
+    --ringwrongcolor=$W \
+    --ringcolor=$T \
+    --keyhlcolor=$W \
+    --bshlcolor=$W \
+    --separatorcolor=00000000 \
+    --datecolor=$T \
+    --timecolor=$T \
+    --greetercolor=$T \
+    --timestr="%H" \
+    --timesize=70 \
+    --datestr="%M" \
+    --datesize=70 \
+    --greetertext="$date_now" \
+    --greetersize=25 \
+    --line-uses-inside \
+    --radius 50 \
+    --ring-width 2 \
+    --indicator \
+    --veriftext="" \
+    --wrongtext="" \
+    --noinputtext="" \
+    --clock \
+    --date-font="Abel" \
+    --time-font="Abel" \
+}
+
+show_help(){
+	cat <<-EOF                                 
+	Usage :
+	 sl [OPTION]
+
+	Avaible options:
+	 -i, --image             Generate cache image
+	 -h, --help              Show this help
+
+	EOF
+}
+
+case $1 in 
+	-i|--image) 
+		genbg $2 ;;
+	-h|--help)
+		show_help ;;
+	*)
+		mylock ;;
+esac
+
