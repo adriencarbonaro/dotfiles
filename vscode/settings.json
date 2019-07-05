@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontFamily": "Iosevka Term,'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 19,
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.cursorSmoothCaretAnimation": true,
+    "terminal.external.linuxExec": "/usr/bin/urxvt"
+}
