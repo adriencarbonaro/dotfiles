@@ -9,11 +9,11 @@ configuration {
 }
 
 * {
-    accent: #00FFAA;
-    textforeground: #303539;
+    accent: argb:FFFD9D34;
+    textforeground: #ffffff;
     foreground:                 @accent;
-    background:                 rgba(48, 53, 58, 50%);
-    transparent:                rgba(0, 0, 0, 0%);
+    background:                 argb:AA282C34;
+    transparent:                argb:00000000;
 
     normal-background: 			@background;
     normal-foreground: 			@foreground;
