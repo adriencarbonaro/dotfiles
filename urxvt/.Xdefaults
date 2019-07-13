@@ -71,9 +71,9 @@ URxvt.keysym.Control-Right:       \033[1;3C
 
 !!Source http://github.com/altercation/solarized
 
-URxvt*background: #303539
+URxvt*background: #282C34
 
-*foreground: #ededed
+*foreground: #cdcdcd
 !*fading: 40
 *fadeColor: #002b36
 *pointerColorBackground: #586e75
