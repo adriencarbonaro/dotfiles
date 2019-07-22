@@ -70,3 +70,15 @@ https://the.exa.website/
 ## zsh-syntax-highlighting : CLI syntax highlighting
 
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+
+## Fuzzy Finder : fzf
+
+https://github.com/junegunn/fzf
+
+## File searcher : fd (find alternative)
+
+https://github.com/sharkdp/fd
+
+## Word searcher : rg (grep alternative)
+
+https://github.com/BurntSushi/ripgrep
