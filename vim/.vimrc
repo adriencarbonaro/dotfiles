@@ -79,15 +79,15 @@ set statusline +=%2*0x%04B\ %*      "  character under cursor
 set statusline +=%3*%{winwidth(0)}  "  window width
 
 " Colors for status bar
-hi User1 ctermfg=166 ctermbg=236
-hi User2 ctermfg=9   ctermbg=236
-hi User3 ctermfg=13  ctermbg=236
-hi User4 ctermfg=12  ctermbg=236
-hi User5 ctermfg=11  ctermbg=236
+hi User1 ctermfg=166
+hi User2 ctermfg=9
+hi User3 ctermfg=13
+hi User4 ctermfg=12
+hi User5 ctermfg=11
 
 hi User6 ctermfg=255 ctermbg=60
 hi User7 ctermfg=255 ctermbg=28
-hi User8 ctermfg=255 ctermbg=94
+hi User8 ctermfg=255 ctermbg=27
 
 " BINDINGS ---------------------------------------
 

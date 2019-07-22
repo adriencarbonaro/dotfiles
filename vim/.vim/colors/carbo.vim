@@ -21,7 +21,7 @@ endif
 let colors_name = "carbo"
 
 " General colors
-hi Normal ctermfg=254
+hi Normal ctermfg=250
 hi Cursor ctermfg=234 ctermbg=13 
 hi Visual ctermfg=251 ctermbg=239
 hi VisualNOS ctermfg=251 ctermbg=236
@@ -40,7 +40,7 @@ hi Directory ctermfg=75 cterm=bold
 " Vim >= 7.0 specific colors
 if version >= 700
 " Highlight current line
-hi CursorLine ctermbg=236 cterm=none
+hi CursorLine cterm=none
 " Highlight current line number
 hi CursorLineNr ctermfg=183
 hi MatchParen ctermfg=228 ctermbg=101 cterm=bold
@@ -69,7 +69,7 @@ hi Comment ctermfg=66
 hi Todo ctermfg=101
 
 " Git
-hi diffAdded ctermfg=77
+hi diffAdded ctermfg=2
 hi diffRemoved ctermfg=167
 
 
