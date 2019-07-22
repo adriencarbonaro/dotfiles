@@ -4,5 +4,9 @@
     "editor.fontSize": 19,
     "C_Cpp.updateChannel": "Insiders",
     "editor.cursorSmoothCaretAnimation": true,
-    "terminal.external.linuxExec": "/usr/bin/urxvt"
+    "terminal.external.linuxExec": "/usr/bin/urxvt",
+    "window.zoomLevel": 1,
+    "terminal.integrated.fontSize": 18,
+    "workbench.iconTheme": "vscode-icons",
+    "window.titleBarStyle": "custom",
 }
