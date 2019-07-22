@@ -19,7 +19,7 @@
     grep        = auto
 [color "status"]
     header    = black bold
-    branch    = magenta bold
+    branch    = magenta
     nobranch  = red
     unmerged  = red
     untracked = red
@@ -31,21 +31,21 @@
     func       = cyan
     old        = red
     new        = green
-    commit     = cyan
+    commit     = blue
     whitespace = red
     context    = normal
 [color "branch"]
-    current  = magenta bold
+    current  = magenta
     local    = magenta
     remote   = cyan
     upstream = cyan
     plain    = normal
 [color "decorate"]
-    branch = green bold
-    remoteBranch = magenta bold
-    tag = yellow bold
+    branch = green
+    remoteBranch = magenta
+    tag = yellow
     stash = cyan
-    HEAD = cyan bold
+    HEAD = cyan
 [color "interactive"]
     prompt = blue bold
     header = red bold
