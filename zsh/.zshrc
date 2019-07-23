@@ -129,10 +129,14 @@ ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=magenta
 
 source $TOP_DIR/.bash_aliases
 
+# -- EXA ----------
 if [ -x "$(command -v exa)" ]
 then
     source $TOP_DIR/.aliases_exa
 fi
+
+# -- FZF ----------
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export SHELL=/bin/zsh
 export VISUAL=vim
@@ -169,4 +173,3 @@ then
     colorpanes
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
