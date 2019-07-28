@@ -1,13 +1,12 @@
 #------------------------------------------------------------
-# POLYBAR - Status bar
-#
 # Polybar launch program
+#------------------------------------------------------------
 #
 # accent color for polybar is set in 
 # * /etc/init.d/accent_color.sh
 # * /bin/accent (present in git repo dotfiles)
 #
-# Move this file to $HOME/.config/polybar/config
+# Move this file to $HOME/.config/polybar/launch.sh
 #------------------------------------------------------------
 # Author:       Adrien CARBONARO
 # Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
