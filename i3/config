@@ -234,7 +234,9 @@ bindsym XF86AudioPrev 	exec --no-startup-id sp prev
 hide_edge_borders smart
 
 # Change resolution (Get things bigger with Mac Book Pro Retina)
-exec_always --no-startup-id xrandr -s 1920x1200
+exec_always --no-startup-id xrandr --output eDP1 -s 1920x1200
+exec_always --no-startup-id xrandr --output HDMI2 --auto --right-of eDP1
+
 
 # Set autorepeat threshold to 250ms and speed to 50 repeats per seconds
 exec_always --no-startup-id xset r rate 250 50
