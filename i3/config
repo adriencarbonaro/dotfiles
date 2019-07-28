@@ -211,6 +211,9 @@ bindsym $mod+Mod1+n     exec notify -u critical Notification
 # ScreenLock keybinding
 bindsym $mod+x exec sl
 
+# Define some custom FN key control
+exec_always --no-startup-id xmodmap $HOME/.xmodmap.conf
+
 # Volume control
 bindsym XF86AudioRaiseVolume 	exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 2 +5%
 bindsym XF86AudioLowerVolume 	exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 2 -5%
