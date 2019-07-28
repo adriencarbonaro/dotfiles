@@ -188,21 +188,21 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Create borders
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 4
 
 new_window	pixel 5
 new_float	pixel 5
 
 # Gaps
-gaps inner 40
-gaps outer 15
+gaps inner 10
+gaps outer 5
 
 # Hide gaps when only one window on screen
 smart_gaps on
 
 # Snapshots bindings
-bindsym $mod+p          exec screen
-bindsym $mod+Shift+p    exec screens
+bindsym $mod+p          exec scr
+bindsym $mod+Shift+p    exec scrs
 
 bindsym $mod+n          exec notify Notification
 bindsym $mod+Shift+n    exec notify -u low Notification
@@ -229,6 +229,8 @@ bindsym XF86AudioPlay 	exec --no-startup-id sp play
 bindsym XF86AudioNext	exec --no-startup-id sp next
 bindsym XF86AudioPrev 	exec --no-startup-id sp prev
 
+bindsym XF86LaunchA     exec --no-startup-id chromium-browser &
+bindsym XF86LaunchB     exec --no-startup-id rofi -show run
 
 # Hide borders when only one window on screen
 hide_edge_borders smart
@@ -244,10 +246,12 @@ exec_always --no-startup-id xset r rate 250 50
 # Set wallpaper
 #exec_always --no-startup-id feh --bg-fill $HOME/Images/wall_red.png
 # Gradient wallpapers from uigradient.com
-exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/gradient/*
+#exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/gradient/*
+exec_always feh --bg-fill $HOME/Images/wallpapers/wall_shapes.jpg
 
 # Start compton compositor (for transparent)
-exec_always --no-startup-id compton -f -D 2 &
+#exec_always --no-startup-id compton -f -D 2 &
+exec_always --no-startup-id compton --config $HOME/.config/compton.conf &
 
 exec_always --no-startup-id killall dunst
 exec_always --no-startup-id dunst &
@@ -255,7 +259,7 @@ exec_always --no-startup-id dunst &
 # Display top bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-set $color  #FF9988
+set $color #FD9D34
 set $rcolo  #FF0000
 set $bg     #262626
 set $bg_in  #303539
