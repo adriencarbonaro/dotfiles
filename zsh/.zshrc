@@ -145,6 +145,7 @@ export EDITOR="$VISUAL"
 # dotfiles paths
 export ZSHRC="$HOME/.zshrc"
 export VIMRC="$HOME/.vimrc"
+export NVIMRC="$HOME/.nvimrc"
 export ACKRC="$HOME/.ackrc"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export TIGRC="$HOME/.tigrc"
