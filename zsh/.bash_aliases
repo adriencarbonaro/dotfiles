@@ -41,3 +41,5 @@ alias pipe="pipes.sh -s 5 -r 0"
 alias pipelc="pipes.sh -s 5 -r 0|lc"
 alias md="typora"
 alias ag="ag --hidden --color-match \"1;33\" --color-line-number \"1;34\""
+# Other aliases ----------------------------------------------------------------
+alias CDEV="cd $HOME/OROSOUND/tilde-dev"
