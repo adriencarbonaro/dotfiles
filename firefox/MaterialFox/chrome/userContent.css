@@ -1,0 +1,68 @@
+@-moz-document url("about:home"),
+url("about:newtab") {
+    .search-wrapper,
+    .tile {
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.10), 0 5px 5px rgba(0, 0, 0, 0.10) !important;
+    }
+    .top-site-outer .title.pinned span{
+        color: #231f21 !important;
+    }
+    .sections-list{
+        border-radius: 15px !important;
+        background: #0C4B7F !important;
+        box-shadow: 0 5px 5px rgba(24, 36, 43, 0.8) !important;
+        padding-bottom: 15px !important;
+    }
+    .collapsible-section .section-title span{
+        color: #231f21 !important;
+    }
+    html {
+        height: 100% !important
+    }
+    body {
+        /* background:linear-gradient(180deg, #282C34, #383C44); */
+        background: #282C34;
+        height: 100% !important;
+        margin: 0 !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+        overflow-y: hidden !important;
+    }
+    body.activity-stream, .root, .root .outer-wrapper, html{
+        margin: 0;
+        overflow-y:hidden !important;
+        overflow-x:hidden;
+    }
+    .section-title{
+        display: none;
+    }
+    .top-site-button .title.pinned span{
+        color: white !important;
+        font-size: 12px;
+    }
+    .top-site-button .title.pinned .icon{
+        display: none !important;
+    }
+    .title,
+    .section-title span,
+    .topic,
+    .edit-topsites-wrapper .edit-topsites-button button {
+        color: white !important;
+    }
+    .section-title span, .prefs-pane-button button {
+        fill: white !important;
+    }
+    .topic .topic-link, .topic .topic-read-more {
+        color: white !important;
+    }
+    .top-site-icon.rich-icon, .tile {
+        border-radius: 50% !important;
+        width: 75px !important;
+        height: 75px !important;
+        margin: 0 auto;
+    }
+    .top-site-icon.rich-icon {
+        border: solid 3px #61AFEF;
+        /* box-shadow: 0 1px 4px rgba(0, 193, 149, 0.9) !important; */
+    }
+}
