@@ -1,12 +1,12 @@
 #!/bin/sh
 
 #-----------------------------------------------------------
-# NAME         :  screens
+# NAME         :  scr
 # AUTHOR       :  Adrien CARBONARO
 # UPDATE       :  07/01/2019
-# DESCRIPTION  :  Screenshot script with screen selection
+# DESCRIPTION  :  Screenshot script
 # PARAMETERS   :  none
 #-----------------------------------------------------------
 
-scrot '%d-%m-%Y_%H%M_$wx$h.png' -e 'mv $f ~/shots/' -s
+scrot '%d-%m-%Y_%H%M_$wx$h.png' -e 'mv $f ~/shots/'
 notify-send "Screenshot" "$(date "+%d-%m-%y %I:%M")" -i /home/adrien/dotfiles/icons/camera.png
