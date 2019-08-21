@@ -9,10 +9,10 @@ configuration {
 }
 
 * {
-    accent: argb:FFFD9D34;
+    accent: #61AFEF;
     textforeground: #ffffff;
     foreground:                 @accent;
-    background:                 argb:AA282C34;
+    background:                 argb:DD282C34;
     transparent:                argb:00000000;
 
     normal-background: 			@background;

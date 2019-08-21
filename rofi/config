@@ -1,5 +1,6 @@
 rofi.show: run
-rofi.modi: window,ssh,run
+rofi.modi: drun,ssh,run
+rofi.matching: fuzzy
 rofi.theme: .config/rofi/carbo.rasi
 rofi.fullscreen:true
 rofi.terminal:urxvt
