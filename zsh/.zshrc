@@ -139,7 +139,7 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export SHELL=/bin/zsh
-export VISUAL=vim
+export VISUAL=vi
 export EDITOR="$VISUAL"
 
 # dotfiles paths
