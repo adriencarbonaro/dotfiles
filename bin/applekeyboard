@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Get Apple Keyboard device id
+dev=$(xinput | grep SONiX | grep -o "id=[0-9]*" | cut -d= -f2)
+
+# Set Apple Keyboard layout
+setxkbmap -device $dev -model pc105 -layout fr
+
+# Set Apple Keyboard auto-repeat
+xset r rate 250 50
