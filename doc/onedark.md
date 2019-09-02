@@ -4,7 +4,10 @@
 
 ![color_reference](myonedark.png)
 
-Black   : #282C34
+Background : #282C34
+Foreground : #C5C6C8
+
+Black   : #3B4048
 Red     : #E56464
 Green   : #98C379
 Yellow  : #FCE94F
