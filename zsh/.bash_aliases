@@ -26,6 +26,7 @@ alias gll='git fullLog'
 alias gla='git compactLogAll'
 alias glla='git fullLogAll'
 alias gb='git branch'
+alias grp='git rev-parse HEAD'
 # Program aliases --------------------------------------------------------------
 alias fsizeall="du * .* -hs | sort -h"
 alias fsize="du * -hs | sort -h"
