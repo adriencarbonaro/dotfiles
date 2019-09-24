@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Get Drevo Keyboard device id
+dav=$(xinput | grep "Compx 2.4G Receiver  " | grep -P -o "id=[0-9]+" | cut -d= -f2)
+
+for i in $dav
+do
+    setxkbmap -device $i -model pc105 -layout fr
+done
+
+# Set Drevo Keyboard layout
+#setxkbmap -device $dav -model pc105 -layout fr
+
+# Set Drevo Keyboard auto-repeat
+xset r rate 200 50
