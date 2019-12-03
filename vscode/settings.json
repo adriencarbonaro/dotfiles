@@ -1,12 +1,61 @@
 {
     "workbench.colorTheme": "One Dark Pro",
-    "editor.fontFamily": "Iosevka Term,'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 19,
+    "oneDarkPro.bold": false,
+    "editor.fontFamily": "Iosevka Carbo",
+    "editor.fontSize": 22,
+    "editor.fontLigatures": true,
     "C_Cpp.updateChannel": "Insiders",
     "editor.cursorSmoothCaretAnimation": true,
-    "terminal.external.linuxExec": "/usr/bin/urxvt",
-    "window.zoomLevel": 1,
-    "terminal.integrated.fontSize": 18,
+    "terminal.external.linuxExec": "/usr/local/bin/st",
+    "window.zoomLevel": 0,
+    "terminal.integrated.fontFamily": "Iosevka Carbo",
+    "terminal.integrated.fontSize": 21,
     "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
     "window.titleBarStyle": "custom",
+    "bracketPairColorizer.showBracketsInGutter": true,
+    "bracketPairColorizer.showHorizontalScopeLine": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "comment.block",
+                    "comment.block.documentation",
+                    "comment.line",
+                    "punctuation.definition.comment",
+                    "comment.line.double-slash",
+                    "variable.parameter"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.function.python"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.activeBorder": "#98c379",
+        "activityBar.foreground": "#98c379",
+        "activityBar.inactiveForeground": "#6e7179",
+    },
+    "editor.renderWhitespace": "all",
+    "C_Cpp.dimInactiveRegions": false,
+    "git-graph.graphColours": [
+        "#61afef",
+        "#c678dd",
+        "#98c379",
+        "#f5d07b",
+        "#e56464",
+        "#35cacf",
+        "#ededed",
+    ],
+    "files.autoSave": "off"
 }
