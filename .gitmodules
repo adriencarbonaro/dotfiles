@@ -43,3 +43,6 @@
 [submodule "st"]
 	path = st
 	url = https://git.suckless.org/st
+[submodule "ohmyzsh/custom/plugins/zsh-autosuggestions"]
+	path = ohmyzsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
