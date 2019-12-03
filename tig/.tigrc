@@ -1,1 +1,6 @@
-set main-view	= line-number:no,interval=5 id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
+set main-view = line-number:no,interval=5 date:no id:yes author:full commit-title:yes,graph,refs,overflow=no
+
+color id             blue default
+color main-head      red default
+color main-ref       green default
+color main-remote    magenta default
