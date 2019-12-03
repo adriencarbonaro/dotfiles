@@ -174,7 +174,10 @@ export CUSTOM_ICONS="$DOTFILES/icons"
 export PATH="$PATH:$HOME/bin:/home/linuxbrew/.linuxbrew/bin"
 export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"
 export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
-export LESS="-RX"
+export LESS="-RFX"
+
+# OROSOUND
+export PATH="$PATH:$HOME/OROSOUND/bin"
 
 #if [ -x "$(command -v neofetch)" ]
 #then
