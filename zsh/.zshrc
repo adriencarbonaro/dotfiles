@@ -81,6 +81,7 @@ export ZSH="$TOP_DIR/.oh-my-zsh"
 plugins=(
   git
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
