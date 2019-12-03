@@ -10,7 +10,7 @@ Foreground : #C5C6C8
 ```
 
 ```
-Black   : #3B4048
+Black   : #4B5058
 Red     : #E56464
 Green   : #98C379
 Yellow  : #F5D07B
