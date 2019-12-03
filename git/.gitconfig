@@ -23,8 +23,8 @@
     nobranch  = red
     unmerged  = red
     untracked = red
-    added     = green bold
-    changed   = red bold
+    added     = green
+    changed   = red
 [color "diff"]
     meta       = black bold
     frag       = cyan bold
@@ -32,20 +32,14 @@
     old        = red
     new        = green
     commit     = blue
-    whitespace = red
+    whitespace = blue reverse
     context    = normal
-[color "branch"]
-    current  = magenta
-    local    = magenta
-    remote   = cyan
-    upstream = cyan
-    plain    = normal
 [color "decorate"]
     branch = green
     remoteBranch = magenta
     tag = yellow
     stash = cyan
-    HEAD = cyan
+    HEAD = red
 [color "interactive"]
     prompt = blue bold
     header = red bold
@@ -60,7 +54,7 @@
     separator = red bold
     linenumber = normal
 [alias]
-    compactLog = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ar)'
-    compactLogAll = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ar)' --all
+    compactLog = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ad)'
+    compactLogAll = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ad)' --all
     fullLog = log --graph --decorate --format=format:'%C(auto)%h%d %n %C(bold black)Author: %an <%ae> %n %C(bold black)Date:   %ad %n%n %s %n%n %b'
     fullLogAll = log --graph --decorate --format=format:'%C(auto)%h%d %n %C(bold black)Author: %an <%ae> %n %C(bold black)Date:   %ad %n%n %s %n%n %b' --all
