@@ -1,0 +1,98 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "oneDarkPro.bold": false,
+    "editor.fontFamily": "Iosevka Term",
+    "editor.fontSize": 17,
+    "editor.fontLigatures": true,
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.cursorSmoothCaretAnimation": true,
+    "terminal.external.linuxExec": "/usr/local/bin/st",
+    "window.zoomLevel": 0,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.env.windows": {
+        "PATH": "/c/Program Files (x86)/CSR/BlueSuite 2.6.2:/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/c/Users/Orosound-ltp9/bin/Python36:/c/ProgramData/chocolatey/bin:/c/Users/Orosound-ltp9/bin/Python36/Scripts:$PATH",
+    },
+    "terminal.integrated.fontFamily": "Iosevka Term",
+    "terminal.integrated.fontSize": 17,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "window.titleBarStyle": "custom",
+    "bracketPairColorizer.showBracketsInGutter": true,
+    "bracketPairColorizer.showHorizontalScopeLine": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "comment.block",
+                    "comment.block.documentation",
+                    "comment.line",
+                    "punctuation.definition.comment",
+                    "comment.line.double-slash",
+                    "variable.parameter"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.function.python"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.activeBorder": "#98c379",
+        "activityBar.foreground": "#98c379",
+        "activityBar.inactiveForeground": "#6e7179",
+        "terminal.ansiBlack": "#3b4048",
+        "terminal.ansiBrightBlack": "#3b4048",
+        "terminal.ansiRed": "#e56464",
+        "terminal.ansiBrightRed": "#e56464",
+        "terminal.ansiGreen": "#98c379",
+        "terminal.ansiBrightGreen": "#98c379",
+        "terminal.ansiYellow": "#f5d07b",
+        "terminal.ansiBrightYellow": "#f5d07b",
+        "terminal.ansiBlue": "#61afef",
+        "terminal.ansiBrightBlue": "#61afef",
+        "terminal.ansiMagenta": "#c678dd",
+        "terminal.ansiBrightMagenta": "#c678cd",
+        "terminal.ansiCyan": "#35cacf",
+        "terminal.ansiBrightCyan": "#35cacf",
+        "terminal.ansiWhite": "#ededed",
+        "terminal.ansiBrightWhite": "#ededed",
+
+    },
+    "editor.renderWhitespace": "all",
+    "C_Cpp.dimInactiveRegions": false,
+    "git-graph.graphColours": [
+        "#61afef",
+        "#c678dd",
+        "#98c379",
+        "#f5d07b",
+        "#e56464",
+        "#35cacf",
+        "#ededed",
+    ],
+    "files.autoSave": "off",
+    "git-graph.commitDetailsViewLocation": "Docked to Bottom",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": false,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["u"],
+            "after": [],
+            "commands": [{"command": "undo"}]
+        },
+        {
+            "before": ["<C-r>"],
+            "after": [],
+            "commands": [{"command": "redo"}]
+        }
+    ],
+    "editor.renderControlCharacters": true
+}
