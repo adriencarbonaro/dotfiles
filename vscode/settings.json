@@ -25,20 +25,13 @@
                     "comment.line",
                     "punctuation.definition.comment",
                     "comment.line.double-slash",
-                    "variable.parameter"
-                ],
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": [
+                    "variable.parameter",
                     "entity.name.function.python"
                 ],
                 "settings": {
                     "fontStyle": ""
                 }
-            }
+            },
         ]
     },
     "workbench.colorCustomizations": {
