@@ -2,7 +2,7 @@
 
 ## Color Reference
 
-![color_reference](myonedark.png)
+![color_reference](onedark_w.png)
 
 ```
 Background : #282C34
