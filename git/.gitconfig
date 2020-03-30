@@ -8,6 +8,10 @@
 # Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
 #------------------------------------------------------------
 
+[core]
+	autocrlf = true
+[tag]
+    sort = version:refname
 [color]
     pager       = true
     ui          = auto
