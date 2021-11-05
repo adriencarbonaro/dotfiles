@@ -16,12 +16,15 @@ alias dd="dd status=progress"
 alias chown="chown -v"
 alias chmod="chmod -v"
 alias mount="mount -v"
-alias cl="clear && l"
-alias cls="clear"
+alias cl="clear"
+alias cls="clear && l"
+alias celar="clear"
 alias qq="exit"
 # Git aliases ------------------------------------------------------------------
 alias gits='git status'
 alias gg='git status'
+alias gca='git commit --amend'
+alias gcan='git commit --amend --not-edit'
 alias gl='git compactLog'
 alias gll='git fullLog'
 alias gla='git compactLogAll'
