@@ -9,10 +9,12 @@
 #------------------------------------------------------------
 
 [core]
-    autocrlf = true
-    editor   = vim
+    autocrlf    = true
+    editor      = vim
+[merge]
+    ff          = false
 [tag]
-    sort = version:refname
+    sort        = version:refname
 [color]
     pager       = true
     ui          = auto
