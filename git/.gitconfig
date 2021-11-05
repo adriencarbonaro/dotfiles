@@ -9,7 +9,8 @@
 #------------------------------------------------------------
 
 [core]
-	autocrlf = true
+    autocrlf = true
+    editor   = vim
 [tag]
     sort = version:refname
 [color]
