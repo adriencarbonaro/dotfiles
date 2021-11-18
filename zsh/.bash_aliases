@@ -20,6 +20,8 @@ alias cl="clear"
 alias cls="clear && l"
 alias celar="clear"
 alias qq="exit"
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 # Git aliases ------------------------------------------------------------------
 alias gits='git status'
 alias gg='git status'
