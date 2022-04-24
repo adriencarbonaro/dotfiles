@@ -10,13 +10,13 @@ Foreground : #C5C6C8
 ```
 
 ```
-Black   : #4B5058
-Red     : #E56464
+Black   : #5c6169
+Red     : #e56464
 Green   : #98C379
-Yellow  : #F5D07B
-Blue    : #61AFEF
-Magenta : #C678DD
-Cyan    : #35CACF
-White   : #EDEDED
+Yellow  : #f5d07b
+Blue    : #61afef
+Magenta : #c678dd
+Cyan    : #fcb495
+White   : #ededed
 ```
 
