@@ -1,0 +1,25 @@
+
+# Programs
+
+curl
+fd (fd-find)
+feh
+git
+gpick
+i3-lock
+imagemagick
+net-tools (ifconfig, arp, etc.)
+nvim (neovim)
+oh-my-zsh
+oh-my-posh
+rg (ripgrep)
+rofi
+scrot
+zsh
+
+# Fonts
+
+Abel # for i3-lock
+Anka Coder # dunst notifications
+Caskaydia Cove Nerd Font
+JetBrainsMono Nerd Font
