@@ -27,7 +27,7 @@ if [ -f sp ]; then
 fi
 
 # Turn on i3lock program with the screenshot as background
-$HOME/i3lock-color/x86_64-pc-linux-gnu/i3lock \
+i3lock-color \
 -i /tmp/screen.png    \
 --insidever-color=$C   \
 --ringver-color=$D     \

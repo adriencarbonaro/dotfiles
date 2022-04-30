@@ -44,7 +44,7 @@ mylock() {
 
     date_now=$(date +'%d %b')
 
-    i3lock -n --force-clock -i $cachepath/wallpaper_blur.png \
+    i3lock-color -n --force-clock -i $cachepath/wallpaper_blur.png \
     --ind-pos="w/2:h/2+70" --time-pos="w/2:h/2-100" --date-pos="w/2:h/2-30" --greeter-pos="w/2:h/2" \
     --insidever-color=$V \
     --insidewrong-color=$W \
