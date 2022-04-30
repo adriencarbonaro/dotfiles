@@ -22,7 +22,9 @@ scrot /tmp/screen.png
 convert -scale 10% -scale 1000% /tmp/screen.png /tmp/screen.png
 
 # Pause Spotify
-sp pause
+if [ -f sp ]; then
+  sp pause
+fi
 
 # Turn on i3lock program with the screenshot as background
 $HOME/i3lock-color/x86_64-pc-linux-gnu/i3lock \

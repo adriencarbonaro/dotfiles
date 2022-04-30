@@ -38,7 +38,9 @@ genbg() {
 
 mylock() {
     # Pause Spotify
-    sp pause
+    if [ -f sp ]; then
+      sp pause
+    fi
 
     date_now=$(date +'%d %b')
 
