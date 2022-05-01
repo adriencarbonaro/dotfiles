@@ -1,0 +1,36 @@
+{
+    "background-color": "#202A33",
+    "badge-color": "#FFFFFF",
+    "bold-color": "#FFFFFF",
+    "comment": "",
+    "cursor-background-color": "#000000",
+    "cursor-foreground-color": "#FFFFFF",
+    "foreground-color": "#D3D7CF",
+    "highlight-background-color": "#000000",
+    "highlight-foreground-color": "#FFFFFF",
+    "name": "onedark",
+    "palette": [
+        "#5C6169",
+        "#E56464",
+        "#98C379",
+        "#F5D07B",
+        "#61AFEF",
+        "#C678DD",
+        "#FCB495",
+        "#EDEDED",
+        "#5C6169",
+        "#E56464",
+        "#98C379",
+        "#F5D07B",
+        "#61AFEF",
+        "#C678DD",
+        "#FCB495",
+        "#EDEDED"
+    ],
+    "use-badge-color": false,
+    "use-bold-color": false,
+    "use-cursor-color": false,
+    "use-highlight-color": false,
+    "use-theme-colors": false
+}
+
