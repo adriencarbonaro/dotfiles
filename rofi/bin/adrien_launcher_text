@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+dir="$HOME/.config/rofi/launchers/custom"
+
+theme="theme_adrien.rasi"
+color="color_adrien.rasi"
+
+rofi -no-lazy-grab -show run \
+-modi run,drun,window \
+-theme $dir/"$theme"
+
