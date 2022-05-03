@@ -13,6 +13,7 @@ configuration {
     display-ssh:              "";
     display-drun:             "";
     display-combi:            "";
+    display-filebrowser:      "";
 }
 
 @import "color_adrien.rasi"
