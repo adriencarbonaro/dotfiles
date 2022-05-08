@@ -5,8 +5,9 @@
 ![color_reference](onedark_w.png)
 
 ```
-Background : #282C34
-Foreground : #C5C6C8
+Background-1 : #282C34
+Background-2 : #202a33
+Foreground   : #C5C6C8
 ```
 
 ```
