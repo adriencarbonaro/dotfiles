@@ -258,7 +258,7 @@ exec_always feh --bg-fill $HOME/Images/wallpapers/wall_shapes.jpg
 
 # Start compton compositor (for transparent)
 #exec_always --no-startup-id compton -f -D 2 &
-exec_always --no-startup-id compton --config $HOME/.config/compton.conf &
+exec_always --no-startup-id compton --config $HOME/.config/compton/compton.conf &
 
 exec_always --no-startup-id killall dunst
 exec_always --no-startup-id dunst &
