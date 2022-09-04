@@ -47,7 +47,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec terminator
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -56,6 +56,9 @@ bindsym $mod+Shift+Q kill
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+space exec /home/adrien/bin/launcher
 bindsym $mod+q exec /home/adrien/bin/powermenu
+
+bindsym $mod+Shift+c exec gpick -s
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -122,7 +125,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws0 "0"
+set $ws0 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -158,7 +161,7 @@ bindsym $mod+Shift+ccedilla move container to workspace $ws9
 bindsym $mod+Shift+agrave move container to workspace $ws0
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -219,24 +222,20 @@ bindsym $mod+x exec sl2
 exec_always --no-startup-id xmodmap $HOME/.xmodmap.conf
 
 # Volume control
-bindsym XF86AudioRaiseVolume 	exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 2 +5%
-bindsym XF86AudioLowerVolume 	exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 2 -5%
-bindsym XF86AudioMute          exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 2 toggle
+bindsym XF86AudioRaiseVolume 	exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume 	exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute 1 toggle
 
 # Brightness control
-bindsym XF86MonBrightnessUp     exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown   exec xbacklight -dec 10
-
-# Keyboard backlight control
-bindsym XF86KbdBrightnessUp     exec $HOME/bin/backlight.sh inc
-bindsym XF86KbdBrightnessDown   exec $HOME/bin/backlight.sh dec
+bindsym XF86MonBrightnessUp     exec $HOME/bin/backlight inc
+bindsym XF86MonBrightnessDown   exec $HOME/bin/backlight dec
 
 # Play control
 bindsym XF86AudioPlay 	exec --no-startup-id sp play
 bindsym XF86AudioNext	exec --no-startup-id sp next
 bindsym XF86AudioPrev 	exec --no-startup-id sp prev
 
-bindsym XF86LaunchA     exec --no-startup-id chromium-browser &
+bindsym XF86LaunchA     exec --no-startup-id firefox &
 bindsym XF86LaunchB     exec --no-startup-id rofi -show run
 
 # Hide borders when only one window on screen
@@ -253,8 +252,8 @@ exec_always --no-startup-id xset r rate 250 50
 # Set wallpaper
 #exec_always --no-startup-id feh --bg-fill $HOME/Images/wall_red.png
 # Gradient wallpapers from uigradient.com
-#exec_always feh --bg-fill --randomize $HOME/Images/wallpapers/gradient/*
-exec_always feh --bg-fill $HOME/Images/wallpapers/wall_shapes.jpg
+exec_always feh --bg-fill $HOME/Pictures/Wallpapers/fold.jpg
+#exec_always feh --bg-fill $HOME/Images/wallpapers/wall_shapes.jpg
 
 # Start compton compositor (for transparent)
 #exec_always --no-startup-id compton -f -D 2 &
@@ -266,7 +265,7 @@ exec_always --no-startup-id dunst &
 # Display top bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-set $color #FD9D34
+set $color #8BC8EB
 set $rcolo  #FF0000
 set $bg     #262626
 set $bg_in  #303539
