@@ -9,17 +9,27 @@
 # RETURN        : 0
 #-----------------------------------------------------------
 
-INTENSITY=$(cat /sys/class/leds/smc::kbd_backlight/brightness)
+BACKLIGHT_PATH="/sys/class/backlight/amdgpu_bl0/brightness"
+INTENSITY=$(cat $BACKLIGHT_PATH)
+STEP=20
+MIN=0
+MAX=255
 
 if [ $# != 0 ]
 then
     if [ $1 = "inc" ]
     then
-        INTENSITY=$((INTENSITY+10))
+        INTENSITY=$((INTENSITY+$STEP))
+        if [ $INTENSITY -gt $MAX ]; then
+            INTENSITY=$MAX
+        fi
         echo $INTENSITY
     elif [ $1 = "dec" ]
     then
-        INTENSITY=$((INTENSITY-10))
+        INTENSITY=$((INTENSITY-$STEP))
+        if [ $INTENSITY -lt $MIN ]; then
+            INTENSITY=$MIN
+        fi
         echo $INTENSITY
     else
         INTENSITY=$INTENSITY
@@ -28,4 +38,4 @@ then
 
 fi
 
-echo $INTENSITY > "/sys/class/leds/smc::kbd_backlight/brightness"
+echo $INTENSITY > $BACKLIGHT_PATH
