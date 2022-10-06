@@ -62,3 +62,4 @@
     linenumber = normal
 [alias]
     formatLog = log --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ad)'
+    chekcout = checkout
