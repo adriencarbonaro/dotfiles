@@ -43,8 +43,7 @@ alias glc='git compactLog -10'
 alias gb='git branch'
 alias grp='git rev-parse HEAD'
 # Program aliases --------------------------------------------------------------
-alias fsizeall="du * .* -bhs | sort -h"
-alias fsize="du * -bhs | sort -h"
+alias fsize="du -bhd1 | sort -h"
 alias openn="mimeopen"
 alias trash="gvfs-trash"
 alias weather="curl wttr.in/Boulogne"
