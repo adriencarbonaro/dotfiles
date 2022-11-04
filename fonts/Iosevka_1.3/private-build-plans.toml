@@ -1,0 +1,47 @@
+[buildPlans.iosevka-1-3]
+family = "Iosevka 1.3"
+spacing = "term"
+serifs = "sans"
+no-cv-ss = true
+export-glyph-names = false
+
+[buildPlans.iosevka-1-3.variants.design]
+capital-a = "curly-serifless"
+capital-b = "standard-serifless"
+capital-g = "toothless-rounded-serifless-hooked"
+capital-k = "curly-serifless"
+capital-m = "hanging"
+capital-r = "curly"
+capital-v = "curly"
+capital-w = "curly"
+capital-x = "curly-serifless"
+capital-y = "curly-serifless"
+k = "curly-serifless"
+l = "tailed-serifed"
+v = "curly"
+w = "curly"
+x = "curly-serifless"
+y = "straight-turn"
+three = "flat-top"
+four = "open"
+six = "closed-contour"
+seven = "bend-serifless"
+eight = "two-circles"
+nine = "closed-contour"
+asterisk = "penta-low"
+underscore = "above-baseline"
+caret = "low"
+paren = "large-contour"
+brace = "curly"
+number-sign = "upright"
+ampersand = "closed"
+at = "threefold"
+dollar = "through"
+percent = "rings-continuous-slash"
+bar = "natural-slope"
+lig-ltgteq = "slanted"
+
+[buildPlans.iosevka-1-3.widths.normal]
+shape = 600
+menu = 5
+css = "normal"
