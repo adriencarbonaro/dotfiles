@@ -1,65 +1,73 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 1,
+  "final_space": true,
+  "palette": {
+    "black": "#202a33",
+    "white": "#ffffff",
+    "yellow": "#f5d07b",
+    "blue": "#61afef",
+    "magenta": "#c678dd"
+  },
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
-          "background": "#F5D07B",
-          "foreground": "#202A33",
-          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "type": "session",
+          "background": "p:yellow",
+          "foreground": "p:black",
           "properties": {
             "template": " {{ .UserName }}@{{ .HostName }} "
           },
-          "style": "diamond",
-          "trailing_diamond": "\ue0b0",
-          "type": "session"
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b0"
         },
         {
-          "background": "#61AFEF",
-          "foreground": "#202A33",
-		  "leading_diamond": "<transparent,#61AFEF>\ue0b0</>",
+          "style": "diamond",
+          "type": "path",
+          "background": "p:blue",
+          "foreground": "p:black",
           "properties": {
             "style": "full",
             "template": " {{ .Path }} "
           },
-		  "trailing_diamond": "\ue0b0",
-          "style": "diamond",
-          "type": "path"
+          "leading_diamond": "<p:black,p:blue>\ue0b0</>",
+          "trailing_diamond": "\ue0b0"
         },
         {
-          "background": "#c678dd",
-          "foreground": "#202A33",
-		  "leading_diamond": "<transparent,#c678dd>\ue0b0</>",
+          "style": "diamond",
+          "type": "git",
+          "background": "p:magenta",
+          "foreground": "p:black",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
             "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf00d {{ end }}"
           },
-          "style": "diamond",
-		  "trailing_diamond": "\ue0b4",
-          "type": "git"
+          "leading_diamond": "<p:black,p:magenta>\ue0b0</>",
+          "trailing_diamond": "\ue0b4"
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
       "newline": true,
       "segments": [
         {
-          "foreground": "#ffffff",
+          "style": "plain",
+          "type": "text",
+          "foreground": "p:white",
           "properties": {
             "template": "\uf460 "
-          },
-          "style": "plain",
-          "type": "text"
+          }
         }
-      ],
-      "type": "prompt"
+      ]
     }
-  ],
-  "final_space": true,
-  "version": 1
+  ]
 }
