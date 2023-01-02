@@ -1,0 +1,50 @@
+# Path
+export PATH="$PATH:$HOME/bin:/home/linuxbrew/.linuxbrew/bin"
+
+# Dotfiles
+export ZSHRC="$HOME/.zshrc"
+export VIMRC="$HOME/.vimrc"
+export NVIMRC="$HOME/.nvimrc"
+export RGRC="$HOME/.ripgreprc"
+export TIGRC="$HOME/.tigrc"
+export ALIASES="$HOME/.bash_aliases"
+
+# Configs dirs
+export RC="$HOME/.config"
+export I3="$RC/i3"
+export POLYBAR="$RC/polybar"
+export ROFI="$RC/rofi"
+export COMPTON="$RC/compton"
+export DUNST="$RC/dunst"
+export VIM_COLOR="$HOME/.vim/colors/carbo.vim"
+export ZSH_COLOR="$HOME/.oh-my-zsh/custom/theme/carbo.zsh-theme"
+
+# Configs files
+export I3RC="$I3/config"
+export POLYBARRC="$POLYBAR/config"
+export ROFIRC="$ROFI/config"
+export ROFI_COLOR="$ROFI/carbo.rasi"
+export COMPTONRC="$COMPTON/compton.conf"
+export DUNSTRC="$DUNST/dunstrc"
+
+# Envs
+export LS_COLORS="$LS_COLORS:di=34:ln=36"
+export EXA_COLORS="ln=36:ex=32:di=34:*.zip=31:*.gz=31:*.md=33:*.png=35:*.jpg=35:33:ga=37:gm=33:gd=33:gv=33:gt=33:uu=36:sb=33:sn=33:uw=36:gw=36:tw:36:ue=32:ux=32:gx=32:tx=32:ur=34:gr=34:tr=34:da=35"
+export TODO="$HOME/TODO"
+export FZF_DEFAULT_COMMAND='find .'
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color=fg:#AAAAAA,bg:-1,fg+:#FFFFFF,pointer:#C678DD,prompt:#61AFEF,header:#61AFEF,hl:#C678DD,hl+:#FFFFFF"
+export TMP="$HOME/tmp"
+
+export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"
+export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
+export LESS="-RFX"
+
+# OROSOUND
+export PATH="$PATH:$HOME/OROSOUND/bin"
+
+# Profile
+export PROFILE="$HOME/.userprofile"
+
+# Wallpapers
+export WALLS="$HOME/Pictures/wallpapers"
+

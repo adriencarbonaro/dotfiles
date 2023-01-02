@@ -30,6 +30,7 @@ hi Folded ctermfg=103 ctermbg=237
 hi Title ctermfg=230 cterm=bold
 hi VertSplit ctermfg=236 ctermbg=66 
 hi LineNr ctermfg=241
+hi CursorLineNr cterm=bold ctermfg=241
 hi SpecialKey ctermfg=241 ctermbg=235 cterm=none
 hi WarningMsg ctermfg=203
 hi Directory ctermfg=75 cterm=bold
