@@ -1,5 +1,5 @@
 configuration {
-    font:                     "Iosevka Nerd Font 12";
+    font:                     "Iosevka 1.3 12";
     fixed-num-lines:          true;
     show-icons:               false;
     sidebar-mode:             true;
@@ -7,16 +7,28 @@ configuration {
     window-format:            "[{w}] ··· {c} ···   {t}";
     click-to-exit:            true;
     combi-hide-mode-prefix:   false;
-    display-window:           "";
-    display-windowcd:         "";
-    display-run:              "";
-    display-ssh:              "";
-    display-drun:             "";
-    display-combi:            "";
-    display-filebrowser:      "";
+    display-window:           " ";
+    display-windowcd:         " ";
+    display-run:              " ";
+    display-ssh:              " ";
+    display-drun:             " ";
+    display-combi:            " ";
+    display-filebrowser:      " ";
 }
 
-@import "color_adrien.rasi"
+* {
+  al:      #00000000;
+  bg:      #57678CFF;
+  se:      #5E6C91ff;
+  fg:      #FFFCFFff;
+  ac:      #FF83A7ff;
+  red:     #EC7875ff;
+  green:   #61C766ff;
+  yellow:  #FDD835ff;
+  blue:    #42A5F5ff;
+  purple:  #BA68C8ff;
+  cyan:    #4DD0E1ff;
+}
 
 * {
     background-color:         @bg;

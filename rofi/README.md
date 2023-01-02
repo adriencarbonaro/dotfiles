@@ -2,7 +2,7 @@
 
 ## Configuration
 
-launcher script (`bin/adrien_launcher_text`) uses a style (`launchers/text/adrien.rasi`) and a colorset (`launchers/text/styles/adrien:q
+launcher script (`bin/adrien_launcher_text`) uses a style (`launchers/text/adrien.rasi`) and a colorset (`launchers/text/styles/adrien`)
 
 ## Remove cache (last commands)
 
