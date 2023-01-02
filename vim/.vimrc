@@ -20,6 +20,20 @@ set hlsearch
 colorscheme carbo
 "colorscheme dracula_perso
 
+" PLUGIN OPTION ----------------------------------
+" Disable specific syntax highlighting (Plugin 'sheerun/vim-polyglot')
+let g:polyglot_disabled = ['markdown']
+
+" Marker style (Plugin 'Yggdroot/indentLine')
+let g:indentLine_char = '|'
+
+" Enable doxygen for C, C++
+let g:load_doxygen_syntax=1
+
+" Get functions for fzf.vim plugin + devicons
+so $HOME/.vim/plugin/fzf_devicon.vim
+
+" PLUGIN LOADING ---------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'      "  Vim Package manager
@@ -45,19 +59,6 @@ set rtp+=~/dotfiles/fzf/fzf
 set directory^=$HOME/.vim/tmp//
 
 filetype indent plugin on
-
-" PLUGIN OPTION ----------------------------------
-" Disable specific syntax highlighting (Plugin 'sheerun/vim-polyglot')
-let g:polyglot_disabled = ['markdown']
-
-" Marker style (Plugin 'Yggdroot/indentLine')
-let g:indentLine_char = '|'
-
-" Enable doxygen for C, C++
-let g:load_doxygen_syntax=1
-
-" Get functions for fzf.vim plugin + devicons
-so $HOME/.vim/plugin/fzf_devicon.vim
 
 " STATUS BAR -------------------------------------
 
