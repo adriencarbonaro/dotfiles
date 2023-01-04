@@ -17,26 +17,46 @@ configuration {
 }
 
 * {
-  al:      #00000000;
-  bg:      #57678CFF;
-  se:      #5E6C91ff;
-  fg:      #FFFCFFff;
-  ac:      #FF83A7ff;
-  red:     #EC7875ff;
-  green:   #61C766ff;
-  yellow:  #FDD835ff;
-  blue:    #42A5F5ff;
-  purple:  #BA68C8ff;
-  cyan:    #4DD0E1ff;
+  // colors (RGBA)
+  dark                       : #202a33FF;
+  dark-alt                   : #303a43ff;
+  grey                       : #cdcdcdff;
+  red                        : #e56464ff;
+  green                      : #98c379ff;
+  blue                       : #61afefff;
+  yellow                     : #f5d07bff;
+  magenta                    : #c678ddff;
+  cyan                       : #4dd0e1ff;
+  white                      : #ffffffff;
+
+  // elements
+  background                 : @dark;
+  border                     : @dark-alt;
+  prompt                     : @green;
+
+  elem-text                  : @grey;
+  elem-back                  : @background;
+  elem-alt-text              : @blue;
+  elem-alt-back              : @background;
+  elem-selected-text         : @dark-alt;
+  elem-selected-back         : @blue;
+
+  btn-text                   : @white;
+  btn-back                   : @background;
+  btn-border                 : @magenta;
+
+  btn-sel-text               : @white;
+  btn-sel-back               : @magenta;
+  btn-sel-border             : @magenta;
 }
 
 * {
-    background-color:         @bg;
+    background-color:         @background;
 }
 
 window {
-    border:                   0px;
-    border-color:             @ac;
+    border:                   5px;
+    border-color:             @border;
     border-radius:            6px;
     padding:                  30;
     width:                    20%;
@@ -45,7 +65,7 @@ window {
 prompt {
     spacing:                  0;
     border:                   0;
-    text-color:               @fg;
+    text-color:               @green;
 }
 
 textbox-prompt-colon {
@@ -57,24 +77,23 @@ textbox-prompt-colon {
 
 entry {
     spacing:                  0;
-    text-color:               @fg;
+    text-color:               @elem-text;
 }
 
 case-indicator {
     spacing:                  0;
-    text-color:               @fg;
+    text-color:               @elem-text;
 }
 
 inputbar {
     spacing:                  0px;
-    text-color:               @fg;
+    text-color:               @elem-text;
     padding:                  1px;
     children:                 [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 
 mainbox {
     border:                   0px;
-    border-color:             @ac;
     padding:                  6;
 }
 
@@ -83,7 +102,7 @@ listview {
     columns:                  1;
     fixed-height:             0;
     border:                   0px;
-    border-color:             @ac;
+//    border-color:             @ac;
     spacing:                  4px;
     scrollbar:                false;
     padding:                  5px 5px 0px 5px;
@@ -100,82 +119,82 @@ element {
     padding:                  5px;
 }
 element normal.normal {
-    background-color:         @bg;
-    text-color:               @fg;
+    background-color:         @background;
+    text-color:               @elem-text;
 }
 element normal.urgent {
-    background-color:         @bg;
-    text-color:               @red;
+    background-color:         @background;
+    text-color:               @elem-text;
 }
 element normal.active {
-    background-color:         @green;
-    text-color:               @bg;
+    background-color:         @background;
+    text-color:               @elem-text;
 }
 element selected.normal {
-    background-color:         @fg;
-    text-color:               @bg;
+    background-color:         @elem-selected-back;
+    text-color:               @elem-selected-text;
 }
 element selected.urgent {
-    background-color:         @bg;
+    background-color:         @background;
     text-color:               @red;
 }
 element selected.active {
-    background-color:         @fg;
-    text-color:               @bg;
+    background-color:         @elem-text;
+    text-color:               @background;
 }
 element alternate.normal {
-    background-color:         @bg;
-    text-color:               @fg;
+    background-color:         @background;
+    text-color:               @blue;
 }
 element alternate.urgent {
-    background-color:         @bg;
-    text-color:               @fg;
+    background-color:         @background;
+    text-color:               @elem-text;
 }
 element alternate.active {
-    background-color:         @bg;
-    text-color:               @fg;
+    background-color:         @background;
+    text-color:               @elem-text;
 }
 
 sidebar {
     border:                   0px;
-    border-color:             @ac;
+//    border-color:             @ac;
     border-radius:            0px;
 }
 
 button {
     horizontal-align:         0.5;
     vertical-align:           0.5;
-    background-color:         @fg;
+    background-color:         @btn-back;
     margin:                   5px;
     padding:                  5px;
-    text-color:               @bg;
-    border:                   0px;
+    text-color:               @btn-text;
+    border:                   2px;
     border-radius:            4px;
-    border-color:             @fg;
+    border-color:             @btn-border;
 }
 
 button selected {
-    background-color:         @ac;
-    text-color:               @fg;
-    border:                   0px;
+    background-color:         @btn-sel-back;
+    text-color:               @btn-sel-text;
+    border:                   2px;
     border-radius:            4px;
-    border-color:             @fg;
+    border-color:             @btn-sel-border;
 }
 
 scrollbar {
     width:                    4px;
     border:                   0px;
-    handle-color:             @fg;
+    handle-color:             @elem-text;
     handle-width:             8px;
     padding:                  0;
 }
 
 message {
     border:                   0px;
-    border-color:             @ac;
+//    border-color:             @ac;
     padding:                  1px;
 }
 
 textbox {
-    text-color:               @fg;
+    text-color:               @elem-text;
 }
