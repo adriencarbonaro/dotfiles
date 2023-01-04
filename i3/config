@@ -268,6 +268,8 @@ exec_always --no-startup-id dunst &
 # Display top bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec_always --no-startup-id xscreensaver -no-splash &
+
 set $color #8BC8EB
 set $rcolo  #FF0000
 set $bg     #262626
