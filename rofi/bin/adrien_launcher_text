@@ -3,9 +3,8 @@
 dir="$HOME/.config/rofi/launchers/custom"
 
 theme="theme_adrien.rasi"
-color="color_adrien.rasi"
 
-rofi -no-lazy-grab -show run \
--modi run,drun,window \
+rofi -matching fuzzy -no-lazy-grab -show run \
+-modi run,drun,filebrowser \
 -theme $dir/"$theme"
 

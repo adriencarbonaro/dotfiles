@@ -1,53 +1,64 @@
 configuration {
-    font:                     "Iosevka 1.3 12";
-    fixed-num-lines:          true;
-    show-icons:               false;
-    sidebar-mode:             true;
-    scroll-method:            0;
-    window-format:            "[{w}] ··· {c} ···   {t}";
-    click-to-exit:            true;
-    combi-hide-mode-prefix:   false;
-    display-window:           " ";
-    display-windowcd:         " ";
-    display-run:              " ";
-    display-ssh:              " ";
-    display-drun:             " ";
-    display-combi:            " ";
-    display-filebrowser:      " ";
+  font:                       "Iosevka 1.3 12";
+  fixed-num-lines:            true;
+  show-icons:                 true;
+  sidebar-mode:               true;
+  scroll-method:              0;
+  window-format:              "[{w}] ··· {c} ···   {t}";
+  click-to-exit:              true;
+  combi-hide-mode-prefix:     false;
+  display-window:             " ";
+  display-windowcd:           " ";
+  display-run:                " ";
+  display-ssh:                " ";
+  display-drun:               " ";
+  display-combi:              " ";
+  display-filebrowser:        " ";
+
+  run,drun {
+    fallback-icon:            "application-x-addon";
+  }
+
+  // File browser
+  filebrowser {
+    directory:                "/home/adrien";
+    directories-first:        true;
+    sorting-method:           "name";
+  }
 }
 
 * {
   // colors (RGBA)
-  dark                       : #202a33FF;
-  dark-alt                   : #303a43ff;
-  grey                       : #cdcdcdff;
-  red                        : #e56464ff;
-  green                      : #98c379ff;
-  blue                       : #61afefff;
-  yellow                     : #f5d07bff;
-  magenta                    : #c678ddff;
-  cyan                       : #4dd0e1ff;
-  white                      : #ffffffff;
+  dark                        : #202a33FF;
+  dark-alt                    : #303a43ff;
+  grey                        : #cdcdcdff;
+  red                         : #e56464ff;
+  green                       : #98c379ff;
+  blue                        : #61afefff;
+  yellow                      : #f5d07bff;
+  magenta                     : #c678ddff;
+  cyan                        : #4dd0e1ff;
+  white                       : #ffffffff;
 
   // elements
-  background                 : @dark;
-  border                     : @dark-alt;
-  prompt                     : @green;
+  background                  : @dark;
+  border                      : @dark-alt;
+  prompt                      : @green;
 
-  elem-text                  : @grey;
-  elem-back                  : @background;
-  elem-alt-text              : @blue;
-  elem-alt-back              : @background;
-  elem-selected-text         : @dark-alt;
-  elem-selected-back         : @blue;
+  elem-text                   : @grey;
+  elem-back                   : @background;
+  elem-alt-text               : @blue;
+  elem-alt-back               : @background;
+  elem-selected-text          : @dark-alt;
+  elem-selected-back          : @blue;
 
-  btn-text                   : @white;
-  btn-back                   : @background;
-  btn-border                 : @magenta;
+  btn-text                    : @white;
+  btn-back                    : @background;
+  btn-border                  : @magenta;
 
-  btn-sel-text               : @white;
-  btn-sel-back               : @magenta;
-  btn-sel-border             : @magenta;
+  btn-sel-text                : @white;
+  btn-sel-back                : @magenta;
+  btn-sel-border              : @magenta;
 }
 
 * {
