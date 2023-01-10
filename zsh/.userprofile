@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Path
 export PATH="$PATH:$HOME/bin:/home/linuxbrew/.linuxbrew/bin"
 
@@ -9,7 +11,7 @@ export NVIMRC="$HOME/.nvimrc"
 export RGRC="$HOME/.ripgreprc"
 export RIPGREP_CONFIG_PATH="$RGRC"
 export TIGRC="$HOME/.tigrc"
-export ALIASES="$HOME/.bash_aliases"
+export ALIASES="$HOME/.user_aliases"
 
 # Configs dirs
 export RC="$HOME/.config"
@@ -33,8 +35,8 @@ export DUNSTRC="$DUNST/dunstrc"
 export LS_COLORS="$LS_COLORS:di=34:ln=36"
 export EXA_COLORS="ln=36:ex=32:di=34:*.zip=31:*.gz=31:*.md=33:*.png=35:*.jpg=35:33:ga=37:gm=33:gd=33:gv=33:gt=33:uu=36:sb=33:sn=33:uw=36:gw=36:tw:36:ue=32:ux=32:gx=32:tx=32:ur=34:gr=34:tr=34:da=35"
 export TODO="$HOME/TODO"
-export FZF_DEFAULT_COMMAND='find .'
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color=fg:#cacaca,bg:-1,fg+:#cdcdcd,pointer:#c678dd,prompt:#61afef,header:#61afef,hl:#f5d07b,hl+:#f5d07b"
+export FZF_DEFAULT_COMMAND='fd -uu'
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color=fg:#cacaca,bg:-1,bg+:-1,fg+:#cdcdcd,pointer:#C678DD,prompt:#61AFEF,header:#61AFEF,hl:#f5d07b,hl+:#f5d07b,info:#98c379"
 export TMP="$HOME/tmp"
 
 export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"

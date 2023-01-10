@@ -84,8 +84,6 @@ plugins=(
   zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 ## zsh-syntax-highlighting style 
@@ -128,14 +126,6 @@ ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=magenta
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $TOP_DIR/.bash_aliases
-
-# -- EXA ----------
-if [ -x "$(command -v exa)" ]
-then
-    source $TOP_DIR/.aliases_exa
-fi
-
 # -- FZF ----------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -143,46 +133,21 @@ export SHELL=/bin/zsh
 export VISUAL=vi
 export EDITOR="$VISUAL"
 
-# dotfiles paths
-export ZSHRC="$HOME/.zshrc"
-export VIMRC="$HOME/.vimrc"
-export NVIMRC="$HOME/.nvimrc"
-export ST_CONFIG="$HOME/st/config.h"
-export ACKRC="$HOME/.ackrc"
-export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-export TIGRC="$HOME/.tigrc"
-export ALIASES="$HOME/.bash_aliases"
-export VIM_COLOR="$HOME/.vim/colors/carbo.vim"
-export ZSH_COLOR="$HOME/.oh-my-zsh/custom/theme/carbo.zsh-theme"
-export I3_CONFIG="$HOME/.config/i3/config"
-export POLYBAR_CONFIG="$HOME/.config/polybar/config"
-export ROFI_CONFIG="$HOME/.config/rofi/config"
-export ROFI_COLOR="$HOME/.config/rofi/carbo.rasi"
-export COMPTON_CONFIG="$HOME/.config/compton.conf"
-export DUNST_CONFIG="$HOME/.config/dunst/dunstrc"
-export DOTFILES="$HOME/dotfiles"
-export LS_COLORS="$LS_COLORS:di=34:ln=36"
-export EXA_COLORS="ln=36:ex=32:di=34:*.zip=31:*.gz=31:*.md=33:*.png=35:*.jpg=35:33:ga=37:gm=33:gd=33:gv=33:gt=33:uu=36:sb=33:sn=33:uw=36:gw=36:tw:36:ue=32:ux=32:gx=32:tx=32:ur=34:gr=34:tr=34:da=35"
-export TODO="$HOME/TODO"
-export FZF_DEFAULT_COMMAND='find .'
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color=fg:#AAAAAA,bg:-1,fg+:#FFFFFF,pointer:#C678DD,prompt:#61AFEF,header:#61AFEF,hl:#C678DD,hl+:#FFFFFF"
-export TMP="$HOME/tmp"
-
-# Icons
-export ORANCHELO_ICONS="$DOTFILES/gtk/icons/oranchelo-icon-theme/Oranchelo/apps/scalable"
-export CUSTOM_ICONS="$DOTFILES/icons"
-
-export PATH="$PATH:$HOME/bin:/home/linuxbrew/.linuxbrew/bin"
-export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"
-export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
-export LESS="-RFX"
-
-# OROSOUND
-export PATH="$PATH:$HOME/OROSOUND/bin"
-
 #if [ -x "$(command -v neofetch)" ]
 #then
     #neofetch --color_blocks off
     #colorpanes
 #fi
+
+# oh-my-posh -------------------------------------------------------------------
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/themes/adrien.omp.json)"
+
+# Load userprofile -------------------------------------------------------------
+source $HOME/.userprofile
+
+# Load oh-my-zsh scripts -------------------------------------------------------
+source $ZSH/oh-my-zsh.sh
+
+# Load user aliases ------------------------------------------------------------
+source $TOP_DIR/.user_aliases
 
