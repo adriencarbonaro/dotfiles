@@ -40,7 +40,6 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color=fg:#cacaca,bg:-1
 export TMP="$HOME/tmp"
 
 export PYTHONPATH="$PYTHONPATH:$HOME/lib/python"
-export SOCCER_CLI_API_TOKEN=5eb8bc4a2eaa4fd9bc7cfb7db78d621a
 export LESS="-RFX"
 
 # OROSOUND
