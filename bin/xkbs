@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+#-------------------------------------------------------------------------------
+# NAME        : xkbs
+# AUTHOR      : Adrien CARBONARO
+# DESCRIPTION : Increment keyboard layouts.
+#               Used by polybar.
+#-------------------------------------------------------------------------------
+# Copy this file in executable path.
+#-------------------------------------------------------------------------------
+
+import os
+
+XKB_FILE = "/tmp/xkb_current"
+
+# Layouts supported
+docs = [
+    { "layout": "us", "variant": ""     },
+    { "layout": "us", "variant": "intl" },
+    { "layout": "fr", "variant": ""     },
+]
+
+# Get current layout
+try:
+    current_xkb = open(XKB_FILE, "r")
+    content     = current_xkb.read().splitlines()[0].split(";")
+    current_xkb.close()
+    current_layout  = content[0]
+    current_variant = content[1]
+except:
+    # If file does not exist, use first value in docs
+    current_layout  = docs[0]["layout"]
+    current_variant = docs[0]["variant"]
+
+for idx, doc in enumerate(docs):
+    # Find current layout in docs
+    if (current_layout == doc["layout"]) and (current_variant == doc["variant"]):
+        # Compute new layout (increment)
+        new_doc     = docs[(idx + 1) % len(docs)]
+        new_layout  = new_doc["layout"]
+        new_variant = new_doc["variant"]
+
+        # Write new layout in file
+        new_xkb = open(XKB_FILE, "w")
+        new_xkb.write(new_layout + ";" + new_variant)
+        new_xkb.close()
+
+        # Load new layout
+        os.system("setxkbmap " + new_layout + " " + new_variant)
+
