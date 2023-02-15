@@ -89,7 +89,7 @@ element {
 element-text {
     background-color: 				#00000000;
     text-color:       				inherit;
-	font:							"feather 64";
+	font:							"Iosevka 1.3 64";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
