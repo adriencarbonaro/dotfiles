@@ -13,13 +13,24 @@ reboot=""
 lock=""
 suspend=""
 logout=""
+yes=' Yes'
+no=' No'
 
 # Confirmation
+confirm_cmd() {
+    rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 280px;}' \
+    -theme-str 'mainbox {children: [ "message", "listview" ];}' \
+    -theme-str 'listview {columns: 2; lines: 1;}' \
+    -theme-str 'element-text {font: "Iosevka 1.3 13"; horizontal-align: 0.5;}' \
+	-theme-str 'textbox {horizontal-align: 0.5;}' \
+	-dmenu \
+	-p 'Confirmation' \
+	-mesg 'Are you Sure ?' \
+	-theme ${dir}/${theme}
+}
+
 confirm_exit() {
-	rofi -dmenu\
-		-i\
-		-no-fixed-num-lines\
-		-p "Are You Sure? : "
+	echo -e "$yes\n$no" | confirm_cmd
 }
 
 # Variable passed to rofi
@@ -44,10 +55,10 @@ case $chosen in
         fi
         ;;
     $lock)
-		sl2
+		sl
         ;;
     $suspend)
-		xscreensaver-command -activate
+		lock
 		;;
     $logout)
 		ans=$(confirm_exit &)

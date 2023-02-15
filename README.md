@@ -6,33 +6,35 @@
 
 My dotfiles for a linux distribution configuration.
 
-**WM**: i3
+**WM**: `i3`
 
-**Shell**: zsh with ohmyzsh
+**Shell**: `zsh` (`+ohmyzsh`, `+ohmyposh`)
 
-**Terminal**: urxvt
+**Terminal**: `alacritty`
 
-**Editor**: vim
+**Editor**: `vim` / `vscode`
 
-**File manager**: thunar
+**File manager**: `thunar`
 
-**Bar**: polybar
+**Bar**: `polybar`
 
-**Compositor**: compton
+**Compositor**: `compton`
 
-**Notifications**: dunst
+**Notifications**: `dunst`
 
-**App launcher**: rofi
+**App launcher**: `rofi`
 
-**Searcher**: ripgrep (rg)
+**Searcher**: `ripgrep`
 
-**File finder**: fzf
+**File finder**: `fd`
 
-**File listing**: exa
+**Fuzzy finder**: `fzf`
 
-**Git CLI**: tig
+**File listing**: `exa`
 
-**Font**: Iosevka
+**Git CLI**: `tig`
+
+**Font**: `Iosevka` *(custom)*
 
 ## Screenshots
 
