@@ -1,1 +1,0 @@
-/home/adrien/.config/rofi/bin/adrien_launcher_text
