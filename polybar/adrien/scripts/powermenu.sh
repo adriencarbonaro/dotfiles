@@ -1,0 +1,1 @@
+/home/adrien/bin/powermenu

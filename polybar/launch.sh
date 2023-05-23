@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dir="$HOME/.config/polybar"
-style="grayblocks"
+style="adrien"
 
 launch_bar() {
 	# Terminate already running bar instances
