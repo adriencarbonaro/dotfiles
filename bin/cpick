@@ -1,4 +1,9 @@
 #!/bin/bash
 
-gpick -so --no-newline | xsel --clipboard
+process_pid=$(pgrep gpick)
+if [[ $process_pid ]]; then
+    kill $process_pid
+else
+    gpick -so --no-newline | xsel --clipboard
+fi
 
