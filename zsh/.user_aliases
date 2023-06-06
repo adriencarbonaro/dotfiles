@@ -11,9 +11,6 @@ alias llc='l | lc'
 alias la='ls -A'
 alias l='ls -lh'
 # System commands aliases ------------------------------------------------------
-alias cp="cp -v"
-alias mv="mv -v"
-alias rm="rm -v"
 alias dd="dd status=progress"
 alias chown="chown -v"
 alias chmod="chmod -v"
@@ -47,6 +44,8 @@ alias grp='git rev-parse HEAD'
 alias fsize="du -abhd1 | sort -h"
 alias ff="fzf"
 alias chrome='chromium-browser'
+alias imageinfo='identify'
+alias calc="gnome-calculator"
 
 if [ -x "$(command -v exa)" ]
 then
