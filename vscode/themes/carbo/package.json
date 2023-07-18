@@ -1,0 +1,30 @@
+{
+  "name": "carbo",
+  "displayName": "Carbo",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Carbo Light",
+        "uiTheme": "vs-dark",
+        "path": "./themes/carbo-light-color-theme.json"
+      },
+      {
+        "label": "Carbo Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/carbo-dark-color-theme.json"
+      },
+      {
+        "label": "Carbo",
+        "uiTheme": "vs-dark",
+        "path": "./themes/carbo-color-theme.json"
+      }
+    ]
+  }
+}
