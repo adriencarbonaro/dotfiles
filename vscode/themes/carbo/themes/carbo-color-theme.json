@@ -2,11 +2,11 @@
     "$schema": "vscode://schemas/color-theme",
     "type": "dark",
     "colors": {
-        "activityBar.activeBorder": "#c678dd",
+        "activityBar.activeBorder": "#61afef",
         "activityBar.background": "#303446",
         "activityBar.border": "#3e4452",
-        "activityBar.foreground": "#c678dd",
-        "activityBar.dropBorder": "#c678dd",
+        "activityBar.foreground": "#61afef",
+        "activityBar.dropBorder": "#61afef",
         "activityBarBadge.background": "#d94343",
         "activityBarBadge.foreground": "#f8fafd",
         "badge.background": "#303446",
@@ -146,7 +146,7 @@
         "list.activeSelectionForeground": "#d7dae0",
         "list.focusBackground": "#414559",
         "list.focusForeground": "#f0f0f0",
-        "list.highlightForeground": "#c678dd",
+        "list.highlightForeground": "#61afef",
         "list.hoverBackground": "#414559",
         "list.hoverForeground": "#abb2bf",
         "list.inactiveSelectionBackground": "#414559",
@@ -633,8 +633,7 @@
         "textCodeBlock.background": "#0a0a0a66",
         "textSeparator.foreground": "#ffffff2e",
         "toolbar.activeBackground": "#63666750",
-        "toolbar.hoverBackground": "#5a5d5e50",
-        "welcomeOverlay.background": "#00000085",
+        "toolbar.hoverBackground": "#51576d",
         "welcomePage.progress.background": "#292c3c",
         "welcomePage.progress.foreground": "#61afef",
         "welcomePage.tileBackground": "#303446",
@@ -1125,7 +1124,7 @@
         {
             "scope": "variable",
             "settings": {
-                "foreground": "#E06C75"
+                "foreground": "#E78284"
             }
         },
         {
