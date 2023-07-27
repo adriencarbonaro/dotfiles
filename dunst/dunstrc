@@ -8,7 +8,7 @@
 #------------------------------------------------------------
 
 [global]
-font = Anka/Coder 13
+font = Iosevka 1.3 10
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -158,7 +158,8 @@ separator_color = auto
 startup_notification = false
 
 # dmenu path.
-dmenu = /usr/bin/dmenu -p dunst:
+#dmenu = /usr/bin/dmenu -p dunst:
+dmenu = /usr/local/bin/rofi -dmenu -theme /home/adrien/.config/rofi/adrien/powermenu.rasi
 
 # Browser for opening urls in context menu.
 browser = /usr/bin/firefox -new-tab
