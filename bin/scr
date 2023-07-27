@@ -1,12 +1,61 @@
-#!/bin/sh
+#!/bin/bash
 
-#-----------------------------------------------------------
-# NAME         :  scr
-# AUTHOR       :  Adrien CARBONARO
-# UPDATE       :  07/01/2019
-# DESCRIPTION  :  Screenshot script
-# PARAMETERS   :  none
-#-----------------------------------------------------------
+DEFAULT_PATH=/home/adrien/res/screenshots
 
-scrot '%d-%m-%Y_%H%M_$wx$h.png' -e 'mv $f ~/shots/'
-notify-send "Screenshot" "$(date "+%d-%m-%y %I:%M")" -i /home/adrien/dotfiles/icons/camera.png
+scrshot () {
+    flameshot \
+        $(if [ $interactive -eq 1 ]; then echo "gui"; else echo "screen"; fi) \
+        -d $delay \
+        -p $(if [[ -n $save_path ]]; then echo $save_path; else echo $DEFAULT_PATH; fi) \
+        $(if [ $clip -eq 1 ]; then echo "-c"; fi)
+}
+
+usage () {
+    help=$1
+    echo "Usage: $0 [-d DELAY_MS] [-p PATH] [-c] [-i]"
+    if [ $help -eq 1 ]; then
+        echo "  -d DELAY delay before screenshot"
+        echo "  -p PATH  path to save screenshot"
+        echo "  -c       copy to clipboard"
+        echo "  -i       interactive"
+        echo "  -h       display this help"
+    fi
+    return -1
+}
+
+delay=0
+clip=0
+interactive=0
+help=0
+while getopts "d:p:cih" arg; do
+    case $arg in
+        d)
+            delay=$OPTARG
+            ;;
+        p)
+            save_path=$OPTARG
+            ;;
+        c)
+            clip=1
+            ;;
+        i)
+            interactive=1
+            ;;
+        h)
+            help=1
+            ;;
+        \?) 
+            help=1
+            ;;
+        *)
+            scrshot
+            ;;
+    esac
+done
+
+if [ $help -eq 1 ]; then
+    usage 1
+else
+    scrshot
+fi
+

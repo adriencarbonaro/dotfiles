@@ -1,0 +1,67 @@
+#!/bin/bash
+
+download () {
+    local url=$1
+    local out=$2
+    curl -f paste.c-net.org/$url -o $out
+}
+
+upload () {
+    local file=$1
+    curl -sT $file paste.c-net.org
+    return 0
+}
+
+usage () {
+    echo "Usage: $0 [-u | -d] [-f <file>] [-s <url_string>]"
+    if [ $1 -eq 1 ]; then
+        echo "  -u   upload file"
+        echo "  -d   download file"
+        echo "  -f   FILE file to upload (-u)"
+        echo "            file to write (-d)"
+        echo "  -s   STR  url string to download from (-d)"
+    fi
+    return -1
+}
+
+upload=0
+download=0
+
+while getopts "uds:f:h" arg; do
+  case $arg in
+    u)
+      upload=1
+      ;;
+    d)
+      download=1
+      ;;
+    s)
+      str=$OPTARG
+      ;;
+    f)
+      file=$OPTARG
+      ;;
+    h)
+      usage 1
+      exit 0
+      ;;
+  esac
+done
+
+# Check that upload or download is selected
+if [ $(($upload ^ $download )) == 0 ]; then
+    usage 0
+    exit
+fi
+
+if [[ $upload -eq 1 ]] && [[ -n $file ]]; then
+    upload $file
+elif [[ $download -eq 1 ]] && [[ -n $str ]] && [[ -n $file ]]; then
+    download $str $file
+    if [ ! $? -eq 0 ]; then
+        echo "download failed"
+    fi
+else
+    usage 0
+fi
+

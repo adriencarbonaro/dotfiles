@@ -1,0 +1,44 @@
+#!/bin/bash
+
+hex_stream () {
+    xxd -ps $1 | tr -d '\n'
+}
+
+hex_dump () {
+    xxd -g1 $1
+}
+
+usage () {
+    echo "Usage: $0 [-d] [-s]"
+    echo "  -d   display hex dump (default)"
+    echo "  -s   display hex stream"
+}
+
+stream=0
+dump=1
+while getopts "dsh" arg; do
+    case $arg in
+        d)
+            dump=1
+            ;;
+        s)
+            stream=1
+            ;;
+        h)
+            usage 1
+            exit 0
+            ;;
+        \?)
+            usage 1
+            exit -1
+            ;;
+    esac
+done
+
+shift $((OPTIND-1))
+
+if [ $stream -eq 1 ]; then
+    hex_stream $1
+else
+    hex_dump $1
+fi
