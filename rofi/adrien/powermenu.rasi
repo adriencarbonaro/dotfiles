@@ -10,6 +10,8 @@
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                 false;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
 }
 
 /*****----- Global Properties -----*****/

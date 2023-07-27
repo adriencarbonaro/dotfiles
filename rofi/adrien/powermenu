@@ -17,13 +17,13 @@ yes=''
 no=''
 
 confirm() {
-    echo -e "$yes\n$no" | $rofi_command -me-select-entry "" -me-accept-entry "MousePrimary" -p 'Are you sure ?' -selected-row 1
+    echo -e "$yes\n$no" | $rofi_command -p 'Are you sure ?' -selected-row 1
 }
 
 # Variable passed to rofi
 options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 
-chosen="$(echo -e "$options" | $rofi_command -me-select-entry "" -me-accept-entry "MousePrimary" -p "Uptime: $uptime" -selected-row 2)"
+chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -selected-row 2)"
 case $chosen in
     $shutdown)
         ans=$(confirm &)
