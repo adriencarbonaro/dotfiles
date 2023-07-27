@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+#-------------------------------------------------------------------------------
+# NAME        : xkbs
+# AUTHOR      : Adrien CARBONARO
+# DESCRIPTION : Increment keyboard layouts.
+#               Used by polybar.
+#-------------------------------------------------------------------------------
+# Copy this file in executable path.
+#-------------------------------------------------------------------------------
+
+import subprocess
+
+XKB_FILE = "/tmp/xkb_current"
+
+# Layouts supported
+docs = [
+    { "menu": "US",        "layout": "us", "variant": ""     },
+    { "menu": "US (intl)", "layout": "us", "variant": "intl" },
+    { "menu": "FR",        "layout": "fr", "variant": ""     },
+]
+
+menu_str = "\n".join(x["menu"] for x in docs)
+
+cmd = subprocess.run("echo \"" + menu_str + "\" | rofi -theme /home/adrien/.config/rofi/adrien/powermenu.rasi -dmenu", shell=True, capture_output=True)
+menu_res = str(cmd.stdout, "utf-8").splitlines()
+if len(menu_res) > 0:
+    menu_res_elem = str(cmd.stdout, "utf-8").splitlines()[0]
+else:
+    exit(-1)
+
+for idx, doc in enumerate(docs):
+    if doc["menu"] == menu_res_elem:
+        new_doc     = docs[idx]
+        new_layout  = new_doc["layout"]
+        new_variant = new_doc["variant"]
+
+        # Write new layout in file
+        new_xkb = open(XKB_FILE, "w")
+        new_xkb.write(new_layout + ";" + new_variant)
+        new_xkb.close()
+
+        # Load new layout
+        subprocess.run("setxkbmap " + new_layout + " " + new_variant, shell=True)
+
