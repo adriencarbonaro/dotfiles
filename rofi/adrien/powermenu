@@ -5,7 +5,7 @@ theme="adrien/powermenu.rasi"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $dir/$theme"
+rofi_command="rofi -dmenu -theme $dir/$theme"
 
 # Options
 shutdown=""
@@ -13,65 +13,46 @@ reboot=""
 lock=""
 suspend=""
 logout=""
-yes=' Yes'
-no=' No'
+yes=''
+no=''
 
-# Confirmation
-confirm_cmd() {
-    rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 280px;}' \
-    -theme-str 'mainbox {children: [ "message", "listview" ];}' \
-    -theme-str 'listview {columns: 2; lines: 1;}' \
-    -theme-str 'element-text {font: "Iosevka 1.3 13"; horizontal-align: 0.5;}' \
-	-theme-str 'textbox {horizontal-align: 0.5;}' \
-	-dmenu \
-	-p 'Confirmation' \
-	-mesg 'Are you Sure ?' \
-	-theme ${dir}/${theme}
-}
-
-confirm_exit() {
-	echo -e "$yes\n$no" | confirm_cmd
+confirm() {
+    echo -e "$yes\n$no" | $rofi_command -me-select-entry "" -me-accept-entry "MousePrimary" -p 'Are you sure ?' -selected-row 1
 }
 
 # Variable passed to rofi
 options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 
-chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -selected-row 2)"
+chosen="$(echo -e "$options" | $rofi_command -me-select-entry "" -me-accept-entry "MousePrimary" -p "Uptime: $uptime" -selected-row 2)"
 case $chosen in
     $shutdown)
-		ans=$(confirm_exit &)
-		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-			systemctl poweroff
-		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
-			exit 0
+        ans=$(confirm &)
+        if [[ $ans == $yes ]]; then
+            systemctl poweroff
+        elif [[ $ans == $no ]]; then
+            exit 0
         fi
         ;;
     $reboot)
-		ans=$(confirm_exit &)
-		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-			systemctl reboot
-		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
-			exit 0
+        ans=$(confirm &)
+        if [[ $ans == $yes ]]; then
+            systemctl reboot
+        elif [[ $ans == $no ]]; then
+            exit 0
         fi
         ;;
     $lock)
-		sl
+        sl
         ;;
     $suspend)
-		lock
-		;;
+        scr_sleep
+        ;;
     $logout)
-		ans=$(confirm_exit &)
-		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-			if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
-				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
-				bspc quit
-			elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
-				i3-msg exit
-			fi
-		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
-			exit 0
+        ans=$(confirm &)
+        if [[ $ans == $yes ]]; then
+            i3-msg exit
+        elif [[ $ans == $no ]]; then
+            exit 0
         fi
         ;;
 esac
