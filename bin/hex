@@ -9,7 +9,7 @@ hex_dump () {
 }
 
 usage () {
-    echo "Usage: $0 [-d] [-s]"
+    echo "Usage: $0 [-d] [-s] <file>"
     echo "  -d   display hex dump (default)"
     echo "  -s   display hex stream"
 }
@@ -36,6 +36,11 @@ while getopts "dsh" arg; do
 done
 
 shift $((OPTIND-1))
+
+if [ -z $1 ]; then
+    usage
+    exit -1
+fi
 
 if [ $stream -eq 1 ]; then
     hex_stream $1
