@@ -1,0 +1,6 @@
+#!/bin/bash
+
+copyq read 0 1 2 3 4 5 6 7 8 9 | \
+  rofi -theme .config/rofi/adrien/launcher.rasi -i -dmenu -p 📋 | \
+  tr -d "\n" | \
+  copyq copy -
