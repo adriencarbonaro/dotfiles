@@ -1,0 +1,25 @@
+[delta "adrien"]
+  navigate                   = true  # use n and N to move between diff sections
+  dark                       = true # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  line-numbers               = true
+  line-numbers-minus-style   = red bold
+  line-numbers-plus-style    = blue bold
+  line-numbers-zero-style    = dim white
+  line-numbers-left-style    = dim white
+  line-numbers-right-style   = dim black
+  minus-style                = red "#513635"
+  minus-emph-style           = red bold "#743f3d"
+  plus-style                 = blue "#2a465e"
+  plus-emph-style            = blue bold "#2f597e"
+  keep-plus-minus-markers    = false
+  commit-decoration-style    = purple ol
+  commit-style               = raw
+  file-style                 = omit
+  hunk-header-decoration-style = omit
+  hunk-header-file-style     = blue
+  hunk-header-line-number-style = green
+  hunk-header-style          = file line-number syntax
+  syntax-theme               = OneHalfDark
+  zero-style                 = dim syntax
+  whitespace-error-style     = reverse red
+

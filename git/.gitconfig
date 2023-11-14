@@ -11,10 +11,14 @@
 [core]
     autocrlf    = true
     editor      = vim
+    pager       = delta
 [merge]
     ff          = false
+    conflictstyle = diff3
 [tag]
     sort        = version:refname
+[interactive]
+    diffFilter  = delta --color-only
 [color]
     pager       = true
     ui          = auto
@@ -63,3 +67,8 @@
 [alias]
     formatLog = log --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ad)'
     chekcout = checkout
+[include]
+    path = $HOME/.config/delta/themes.gitconfig
+[delta]
+    features = adrien
+
