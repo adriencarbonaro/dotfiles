@@ -69,7 +69,7 @@
     chekcout                 = checkout
 
 [include]
-    path                     = $HOME/.config/delta/themes.gitconfig
+    path                     = /path/to/your/delta/theme.gitconfig
 
 [delta]
     features                 = adrien
