@@ -37,7 +37,7 @@ done
 
 shift $((OPTIND-1))
 
-if [ -z $1 ]; then
+if [ -z ${1:-/dev/stdin} ]; then
     usage
     exit -1
 fi
