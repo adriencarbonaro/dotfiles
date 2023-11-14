@@ -9,66 +9,68 @@
 #------------------------------------------------------------
 
 [core]
-    autocrlf    = true
-    editor      = vim
-    pager       = delta
+    autocrlf                 = false
+    editor                   = vim
+    pager                    = delta
 [merge]
-    ff          = false
-    conflictstyle = diff3
+    ff                       = false
+    conflictstyle            = diff3
 [tag]
-    sort        = version:refname
+    sort                     = version:refname
 [interactive]
-    diffFilter  = delta --color-only
+    diffFilter               = delta --color-only
 [color]
-    pager       = true
-    ui          = auto
-    status      = auto
-    diff        = auto
-    branch      = auto
-    showBranch  = auto
-    interactive = auto
-    grep        = auto
+    pager                    = true
+    ui                       = auto
+    status                   = auto
+    diff                     = auto
+    branch                   = auto
+    showBranch               = auto
+    interactive              = auto
+    grep                     = auto
 [color "status"]
-    header    = black bold
-    branch    = magenta
-    nobranch  = red
-    unmerged  = red
-    untracked = red
-    added     = green
-    changed   = red
+    header                   = black bold
+    branch                   = magenta
+    nobranch                 = red
+    unmerged                 = red
+    untracked                = red
+    added                    = green
+    changed                  = red
 [color "diff"]
-    meta       = black bold
-    frag       = cyan bold
-    func       = cyan
-    old        = red
-    new        = green
-    commit     = blue
-    whitespace = blue reverse
-    context    = normal
+    meta                     = black bold
+    frag                     = cyan bold
+    func                     = cyan
+    old                      = red
+    new                      = green
+    commit                   = blue
+    whitespace               = blue reverse
+    context                  = normal
 [color "decorate"]
-    branch = green
-    remoteBranch = magenta
-    tag = yellow
-    stash = cyan
-    HEAD = red
+    branch                   = green
+    remoteBranch             = magenta
+    tag                      = yellow
+    stash                    = cyan
+    HEAD                     = red
 [color "interactive"]
-    prompt = blue bold
-    header = red bold
-    error = red
-    help = black bold
+    prompt                   = blue bold
+    header                   = red bold
+    error                    = red
+    help                     = black bold
 [color "grep"]
-    context = normal
-    match = cyan
-    filename = blue
-    function = blue
-    selected = normal
-    separator = red bold
-    linenumber = normal
+    context                  = normal
+    match                    = cyan
+    filename                 = blue
+    function                 = blue
+    selected                 = normal
+    separator                = red bold
+    linenumber               = normal
 [alias]
-    formatLog = log --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ad)'
-    chekcout = checkout
+    formatLog                = log --graph --decorate --format=format:'%C(auto)%h%d %s %C(bold black)%an (%ad)'
+    chekcout                 = checkout
+
 [include]
-    path = $HOME/.config/delta/themes.gitconfig
+    path                     = $HOME/.config/delta/themes.gitconfig
+
 [delta]
-    features = adrien
+    features                 = adrien
 
