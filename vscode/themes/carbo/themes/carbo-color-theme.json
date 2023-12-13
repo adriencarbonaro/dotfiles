@@ -2255,7 +2255,7 @@
         },
         {
             "scope": [
-                " meta.brace.square"
+                "meta.brace.square"
             ],
             "settings": {
                 "foreground": "#ABB2BF"
