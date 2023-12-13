@@ -2275,6 +2275,12 @@
             }
         },
         {
+            "scope": "entity.name.tag.yaml",
+            "settings": {
+                "foreground": "#61afef"
+            }
+        },
+        {
             "scope": "punctuation.definition.block.sequence.item.yaml",
             "settings": {
                 "foreground": "#ABB2BF"
