@@ -17,8 +17,7 @@ set expandtab
 set hlsearch 
 
 " Color Scheme
-colorscheme carbo
-"colorscheme dracula_perso
+colorscheme onedark
 
 " PLUGIN OPTION ----------------------------------
 " Disable specific syntax highlighting (Plugin 'sheerun/vim-polyglot')
@@ -31,32 +30,15 @@ let g:indentLine_char = '|'
 let g:load_doxygen_syntax=1
 
 " Get functions for fzf.vim plugin + devicons
-so $HOME/.vim/plugin/fzf_devicon.vim
+so $HOME/.config/vim/plugin/fzf_devicon.vim
 
-" PLUGIN LOADING ---------------------------------
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'      "  Vim Package manager
-Plugin 'airblade/vim-gitgutter'    "  Git plugin - display + - ~ in vim gutter
-Plugin 'scrooloose/nerdcommenter'  "  Comment plugin - Toggle comments
-Plugin 'Yggdroot/indentLine'       "  Indent plugin - display indent lines in code
-Plugin 'scrooloose/nerdtree'       "  Tree plugin - display file tree
-Plugin 'godlygeek/tabular'         "  Align plugin - align code according to symbol
-Plugin 'sheerun/vim-polyglot'      "  Syntax plugin - syntax highlighting according to language
-"Plugin 'Valloric/YouCompleteMe'    "  Complete plugin - auto complete
-"Plugin 'rdnetto/YCM-Generator'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'mboughaba/i3config.vim'
-Plugin 'junegunn/fzf.vim'
-
-call vundle#end()
-set runtimepath^=~/.vim/plugin
+set runtimepath^=~/config/vim/plugin
 
 " add fzf program for fzf.vim
 set rtp+=~/dotfiles/fzf/fzf
 
 " create location to store swap (.swp) files
-set directory^=$HOME/.vim/tmp//
+set directory^=$HOME/.config/vim/tmp//
 
 filetype indent plugin on
 
@@ -169,3 +151,44 @@ nnoremap <C-a> :Ack!<Space>
 " Vertical resize abbreviation
 ca vr vertical resize
 
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+let g:lightline = { 'colorscheme': 'onedark' }
+
+" vim -b : edit binary using xxd-format!
+augroup Binary
+  autocmd!
+  autocmd BufReadPre  *.bin set binary
+  autocmd BufReadPost *.bin
+    \ if &binary
+    \ |   execute "silent %!xxd -c 32"
+    \ |   set filetype=xxd
+    \ |   redraw
+    \ | endif
+  autocmd BufWritePre *.bin
+    \ if &binary
+    \ |   let s:view = winsaveview()
+    \ |   execute "silent %!xxd -r -c 32"
+    \ | endif
+  autocmd BufWritePost *.bin
+    \ if &binary
+    \ |   execute "silent %!xxd -c 32"
+    \ |   set nomodified
+    \ |   call winrestview(s:view)
+    \ |   redraw
+    \ | endif
+augroup END

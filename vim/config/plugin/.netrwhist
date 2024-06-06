@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/c/Users/adrien/.vim/pack/lightline/autoload'
+let g:netrw_dirhist_9='/c/Users/adrien/.vim/pack/lightline/autoload/lightline'
+let g:netrw_dirhist_8='/c/Users/adrien/.vim/pack/lightline/autoload'
+let g:netrw_dirhist_7='/c/Users/adrien/.vim/pack/lightline'
+let g:netrw_dirhist_6='/c/Users/adrien/appdata/Roaming/orosound/OrosoundTestUi/config/tests/bt_config/res'
+let g:netrw_dirhist_5='/c/Users/adrien/appdata/Roaming/orosound/OrosoundTestUi/config/tests/bt_config'
+let g:netrw_dirhist_4='/c/Users/adrien/appdata/Roaming/orosound/OrosoundTestUi/config/tests/bt_config/res'
+let g:netrw_dirhist_3='/c/Users/adrien/appdata/Roaming/orosound/OrosoundTestUi/config/tests/bt_config'
+let g:netrw_dirhist_2='/c/Users/adrien/appdata/Roaming/orosound/OrosoundTestUi/config/tests/bt_config/res'
+let g:netrw_dirhist_1='/c/Users/adrien/appdata/Roaming/orosound/OrosoundTestUi/config/tests/bt_config'
