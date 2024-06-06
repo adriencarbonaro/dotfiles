@@ -1,0 +1,16 @@
+#!/bin/env python
+
+from argparse import ArgumentParser
+
+# Set the parsers for the command from the user
+parser = ArgumentParser(prog="hex2ascii")
+
+parser.add_argument("stream")
+args = parser.parse_args()
+stream = args.stream
+
+try:
+    stream_bytearray = bytearray.fromhex(stream)
+    print(stream_bytearray.decode("utf8"))
+except ValueError as e:
+    print("Error in stream ({})".format(e))
