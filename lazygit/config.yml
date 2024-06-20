@@ -1,0 +1,7 @@
+confirmOnQuit: true
+gui:
+  showIcons: true
+  expandFocusedSidePanel: true
+git:
+  log:
+    showWholeGraph: true
