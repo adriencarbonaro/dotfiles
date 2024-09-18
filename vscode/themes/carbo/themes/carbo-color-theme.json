@@ -932,7 +932,7 @@
         {
             "scope": "variable.other.readwrite,meta.object-literal.key,support.variable.property,support.variable.object.process,support.variable.object.node",
             "settings": {
-                "foreground": "#e78284"
+                "foreground": "#C6D0F5"
             }
         },
         {
@@ -981,6 +981,12 @@
             "scope": "entity.name.function,support.function.console",
             "settings": {
                 "foreground": "#61AFEF"
+            }
+        },
+        {
+            "scope": "entity.name.function.preprocessor.c",
+            "settings": {
+                "foreground": "#5CBB9F"
             }
         },
         {
@@ -1124,7 +1130,7 @@
         {
             "scope": "variable",
             "settings": {
-                "foreground": "#E78284"
+                "foreground": "#C6D0F5"
             }
         },
         {
@@ -2191,7 +2197,7 @@
                 "beginning.punctuation.definition.list.markdown.xi"
             ],
             "settings": {
-                "foreground": "#7F848E"
+                "foreground": "#737994"
             }
         },
         {
@@ -2265,7 +2271,7 @@
         {
             "scope": "comment, punctuation.definition.comment",
             "settings": {
-                "foreground": "#7F848E",
+                "foreground": "#737994",
                 "fontStyle": "italic"
             }
         },
@@ -2374,7 +2380,7 @@
         {
             "scope": "variable.other.readwrite.c",
             "settings": {
-                "foreground": "#E06C75"
+                "foreground": "#C6D0F5"
             }
         },
         {
@@ -2467,7 +2473,7 @@
         {
             "scope": "variable.other.property",
             "settings": {
-                "foreground": "#ea999c",
+                "foreground": "#b5bfe2",
                 "fontStyle": ""
             }
         }
@@ -2476,5 +2482,6 @@
     "renderFinalNewline": "dimmed",
     "semanticTokenColors": {
         "enumMember": "#5cbb9f",
+        "macro": "#5cbb9f",
     }
 }
