@@ -7,7 +7,8 @@
         {
           "style": "diamond",
           "type": "session",
-          "template": " \ue70f {{ .UserName }} ",
+          "template": " \uf007 {{ .UserName }} \ue70f {{ .HostName }} ",
+          "template_linux": " \uf007 {{ .UserName }} \uf31b {{ .HostName }} ",
           "background": "p:cyan",
           "foreground": "p:black",
           "leading_diamond": "\ue0b6",
