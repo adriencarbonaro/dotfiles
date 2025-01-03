@@ -1,1 +1,0 @@
-/home/adrien/bin/launcher

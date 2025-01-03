@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dir="$HOME/.config/polybar"
-style="adrien"
+style=${1:-"default"}
 
 launch_bar() {
 	# Terminate already running bar instances
@@ -11,7 +11,7 @@ launch_bar() {
 	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
-	polybar -q main -c "$dir/$style/config.ini" &	
+	polybar -q main -c "$dir/themes/$style/config.ini" &	
 }
 
 launch_bar
