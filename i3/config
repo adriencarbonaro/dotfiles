@@ -27,6 +27,9 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod1
 
+set $theme coffee
+include $theme/config.conf
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -54,10 +57,13 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+space exec /home/adrien/bin/launcher
-bindsym $mod+q exec /home/adrien/bin/powermenu
+bindsym $mod+space exec $HOME/bin/launcher
+bindsym $mod+q exec $HOME/bin/powermenu
 
-bindsym $mod+Shift+c exec gpick -s
+# clipboard pick
+bindsym $mod+c exec clipick
+
+bindsym $mod+Shift+c exec cpick
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -196,6 +202,10 @@ bindsym $mod+r mode "resize"
 
 # Create borders
 for_window [class="^.*"] border pixel 4
+for_window [class="Gpick"] floating enable
+for_window [class="Orosound Link"] floating enable
+for_window [class="Calculator.Skia.Gtk"] floating enable, focus, resize set 400 500
+for_window [class="Gnome-calculator"] floating enable, focus, resize set 400 500
 
 new_window	pixel 5
 new_float	pixel 5
@@ -205,18 +215,17 @@ gaps inner 10
 gaps outer 5
 
 # Hide gaps when only one window on screen
-smart_gaps on
+smart_gaps off
 
 # Snapshots bindings
-bindsym $mod+p          exec scr
-bindsym $mod+Shift+p    exec scrs
+bindsym $mod+p          exec scr -c
+bindsym $mod+Shift+p    exec scr -ci
+
+bindcode Shift+Control+24 exec xkbs
 
 bindsym $mod+n          exec notify Notification
 bindsym $mod+Shift+n    exec notify -u low Notification
 bindsym $mod+Mod4+n     exec notify -u critical Notification
-
-# ScreenLock keybinding
-bindsym $mod+x exec sl2
 
 # Define some custom FN key control
 exec_always --no-startup-id xmodmap $HOME/.xmodmap.conf
@@ -244,19 +253,14 @@ bindsym XF86LaunchB     exec --no-startup-id rofi -show run
 # Hide borders when only one window on screen
 hide_edge_borders smart
 
-# Change resolution (Get things bigger with Mac Book Pro Retina)
-exec_always --no-startup-id xrandr --output eDP1 -s 1920x1200
-exec_always --no-startup-id xrandr --output HDMI2 --auto --right-of eDP1
-
+# Set screen setup
+exec_always --no-startup-id $HOME/.config/xrandr/setup.sh
 
 # Set autorepeat threshold to 250ms and speed to 50 repeats per seconds
 exec_always --no-startup-id xset r rate 250 50
 
 # Set wallpaper
-#exec_always --no-startup-id feh --bg-fill $HOME/Images/wall_red.png
-# Gradient wallpapers from uigradient.com
-exec_always feh --bg-fill $HOME/Pictures/Wallpapers/fold.jpg
-#exec_always feh --bg-fill $HOME/Images/wallpapers/wall_shapes.jpg
+exec_always feh --bg-fill $HOME/.config/i3/$theme/wallpapers/2560x1440 $HOME/.config/i3/$theme/wallpapers/1080x1920
 
 # Start compton compositor (for transparent)
 #exec_always --no-startup-id compton -f -D 2 &
@@ -265,21 +269,11 @@ exec_always --no-startup-id compton --config $HOME/.config/compton/compton.conf 
 exec_always --no-startup-id killall dunst
 exec_always --no-startup-id dunst &
 
+# Clipboard manager
+exec_always --no-startup-id COPYQ_LOG_FILE="$HOME/tmp/copylog.log" copyq &
+
 # Display top bar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh $theme
 
 exec_always --no-startup-id xscreensaver -no-splash &
-
-set $color #8BC8EB
-set $rcolo  #FF0000
-set $bg     #262626
-set $bg_in  #303539
-
-# class                 border    backgr.   text      indicator   child_border
-client.focused          $bg_in    $bg_in    $bg_in    $color      $color
-client.focused_inactive $bg_in    $bg_in    $bg_in    $bg_in      $bg_in
-client.unfocused        $bg_in    $bg_in    $bg_in    $bg_in      $bg_in
-client.urgent           $bg_in    $bg_in    $bg_in    $bg_in      $bg_in
-client.placeholder      $bg_in    $bg_in    $bg_in    $bg_in      $bg_in
-client.background       #ffffff
 
