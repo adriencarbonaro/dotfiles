@@ -1,0 +1,7 @@
+alias ls='eza --icons'
+alias l='eza -lg --icons'
+alias ll='eza -lga --git --icons'
+alias lls="eza -l -a -g --git --sort=size --icons"
+alias llt="eza -l -a -g --git --sort=time --icons"
+alias ltr="eza --tree --icons"
+alias tree="eza --tree --icons"

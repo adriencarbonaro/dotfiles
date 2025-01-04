@@ -47,8 +47,8 @@ alias chrome='chromium-browser'
 alias imageinfo='identify'
 alias calc="gnome-calculator"
 
-if [ -x "$(command -v exa)" ]
+if [ -x "$(command -v eza)" ]
 then
-    source $TOP_DIR/.aliases_exa
+    source $TOP_DIR/.aliases_eza
 fi
 
