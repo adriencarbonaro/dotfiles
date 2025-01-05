@@ -1,0 +1,59 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "diamond",
+          "type": "session",
+          "template": " \uf007 {{ .UserName }} \uf31b {{ .HostName }} ",
+          "background": "p:cyan",
+          "foreground": "p:black",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b0"
+        },
+        {
+          "style": "diamond",
+          "type": "path",
+          "template": " {{ .Path }}",
+          "background": "p:blue",
+          "foreground": "p:black",
+          "leading_diamond": "<p:black,p:blue>\ue0b0</>",
+          "trailing_diamond": "\ue0b4",
+          "properties": {
+            "style": "full"
+          }
+        },
+        {
+          "style": "diamond",
+          "type": "git",
+          "template": " {{ .HEAD }} {{ if .Working.Modified }} \uf00d {{ end }}",
+          "background": "p:magenta",
+          "foreground": "p:black",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "properties": {
+            "branch_max_length": 25,
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+  "final_space": true,
+  "version": 2,
+  "palette": {
+    "red": "#ff0000",
+    "black": "#303446",
+    "blue": "#61afef",
+    "cyan": "#37e697",
+    "magenta": "#c678dd",
+    "white": "#ffffff",
+    "yellow": "#f5d07b"
+  }
+}
