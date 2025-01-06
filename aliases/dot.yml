@@ -1,0 +1,6 @@
+config:
+  dest: $HOME
+  directories:
+    - test_aliases
+  files:
+    - .user_aliases

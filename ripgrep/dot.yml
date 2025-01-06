@@ -1,0 +1,4 @@
+config:
+  dest: $HOME
+  files:
+    - .ripgreprc

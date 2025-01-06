@@ -53,3 +53,12 @@ export WALLS="$HOME/Pictures/wallpapers"
 
 # zsh options
 setopt noauto_cd
+
+export VISUAL=vi
+export EDITOR="$VISUAL"
+
+# oh-my-posh -------------------------------------------------------------------
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/themes/adrien.omp.json)"
+
+# Load user aliases ------------------------------------------------------------
+source $TOP_DIR/.user_aliases

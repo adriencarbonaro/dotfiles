@@ -1,0 +1,6 @@
+config:
+  dest: $HOME/.fonts
+  directories:
+    - Iosevka_1.3
+  shell_commands:
+    - fc-cache -fv

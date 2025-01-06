@@ -1,0 +1,11 @@
+config:
+  dest: $HOME/.config/example
+  files:
+    - config
+  directories:
+    - themes
+  env_vars:
+    - name: EXAMPLE_ENV_1
+      value: test
+    - name: EXAMPLE_ENV_2
+      value: 2

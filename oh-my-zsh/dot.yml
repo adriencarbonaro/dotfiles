@@ -1,0 +1,12 @@
+config:
+  pre_shell_commands:
+    - RUNZSH=no ZSH=$HOME/.config/oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""
+  dest: $HOME/.config/oh-my-zsh
+  backup: false
+  extra_files:
+    - name: .zshrc
+      dest: $HOME
+    - name: test
+      dest: $HOME
+  directories:
+    - custom

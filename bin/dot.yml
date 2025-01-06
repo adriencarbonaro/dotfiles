@@ -1,0 +1,7 @@
+config:
+  dest: $HOME/bin
+  directories:
+    - .
+  env_vars:
+    - name: PATH
+      value: $PATH:$HOME/bin

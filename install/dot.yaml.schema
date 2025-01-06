@@ -1,0 +1,17 @@
+config:
+  dest: string
+  backup: boolean
+  files:
+    - string
+  directories:
+    - string
+  extra_files:
+    - name: string
+      dest: string
+  pre_shell_commands:
+    - string
+  shell_commands:
+    - string
+  env_vars:
+    - name: string
+      value: string

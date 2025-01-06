@@ -1,0 +1,6 @@
+config:
+  dest: $HOME/.config/oh-my-posh
+  directories:
+    - themes
+  shell_commands:
+    - curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/bin

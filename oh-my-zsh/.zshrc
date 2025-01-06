@@ -3,12 +3,11 @@
 #
 # ███████╗███████╗██╗  ██╗██████╗  ██████╗
 # ╚══███╔╝██╔════╝██║  ██║██╔══██╗██╔════╝
-#   ███╔╝ ███████╗███████║██████╔╝██║     
-#  ███╔╝  ╚════██║██╔══██║██╔══██╗██║     
+#   ███╔╝ ███████╗███████║██████╔╝██║
+#  ███╔╝  ╚════██║██╔══██║██╔══██╗██║
 # ███████╗███████║██║  ██║██║  ██║╚██████╗
 # ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 #
-# Move this file to $HOME/.zshrc
 #------------------------------------------------------------
 # Author:       Adrien CARBONARO
 # Dotfiles :    www.github.com/adriencarbonaro/dotfiles.git
@@ -24,7 +23,7 @@ ZSH_THEME="carbo"
 TOP_DIR="$HOME"
 
 # Path to your oh-my-zsh installation.
-#export ZSH="$TOP_DIR/.oh-my-zsh"
+export ZSH="$TOP_DIR/.config/oh-my-zsh"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -86,7 +85,7 @@ plugins=(
 
 # User configuration
 
-## zsh-syntax-highlighting style 
+## zsh-syntax-highlighting style
 # Change syntax highlighting colors
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta
@@ -126,28 +125,12 @@ ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=magenta
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# -- FZF ----------
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export SHELL=/bin/zsh
 export VISUAL=vi
 export EDITOR="$VISUAL"
-
-#if [ -x "$(command -v neofetch)" ]
-#then
-    #neofetch --color_blocks off
-    #colorpanes
-#fi
-
-# oh-my-posh -------------------------------------------------------------------
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/themes/adrien.omp.json)"
-
-# Load userprofile -------------------------------------------------------------
-source $HOME/.userprofile
 
 # Load oh-my-zsh scripts -------------------------------------------------------
 source $ZSH/oh-my-zsh.sh
 
-# Load user aliases ------------------------------------------------------------
-source $TOP_DIR/.user_aliases
+# Load userprofile -------------------------------------------------------------
+source $HOME/.userprofile
 

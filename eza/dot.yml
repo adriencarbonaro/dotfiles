@@ -1,0 +1,4 @@
+config:
+  dest: $HOME/.config/eza
+  files:
+    - theme.yml
