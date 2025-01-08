@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # ls aliases -------------------------------------------------------------------
 alias ll='ls -lha'
 alias lla='ls -hlFa'
@@ -46,9 +44,3 @@ alias ff="fzf"
 alias chrome='chromium-browser'
 alias imageinfo='identify'
 alias calc="gnome-calculator"
-
-if [ -x "$(command -v eza)" ]
-then
-    source $TOP_DIR/.aliases_eza
-fi
-

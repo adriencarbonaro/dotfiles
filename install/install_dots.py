@@ -66,6 +66,28 @@ def create_dest(dest: str, backup: bool):
 
 def install(dir: str):
     print("installing:", dotName(dir))
+
+    # Copy optional .userprofile
+    if USERPROFILE_FILE in os.listdir(dir):
+        home_userprofile = os.path.join(HOME_DIR, USERPROFILE_FILE)
+        print(PRINT_ADDING_CONTENT.format(fileName(USERPROFILE_FILE), pathName(home_userprofile)))
+        with open(os.path.join(dir, USERPROFILE_FILE), "r") as f_source:
+            content = f_source.read()
+            with open(os.path.join(HOME_DIR, USERPROFILE_FILE), "a") as f_dest:
+                f_dest.write(AUTO_GENERATED_PREFIX_LINE.format(dir) + content + "\n")
+
+    # Copy optional .useraliases
+    if USERALIASES_FILE in os.listdir(dir):
+        home_useraliases = os.path.join(HOME_DIR, USERALIASES_FILE)
+        print(PRINT_ADDING_CONTENT.format(fileName(USERALIASES_FILE), pathName(home_useraliases)))
+        with open(os.path.join(dir, USERALIASES_FILE), "r") as f_source:
+            content = f_source.read()
+            with open(os.path.join(HOME_DIR, USERALIASES_FILE), "a") as f_dest:
+                f_dest.write(AUTO_GENERATED_PREFIX_LINE.format(dir) + content + "\n")
+
+    if not find_yml(dir):
+        return
+
     yml_path = os.path.join(dir, "dot.yml")
     with open(yml_path, "r") as f:
         content = f.read()
@@ -129,23 +151,6 @@ def install(dir: str):
                 print("executing shell command", commandName(shell_command))
                 subprocess.run(shell_command, shell=True)
 
-        # Copy optional .userprofile
-        if USERPROFILE_FILE in os.listdir(dir):
-            home_userprofile = os.path.join(HOME_DIR, USERPROFILE_FILE)
-            print(PRINT_ADDING_CONTENT.format(fileName(USERPROFILE_FILE), pathName(home_userprofile)))
-            with open(os.path.join(dir, USERPROFILE_FILE), "r") as f_source:
-                content = f_source.read()
-                with open(os.path.join(HOME_DIR, USERPROFILE_FILE), "a") as f_dest:
-                    f_dest.write(AUTO_GENERATED_PREFIX_LINE.format(dir) + content + "\n")
-
-        # Copy optional .useraliases
-        if USERALIASES_FILE in os.listdir(dir):
-            home_useraliases = os.path.join(HOME_DIR, USERALIASES_FILE)
-            print(PRINT_ADDING_CONTENT.format(fileName(USERALIASES_FILE), pathName(home_useraliases)))
-            with open(os.path.join(dir, USERALIASES_FILE), "r") as f_source:
-                content = f_source.read()
-                with open(os.path.join(HOME_DIR, USERALIASES_FILE), "a") as f_dest:
-                    f_dest.write(AUTO_GENERATED_PREFIX_LINE.format(dir) + content + "\n")
     print()
 
 def main():
@@ -153,13 +158,11 @@ def main():
         print("installing all dotfiles")
         # install for all directories that contain dot.yml file
         for path in os.listdir("."):
-            if (find_yml(path)):
-                install(path)
+            install(path)
     else:
         dots = argv[1:]
         for dot in dots:
-            if (find_yml(dot)):
-                install(dot)
+            install(dot)
 
 try:
     main()
