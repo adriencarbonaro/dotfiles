@@ -84,8 +84,11 @@ def install(dir: str):
     yml_path = os.path.join(dir, "dot.yml")
     with open(yml_path, "r") as f:
         content = f.read()
-        yml = yaml.load(content, Loader=yaml.CLoader)
-        config = yml[KEY_CONFIG]
+        if content == "":
+            config = []
+        else:
+            yml = yaml.load(content, Loader=yaml.CLoader)
+            config = yml[KEY_CONFIG]
 
         # Execute pre shell commands first
         if KEY_PRE_SHELL_COMMANDS in config:
@@ -95,7 +98,7 @@ def install(dir: str):
                 subprocess.run(pre_shell_command, shell=True)
 
         # if dest is $HOME, only copy files to home directory
-        if config[KEY_DEST] == "$HOME":
+        if KEY_DEST in config and config[KEY_DEST] == "$HOME":
             dest = HOME_DIR
         else:
             dest = os.path.expandvars(config[KEY_DEST])
