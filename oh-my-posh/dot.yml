@@ -3,4 +3,4 @@ config:
   directories:
     - themes
   shell_commands:
-    - curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/bin
+    - mkdir -p $HOME/bin && curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/bin
