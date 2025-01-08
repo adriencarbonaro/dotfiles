@@ -3,4 +3,4 @@ config:
   directories:
     - Iosevka_1.3
   shell_commands:
-    - fc-cache -fv
+    - fc-cache -f
