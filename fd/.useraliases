@@ -1,0 +1,1 @@
+alias fd="fdfind"
