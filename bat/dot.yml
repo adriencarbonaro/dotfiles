@@ -1,0 +1,6 @@
+config:
+  dest: $HOME/.config/bat
+  files:
+    - config
+  directories:
+    - themes
