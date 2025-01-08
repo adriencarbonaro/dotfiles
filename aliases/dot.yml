@@ -1,4 +1,0 @@
-config:
-  dest: $HOME
-  files:
-    - .user_aliases
