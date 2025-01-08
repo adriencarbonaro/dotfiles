@@ -28,6 +28,9 @@ def dirName(name: str):
 def fileName(name: str):
     return printColoredName(Fore.CYAN, name)
 
+def envName(name: str):
+    return printColoredName(Fore.CYAN, name)
+
 def commandName(name: str):
     return printColoredName(Fore.YELLOW, name)
 
@@ -114,7 +117,7 @@ def install(dir: str):
                 for env_var_dict in env_vars:
                     name = env_var_dict["name"]
                     value = env_var_dict["value"]
-                    print("writing env var", name, "to", pathName(env_var_file))
+                    print("writing env var", envName(name), "to", pathName(env_var_file))
                     f.write("export {}=\"{}\"\n".format(name, value))
                 f.write("\n")
         # Execute commands
