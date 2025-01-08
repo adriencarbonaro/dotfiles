@@ -6,7 +6,5 @@ config:
   extra_files:
     - name: .zshrc
       dest: $HOME
-    - name: test
-      dest: $HOME
   directories:
     - custom
