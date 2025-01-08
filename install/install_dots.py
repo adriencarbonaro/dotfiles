@@ -45,8 +45,8 @@ def find_yml(dir):
 
 def create_dest(dest: str, backup: bool):
     if os.path.exists(dest):
-        print("config directory already exists:", dest)
         if backup:
+            print("config directory already exists:", dest)
             i = 1
             backup_dir = dest + ".back." + str(i)
             while os.path.exists(backup_dir):
