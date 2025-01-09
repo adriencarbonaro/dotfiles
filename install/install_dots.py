@@ -98,16 +98,17 @@ def install(dir: str):
                 subprocess.run(pre_shell_command, shell=True)
 
         # if dest is $HOME, only copy files to home directory
-        if KEY_DEST in config and config[KEY_DEST] == "$HOME":
-            dest = HOME_DIR
-        else:
-            dest = os.path.expandvars(config[KEY_DEST])
+        if KEY_DEST in config:
+            if config[KEY_DEST] == "$HOME":
+                dest = HOME_DIR
+            else:
+                dest = os.path.expandvars(config[KEY_DEST])
 
-            backup = True
-            if KEY_BACKUP in config and config[KEY_BACKUP] == False:
-                backup = False
+                backup = True
+                if KEY_BACKUP in config and config[KEY_BACKUP] == False:
+                    backup = False
 
-            create_dest(dest, backup)
+                create_dest(dest, backup)
 
         # Copy files
         if KEY_FILES in config:
