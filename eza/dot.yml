@@ -1,4 +1,6 @@
 config:
   dest: $HOME/.config/eza
+  pre_shell_commands:
+    - sh eza/install.sh
   files:
     - theme.yml
