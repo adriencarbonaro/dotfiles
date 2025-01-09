@@ -1,0 +1,4 @@
+config:
+  dest: $HOME/.config/alacritty
+  files:
+    - alacritty.yml
