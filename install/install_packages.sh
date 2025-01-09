@@ -1,1 +1,1 @@
-cat install/packages.list | xargs apt install
+cat install/packages.list | xargs apt install -y
