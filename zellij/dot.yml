@@ -1,0 +1,8 @@
+config:
+  dest: $HOME/.config/zellij
+  pre_shell_commands:
+    - sh zellij/install.sh
+  files:
+    - config.kdl
+  directories:
+    - themes
