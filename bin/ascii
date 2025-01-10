@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 echo -e \
 "\033[36mDec\033[0m Hx Char                          \033[36mDec\033[0m Hx Char  Dec Hx Char  Dec Hx Char
