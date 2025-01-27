@@ -1,7 +1,7 @@
 {
     "$schema": "vscode://schemas/color-theme",
     "version": "1.0.0",
-    "type": "dark",
+    "type": "light",
     "colors": {
         "activityBar.activeBorder": "#61afef",
         "activityBar.background": "#303446",
@@ -1283,7 +1283,7 @@
         {
             "scope": "support.type.property-name.toml, support.type.property-name.table.toml, support.type.property-name.array.toml",
             "settings": {
-                "foreground": "#E06C75"
+                "foreground": "#61afef"
             }
         },
         {
@@ -2269,7 +2269,16 @@
             }
         },
         {
-            "scope": "comment, punctuation.definition.comment",
+            "scope": [
+                "comment",
+                "comment.block",
+                "comment.block.c",
+                "comment.block.documentation",
+                "comment.block.documentation.c",
+                "comment.line",
+                "comment.line.double-slash",
+                "punctuation.definition.comment"
+            ],
             "settings": {
                 "foreground": "#737994",
                 "fontStyle": "italic"
@@ -2428,12 +2437,6 @@
             }
         },
         {
-            "scope": "comment.line.double-slash,comment.block.documentation",
-            "settings": {
-                "fontStyle": "italic"
-            }
-        },
-        {
             "scope": "keyword.control.import.python,keyword.control.flow.python,keyword.operator.logical.python",
             "settings": {
                 "fontStyle": "italic"
@@ -2447,34 +2450,10 @@
         },
         {
             "scope": [
-                "comment",
-                "comment.block",
-                "comment.block.documentation",
-                "comment.line",
-                "punctuation.definition.comment",
-                "comment.line.double-slash",
-                "variable.parameter",
-                "keyword.control.import.python",
-                "entity.name.function.python",
-                "keyword.control.flow.python"
-            ],
-            "settings": {
-                "fontStyle": ""
-            }
-        },
-        {
-            "scope": [
                 "variable.parameter"
             ],
             "settings": {
                 "foreground": "#f4b8e4"
-            }
-        },
-        {
-            "scope": "variable.other.property",
-            "settings": {
-                "foreground": "#b5bfe2",
-                "fontStyle": ""
             }
         }
     ],
