@@ -1283,7 +1283,7 @@
         {
             "scope": "support.type.property-name.toml, support.type.property-name.table.toml, support.type.property-name.array.toml",
             "settings": {
-                "foreground": "#E06C75"
+                "foreground": "#61afef"
             }
         },
         {
@@ -2271,10 +2271,13 @@
         {
             "scope": [
                 "comment",
+                "comment.block",
                 "comment.block.c",
                 "comment.block.documentation",
                 "comment.block.documentation.c",
-                "punctuation.definition.comment",
+                "comment.line",
+                "comment.line.double-slash",
+                "punctuation.definition.comment"
             ],
             "settings": {
                 "foreground": "#737994",
