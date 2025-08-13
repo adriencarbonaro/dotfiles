@@ -1,3 +1,194 @@
-#!/bin/bash
+#!/usr/bin/env python3
+import curses
+from pathlib import Path
 
-cat $HOME/.todo
+TODO_FILE = Path.home() / ".todo"
+BULLET = "•"  # Display bullet only, stored as '-'
+
+# ---------------------------
+# Data handling
+# ---------------------------
+
+def normalize_spacing(lines):
+    """Ensure exactly one blank line between sections, but no extra inside a section."""
+    out = []
+    for i, line in enumerate(lines):
+        if line.startswith("[") and line.endswith("]"):
+            if out and out[-1].strip() != "":
+                out.append("")
+            elif len(out) >= 2 and out[-1] == "" and out[-2] == "":
+                out.pop()
+            out.append(line)
+        else:
+            out.append(line)
+
+    # Remove multiple blank lines
+    cleaned = []
+    prev_blank = False
+    for l in out:
+        if l.strip() == "":
+            if not prev_blank:
+                cleaned.append("")
+            prev_blank = True
+        else:
+            cleaned.append(l)
+            prev_blank = False
+
+    return cleaned
+
+def load_todo():
+    if not TODO_FILE.exists():
+        TODO_FILE.touch()
+        return []
+    lines = TODO_FILE.read_text(encoding="utf-8").splitlines()
+    return normalize_spacing(lines)
+
+def save_todo(lines):
+    lines = normalize_spacing(lines)
+    TODO_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+# ---------------------------
+# TUI drawing
+# ---------------------------
+
+def draw(stdscr, lines, pos, scroll):
+    stdscr.clear()
+    height, width = stdscr.getmaxyx()
+
+    # Visible content area (leave last line for help)
+    max_visible = height - 1
+
+    # Adjust scroll so selection is always visible
+    if pos < scroll:
+        scroll = pos
+    elif pos >= scroll + max_visible:
+        scroll = pos - max_visible + 1
+
+    visible_lines = lines[scroll:scroll + max_visible]
+
+    # Draw tasks and sections
+    for idx, line in enumerate(visible_lines):
+        real_idx = scroll + idx
+
+        if line.startswith("[") and line.endswith("]"):
+            color = curses.color_pair(1) | curses.A_BOLD
+        elif line.strip().startswith("-"):
+            color = curses.color_pair(2)
+        else:
+            color = curses.color_pair(0)
+
+        if real_idx == pos:
+            color |= curses.color_pair(3)
+
+        display_line = line
+        if line.strip().startswith("-"):
+            leading_spaces = len(line) - len(line.lstrip())
+            display_line = " " * leading_spaces + BULLET + " " + line.lstrip()[2:]
+
+        stdscr.addstr(idx, 0, display_line[:width-1], color)
+
+    # Fixed help line at the bottom
+    help_text = "a: add task   d: delete   q: quit"
+    stdscr.attron(curses.color_pair(4))
+    stdscr.addstr(height - 1, 0, help_text[:width-1])
+    stdscr.clrtoeol()
+    stdscr.attroff(curses.color_pair(4))
+
+    stdscr.refresh()
+    return scroll
+
+# ---------------------------
+# Interactive helpers
+# ---------------------------
+
+def prompt(stdscr, prompt_text):
+    curses.echo()
+    height, _ = stdscr.getmaxyx()
+    stdscr.addstr(height - 1, 0, prompt_text)
+    stdscr.clrtoeol()
+    stdscr.refresh()
+    input_str = stdscr.getstr(height - 1, len(prompt_text)).decode("utf-8")
+    curses.noecho()
+    return input_str.strip()
+
+def add_task(lines, stdscr):
+    section = prompt(stdscr, "Section name: ")
+    task_desc = prompt(stdscr, "Task description: ")
+    if not section or not task_desc:
+        return lines
+
+    section_header = f"[{section}]"
+    if section_header in lines:
+        idx = lines.index(section_header)
+        insert_pos = idx + 1
+        while insert_pos < len(lines) and not (lines[insert_pos].startswith("[") and lines[insert_pos].endswith("]")):
+            insert_pos += 1
+        if insert_pos < len(lines) and lines[insert_pos].startswith("["):
+            if insert_pos > 0 and lines[insert_pos - 1].strip() == "":
+                insert_pos -= 1
+        lines.insert(insert_pos, f"- {task_desc}")
+    else:
+        if lines and lines[-1].strip() != "":
+            lines.append("")
+        lines.append(section_header)
+        lines.append(f"- {task_desc}")
+
+    return normalize_spacing(lines)
+
+def delete_item(lines, pos, stdscr):
+    if pos < 0 or pos >= len(lines):
+        return lines, pos
+    line = lines[pos]
+
+    if line.startswith("[") and line.endswith("]"):
+        confirm = prompt(stdscr, f"Delete section '{line}' and its tasks? (y/n): ")
+        if confirm.lower() != "y":
+            return lines, pos
+        end = pos + 1
+        while end < len(lines) and not (lines[end].startswith("[") and lines[end].endswith("]")):
+            end += 1
+        del lines[pos:end]
+    else:
+        del lines[pos]
+
+    pos = min(pos, len(lines) - 1)
+    return normalize_spacing(lines), pos
+
+# ---------------------------
+# Main TUI loop
+# ---------------------------
+
+def main(stdscr):
+    curses.curs_set(0)
+    curses.start_color()
+    curses.use_default_colors()
+
+    curses.init_pair(1, curses.COLOR_CYAN, -1)   # section color
+    curses.init_pair(2, curses.COLOR_WHITE, -1)  # task color
+    curses.init_pair(3, curses.COLOR_RED, -1)    # selection highlight
+    curses.init_pair(4, curses.COLOR_YELLOW, -1) # help text
+
+    lines = load_todo()
+    pos = 0
+    scroll = 0
+
+    while True:
+        scroll = draw(stdscr, lines, pos, scroll)
+        key = stdscr.getch()
+
+        if key == curses.KEY_UP:
+            pos = max(0, pos - 1)
+        elif key == curses.KEY_DOWN:
+            pos = min(len(lines) - 1, pos + 1)
+        elif key in (ord("q"), 27):
+            break
+        elif key == ord("d"):
+            lines, pos = delete_item(lines, pos, stdscr)
+        elif key == ord("a"):
+            lines = add_task(lines, stdscr)
+
+    save_todo(lines)
+
+if __name__ == "__main__":
+    curses.wrapper(main)
+
