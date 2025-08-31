@@ -6,19 +6,19 @@
 
 My dotfiles for a linux distribution configuration.
 
-**WM**: `i3`
+**Distro**: `Arch Linux`
+
+**WM**: `Hyprland`
 
 **Shell**: `zsh` (`+ohmyzsh`, `+ohmyposh`)
 
-**Terminal**: `alacritty`
+**Terminal**: `kitty`
 
-**Editor**: `vim` / `vscode`
+**Editor**: `nvim` / `vscode`
 
 **File manager**: `thunar`
 
-**Bar**: `polybar`
-
-**Compositor**: `compton`
+**Bar**: `waybar`
 
 **Notifications**: `dunst`
 
@@ -30,9 +30,7 @@ My dotfiles for a linux distribution configuration.
 
 **Fuzzy finder**: `fzf`
 
-**File listing**: `exa`
-
-**Git CLI**: `tig`
+**File listing**: `eza`
 
 **Font**: `Iosevka` *(custom)*
 
