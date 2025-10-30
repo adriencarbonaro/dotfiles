@@ -1,0 +1,73 @@
+[buildPlans.IosevkaCurved]
+family = "IosevkaCurved"
+spacing = "term"
+serifs = "sans"
+noCvSs = false
+exportGlyphNames = true
+
+[buildPlans.IosevkaCurved.variants.design]
+three = "flat-top-serifless"
+four = "open-serifless"
+six = "closed-contour"
+seven = "curly-serifless"
+eight = "two-circles"
+nine = "closed-contour"
+capital-a = "round-top-serifless"
+capital-g = "toothless-rounded-serifless-hooked"
+capital-k = "curly-serifless"
+capital-r = "curly-serifless"
+capital-v = "curly-serifless"
+capital-w = "rounded-vertical-sides-serifless"
+capital-x = "curly-serifless"
+capital-y = "curly-serifless"
+capital-z = "curly-serifless"
+a = "double-storey-toothless-corner"
+b = "toothless-corner-serifless"
+c = "serifless"
+d = "toothless-corner-serifless"
+g = "single-storey-earless-corner"
+k = "curly-serifless"
+l = "tailed-serifed"
+m = "earless-rounded-double-arch-serifless"
+n = "earless-corner-straight-serifless"
+p = "earless-corner-serifless"
+q = "earless-corner-straight-serifless"
+r = "earless-corner-serifless"
+u = "toothless-rounded-serifless"
+v = "curly-serifless"
+w = "rounded-vertical-sides-flat-top-serifless"
+x = "curly-serifless"
+y = "cursive-serifless"
+z = "curly-serifless"
+asterisk = "penta-low"
+underscore = "above-baseline"
+caret = "low"
+paren = "flat-arc"
+guillemet = "straight"
+percent = "rings-continuous-slash"
+lig-ltgteq = "slanted"
+
+[buildPlans.IosevkaCurved.ligations]
+inherits = "julia"
+
+[buildPlans.IosevkaCurved.widths.Condensed]
+shape = 500
+menu = 3
+css = "condensed"
+
+[buildPlans.IosevkaCurved.widths.Normal]
+shape = 600
+menu = 5
+css = "normal"
+
+[buildPlans.IosevkaCurved.slopes.Upright]
+angle = 0
+shape = "upright"
+menu = "upright"
+css = "normal"
+
+[buildPlans.IosevkaCurved.slopes.Oblique]
+angle = 9.4
+shape = "oblique"
+menu = "oblique"
+css = "oblique"
